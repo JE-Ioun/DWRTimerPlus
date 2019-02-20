@@ -2,8 +2,8 @@
 Dragon Warrior Randomizer Item, time, and stat tracker
 
 Requires:
-Windows
-.NET 3.5
+- Windows
+- .NET 3.5
 
 To get:
 - Go to Releases tab at top
