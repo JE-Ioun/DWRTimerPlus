@@ -1,0 +1,1 @@
+﻿The system will try to load true type fonts (with .ttf extension) that are in this directory.

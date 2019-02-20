@@ -150,6 +150,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Fonts\FontPlaceHolder.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="img\alefgard.png" />
     <Content Include="img\Armor\chain_mail.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -400,8 +403,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fonts\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

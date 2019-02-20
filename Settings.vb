@@ -85,7 +85,9 @@ Public Class Settings
         Next
         Dim cfntCustomFonts As New PrivateFontCollection
         For Each fiFile As FileInfo In New DirectoryInfo(System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "Fonts\")).GetFiles
-            cfntCustomFonts.AddFontFile(fiFile.FullName)
+            If fiFile.Extension = "ttf" Then
+                cfntCustomFonts.AddFontFile(fiFile.FullName)
+            End If
         Next
         For Each fntCustomFont As FontFamily In cfntCustomFonts.Families
             If fntCustomFont.IsStyleAvailable(FontStyle.Regular) Then

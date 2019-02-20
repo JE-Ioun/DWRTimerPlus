@@ -67,3 +67,4 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.vbproj.CoreCompil
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.xml
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.pdb
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\FontPlaceHolder.txt
