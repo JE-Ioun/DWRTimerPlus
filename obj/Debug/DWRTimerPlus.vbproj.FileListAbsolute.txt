@@ -66,24 +66,10 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\img\Weapons\erdricks_sword-grey.
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\img\Weapons\erdricks_sword.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\img\Weapons\flame_sword.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\img\Weapons\hand_axe.png
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DIGITALDREAM.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DIGITALDREAMFAT.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DIGITALDREAMFATNARROW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DIGITALDREAMFATSKEW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DIGITALDREAMFATSKEWNARROW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DIGITALDREAMNARROW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DIGITALDREAMSKEW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DIGITALDREAMSKEWNARROW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DS-DIGI.TTF
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DS-DIGIB.TTF
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DS-DIGII.TTF
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\DS-DIGIT.TTF
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\trs-million rg.ttf
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\DWRTimerPlus.exe.config
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\DWRTimerPlus.pdb
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\DWRTimerPlus.xml
-F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Debug\DWRTimerPlus.vbprojResolveAssemblyReference.cache
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Debug\DWRTimerPlus.DWRTackerWindow.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Debug\DWRTimerPlus.FMaps.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Debug\DWRTimerPlus.Resources.resources

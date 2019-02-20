@@ -54,19 +54,6 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\erdricks_sword-gre
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\erdricks_sword.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\flame_sword.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\hand_axe.png
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DIGITALDREAM.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DIGITALDREAMFAT.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DIGITALDREAMFATNARROW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DIGITALDREAMFATSKEW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DIGITALDREAMFATSKEWNARROW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DIGITALDREAMNARROW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DIGITALDREAMSKEW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DIGITALDREAMSKEWNARROW.ttf
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DS-DIGI.TTF
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DS-DIGIB.TTF
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DS-DIGII.TTF
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\DS-DIGIT.TTF
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\trs-million rg.ttf
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe.config
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.pdb
@@ -80,5 +67,3 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.vbproj.CoreCompil
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.xml
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.pdb
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe.CodeAnalysisLog.xml
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe.lastcodeanalysissucceeded
