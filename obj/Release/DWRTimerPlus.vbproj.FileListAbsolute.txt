@@ -1,3 +1,4 @@
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\Dragon Warrior (NES)license.html
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\FontPlaceHolder.txt
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\chain_mail.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\erdricks_armour-dark.png
@@ -7,6 +8,22 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\half_plate.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\leather_armour.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\magic_armour.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\plain_clothes.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Blue-Aqua_Rounded-Gradient_1.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Blue-Aqua_Rounded-Gradient_2.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Blue-Green_Rounded-Gradient_1.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Blue-Green_Rounded-Gradient_2.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Blue-Violet_Rounded-Gradient_1.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Blue-Violet_Rounded-Gradient_2.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Pink-Orange_Rounded-Gradient_1.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Pink-Orange_Rounded-Gradient_2.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Pink-Purple_Rounded-Gradient_1.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Pink-Purple_Rounded-Gradient_2.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Red-Orange_Rounded-Gradient_1.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Red-Orange_Rounded-Gradient_2.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Yellow-Green_Rounded-Gradient_1.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Yellow-Green_Rounded-Gradient_2.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Yellow-Orange_Rounded-Gradient_1.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Backgrounds\Yellow-Orange_Rounded-Gradient_2.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Maps\alefgard-routed.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Maps\alefgard.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Maps\charlock_full_base-routed.png
@@ -55,11 +72,11 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\erdricks_sword-gre
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\erdricks_sword.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\flame_sword.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\hand_axe.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\Dragon Warrior (NES).ttf
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe.config
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.pdb
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.xml
-F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.vbprojResolveAssemblyReference.cache
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.DWRTackerWindow.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.FMaps.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.Resources.resources
