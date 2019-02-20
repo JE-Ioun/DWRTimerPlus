@@ -1,3 +1,4 @@
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\FontPlaceHolder.txt
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\chain_mail.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\erdricks_armour-dark.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\erdricks_armour.png
@@ -58,6 +59,7 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe.config
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.pdb
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.xml
+F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.vbprojResolveAssemblyReference.cache
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.DWRTackerWindow.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.FMaps.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.Resources.resources
@@ -67,4 +69,3 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.vbproj.CoreCompil
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.xml
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.pdb
-F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\FontPlaceHolder.txt

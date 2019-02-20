@@ -10,6 +10,7 @@ C:\Users\MarcDade\AppData\Local\Temporary Projects\DWRTimerPlus\obj\Debug\DWRTim
 C:\Users\MarcDade\AppData\Local\Temporary Projects\DWRTimerPlus\obj\Debug\DWRTimerPlus.xml
 C:\Users\MarcDade\AppData\Local\Temporary Projects\DWRTimerPlus\obj\Debug\DWRTimerPlus.pdb
 C:\Users\MarcDade\AppData\Local\Temporary Projects\DWRTimerPlus\obj\Debug\DWRTimerPlus.DWRTackerWindow.resources
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\Fonts\FontPlaceHolder.txt
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\img\Armor\chain_mail.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\img\Armor\erdricks_armour-dark.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\img\Armor\erdricks_armour.png
@@ -70,6 +71,7 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\DWRTimerPlus.exe.config
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\DWRTimerPlus.pdb
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Debug\DWRTimerPlus.xml
+F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Debug\DWRTimerPlus.vbprojResolveAssemblyReference.cache
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Debug\DWRTimerPlus.DWRTackerWindow.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Debug\DWRTimerPlus.FMaps.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Debug\DWRTimerPlus.Resources.resources
