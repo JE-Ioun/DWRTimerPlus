@@ -485,6 +485,18 @@ Namespace My
                 Me("strOtherLabelColor") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property blnEnableRunPercent() As Boolean
+            Get
+                Return CType(Me("blnEnableRunPercent"),Boolean)
+            End Get
+            Set
+                Me("blnEnableRunPercent") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

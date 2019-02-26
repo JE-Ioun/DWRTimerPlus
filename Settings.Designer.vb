@@ -103,6 +103,7 @@ Partial Class Settings
         Me.chkEnableStats = New System.Windows.Forms.CheckBox()
         Me.btnOpenMapForm = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.chkEnableRunPercent = New System.Windows.Forms.CheckBox()
         CType(Me.nudTimerFontSize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -483,7 +484,7 @@ Partial Class Settings
         Me.tabForms.Location = New System.Drawing.Point(0, 0)
         Me.tabForms.Name = "tabForms"
         Me.tabForms.SelectedIndex = 0
-        Me.tabForms.Size = New System.Drawing.Size(339, 284)
+        Me.tabForms.Size = New System.Drawing.Size(339, 294)
         Me.tabForms.TabIndex = 40
         Me.tabForms.TabStop = False
         '
@@ -837,6 +838,7 @@ Partial Class Settings
         '
         'tbOther
         '
+        Me.tbOther.Controls.Add(Me.chkEnableRunPercent)
         Me.tbOther.Controls.Add(Me.GroupBox4)
         Me.tbOther.Controls.Add(Me.GroupBox3)
         Me.tbOther.Controls.Add(Me.Label17)
@@ -848,7 +850,7 @@ Partial Class Settings
         Me.tbOther.Location = New System.Drawing.Point(4, 22)
         Me.tbOther.Name = "tbOther"
         Me.tbOther.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbOther.Size = New System.Drawing.Size(331, 258)
+        Me.tbOther.Size = New System.Drawing.Size(331, 268)
         Me.tbOther.TabIndex = 2
         Me.tbOther.Text = "Extras"
         Me.tbOther.UseVisualStyleBackColor = True
@@ -859,7 +861,7 @@ Partial Class Settings
         Me.GroupBox4.Controls.Add(Me.btnOpenBGImgSelector)
         Me.GroupBox4.Controls.Add(Me.chkBackgroundImage)
         Me.GroupBox4.Controls.Add(Me.txtImageFileLocation)
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 98)
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 103)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(315, 62)
         Me.GroupBox4.TabIndex = 43
@@ -903,7 +905,7 @@ Partial Class Settings
         Me.GroupBox3.Controls.Add(Me.cmbOtherLabelFont)
         Me.GroupBox3.Controls.Add(Me.cmbOtherLabelColor)
         Me.GroupBox3.Controls.Add(Me.Label23)
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 160)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 165)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(315, 90)
         Me.GroupBox3.TabIndex = 42
@@ -965,7 +967,7 @@ Partial Class Settings
         'Label17
         '
         Me.Label17.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label17.Location = New System.Drawing.Point(171, 12)
+        Me.Label17.Location = New System.Drawing.Point(171, 11)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(152, 29)
         Me.Label17.TabIndex = 40
@@ -977,7 +979,7 @@ Partial Class Settings
         Me.chkTrackerView.AutoSize = True
         Me.chkTrackerView.Checked = True
         Me.chkTrackerView.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkTrackerView.Location = New System.Drawing.Point(171, 52)
+        Me.chkTrackerView.Location = New System.Drawing.Point(171, 49)
         Me.chkTrackerView.Name = "chkTrackerView"
         Me.chkTrackerView.Size = New System.Drawing.Size(125, 17)
         Me.chkTrackerView.TabIndex = 39
@@ -990,7 +992,7 @@ Partial Class Settings
         Me.chkTimerView.AutoSize = True
         Me.chkTimerView.Checked = True
         Me.chkTimerView.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkTimerView.Location = New System.Drawing.Point(171, 75)
+        Me.chkTimerView.Location = New System.Drawing.Point(171, 70)
         Me.chkTimerView.Name = "chkTimerView"
         Me.chkTimerView.Size = New System.Drawing.Size(114, 17)
         Me.chkTimerView.TabIndex = 38
@@ -1003,7 +1005,7 @@ Partial Class Settings
         Me.chkEnableCalculation.AutoSize = True
         Me.chkEnableCalculation.Checked = True
         Me.chkEnableCalculation.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkEnableCalculation.Location = New System.Drawing.Point(20, 75)
+        Me.chkEnableCalculation.Location = New System.Drawing.Point(20, 70)
         Me.chkEnableCalculation.Name = "chkEnableCalculation"
         Me.chkEnableCalculation.Size = New System.Drawing.Size(140, 17)
         Me.chkEnableCalculation.TabIndex = 34
@@ -1016,7 +1018,7 @@ Partial Class Settings
         Me.chkEnableStats.AutoSize = True
         Me.chkEnableStats.Checked = True
         Me.chkEnableStats.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkEnableStats.Location = New System.Drawing.Point(20, 52)
+        Me.chkEnableStats.Location = New System.Drawing.Point(20, 49)
         Me.chkEnableStats.Name = "chkEnableStats"
         Me.chkEnableStats.Size = New System.Drawing.Size(112, 17)
         Me.chkEnableStats.TabIndex = 33
@@ -1026,7 +1028,7 @@ Partial Class Settings
         'btnOpenMapForm
         '
         Me.btnOpenMapForm.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnOpenMapForm.Location = New System.Drawing.Point(20, 6)
+        Me.btnOpenMapForm.Location = New System.Drawing.Point(20, 5)
         Me.btnOpenMapForm.Name = "btnOpenMapForm"
         Me.btnOpenMapForm.Size = New System.Drawing.Size(119, 40)
         Me.btnOpenMapForm.TabIndex = 0
@@ -1037,11 +1039,24 @@ Partial Class Settings
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'chkEnableRunPercent
+        '
+        Me.chkEnableRunPercent.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.chkEnableRunPercent.AutoSize = True
+        Me.chkEnableRunPercent.Checked = True
+        Me.chkEnableRunPercent.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkEnableRunPercent.Location = New System.Drawing.Point(20, 90)
+        Me.chkEnableRunPercent.Name = "chkEnableRunPercent"
+        Me.chkEnableRunPercent.Size = New System.Drawing.Size(204, 17)
+        Me.chkEnableRunPercent.TabIndex = 44
+        Me.chkEnableRunPercent.Text = "Enable Run/Back Attack Percentage"
+        Me.chkEnableRunPercent.UseVisualStyleBackColor = True
+        '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(339, 284)
+        Me.ClientSize = New System.Drawing.Size(339, 294)
         Me.Controls.Add(Me.tabForms)
         Me.Name = "Settings"
         Me.Text = "Settings"
@@ -1158,4 +1173,5 @@ Partial Class Settings
     Friend WithEvents cmbOtherLabelColor As ComboBox
     Friend WithEvents Label23 As Label
     Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents chkEnableRunPercent As CheckBox
 End Class

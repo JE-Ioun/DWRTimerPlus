@@ -110,5 +110,8 @@
     <Setting Name="strOtherLabelColor" Type="System.String" Scope="User">
       <Value Profile="(Default)">White</Value>
     </Setting>
+    <Setting Name="blnEnableRunPercent" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

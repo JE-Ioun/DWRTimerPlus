@@ -91,6 +91,7 @@
     <Compile Include="FMaps.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MCalcs.vb" />
     <Compile Include="RotatingItems.vb" />
     <Compile Include="Settings.vb">
       <SubType>Form</SubType>

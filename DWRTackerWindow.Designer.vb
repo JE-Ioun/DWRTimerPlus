@@ -22,6 +22,7 @@ Partial Class DWRTackerWindow
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.pbToken = New System.Windows.Forms.PictureBox()
         Me.pbStones = New System.Windows.Forms.PictureBox()
         Me.pbStaff = New System.Windows.Forms.PictureBox()
@@ -67,6 +68,17 @@ Partial Class DWRTackerWindow
         Me.lblHeader2Output = New System.Windows.Forms.Label()
         Me.lblHeader1Output = New System.Windows.Forms.Label()
         Me.lblTimerOutput = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.pnlRunPercentage = New System.Windows.Forms.Panel()
+        Me.lblRedDragRunPercent = New System.Windows.Forms.Label()
+        Me.lblRunPercent = New System.Windows.Forms.Label()
+        Me.lblRedDragRunPercentOut = New System.Windows.Forms.Label()
+        Me.lblArmKnightRunPercentOut = New System.Windows.Forms.Label()
+        Me.lblArmKnightRunPercent = New System.Windows.Forms.Label()
+        Me.lblDL1RunPercentOut = New System.Windows.Forms.Label()
+        Me.lblDL1RunPercent = New System.Windows.Forms.Label()
+        Me.lblDL2RunPercentOut = New System.Windows.Forms.Label()
+        Me.lblDL2RunPercent = New System.Windows.Forms.Label()
         CType(Me.pbToken, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbStones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbStaff, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +97,7 @@ Partial Class DWRTackerWindow
         Me.pnlStatsOutput.SuspendLayout()
         Me.pnlItemTracker.SuspendLayout()
         Me.pnlHeaderOutput.SuspendLayout()
+        Me.pnlRunPercentage.SuspendLayout()
         Me.SuspendLayout()
         '
         'pbToken
@@ -97,6 +110,7 @@ Partial Class DWRTackerWindow
         Me.pbToken.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbToken.TabIndex = 11
         Me.pbToken.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbToken, "Erdrick's Token")
         '
         'pbStones
         '
@@ -108,6 +122,7 @@ Partial Class DWRTackerWindow
         Me.pbStones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbStones.TabIndex = 10
         Me.pbStones.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbStones, "Stones of Sunlight")
         '
         'pbStaff
         '
@@ -119,6 +134,7 @@ Partial Class DWRTackerWindow
         Me.pbStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbStaff.TabIndex = 9
         Me.pbStaff.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbStaff, "Staff of Rain")
         '
         'pbDN
         '
@@ -130,6 +146,7 @@ Partial Class DWRTackerWindow
         Me.pbDN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbDN.TabIndex = 8
         Me.pbDN.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbDN, "Death Necklace")
         '
         'pbDrop
         '
@@ -141,6 +158,7 @@ Partial Class DWRTackerWindow
         Me.pbDrop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbDrop.TabIndex = 7
         Me.pbDrop.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbDrop, "Rainbow Drop")
         '
         'pbKeys
         '
@@ -152,6 +170,7 @@ Partial Class DWRTackerWindow
         Me.pbKeys.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbKeys.TabIndex = 6
         Me.pbKeys.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbKeys, "Magic Keys")
         '
         'pbHarp
         '
@@ -163,6 +182,7 @@ Partial Class DWRTackerWindow
         Me.pbHarp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbHarp.TabIndex = 5
         Me.pbHarp.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbHarp, "Silver Harp")
         '
         'pbPrincess
         '
@@ -174,6 +194,7 @@ Partial Class DWRTackerWindow
         Me.pbPrincess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbPrincess.TabIndex = 4
         Me.pbPrincess.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbPrincess, "Princess Gwaelin")
         '
         'pbFlute
         '
@@ -185,6 +206,7 @@ Partial Class DWRTackerWindow
         Me.pbFlute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbFlute.TabIndex = 3
         Me.pbFlute.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbFlute, "Fairy Flute")
         '
         'pbRing
         '
@@ -196,6 +218,7 @@ Partial Class DWRTackerWindow
         Me.pbRing.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbRing.TabIndex = 2
         Me.pbRing.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbRing, "Fighter's Ring +2 Attack Power")
         '
         'pbScale
         '
@@ -207,6 +230,7 @@ Partial Class DWRTackerWindow
         Me.pbScale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbScale.TabIndex = 1
         Me.pbScale.TabStop = False
+        Me.ToolTip1.SetToolTip(Me.pbScale, "Dragon's Scale +2 Defense")
         '
         'pbWeapons
         '
@@ -494,7 +518,7 @@ Partial Class DWRTackerWindow
         Me.pnlDLCalculations.Controls.Add(Me.txtAverageAttacks)
         Me.pnlDLCalculations.Controls.Add(Me.lblDLHeader)
         Me.pnlDLCalculations.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlDLCalculations.Location = New System.Drawing.Point(0, 362)
+        Me.pnlDLCalculations.Location = New System.Drawing.Point(0, 342)
         Me.pnlDLCalculations.Name = "pnlDLCalculations"
         Me.pnlDLCalculations.Size = New System.Drawing.Size(386, 76)
         Me.pnlDLCalculations.TabIndex = 40
@@ -541,7 +565,7 @@ Partial Class DWRTackerWindow
         Me.pnlStatsOutput.Controls.Add(Me.lblLastLevel)
         Me.pnlStatsOutput.Controls.Add(Me.lblCurrentStats)
         Me.pnlStatsOutput.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlStatsOutput.Location = New System.Drawing.Point(0, 292)
+        Me.pnlStatsOutput.Location = New System.Drawing.Point(0, 272)
         Me.pnlStatsOutput.Name = "pnlStatsOutput"
         Me.pnlStatsOutput.Size = New System.Drawing.Size(386, 70)
         Me.pnlStatsOutput.TabIndex = 41
@@ -564,7 +588,7 @@ Partial Class DWRTackerWindow
         Me.pnlItemTracker.Controls.Add(Me.pbRing)
         Me.pnlItemTracker.Controls.Add(Me.pbScale)
         Me.pnlItemTracker.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlItemTracker.Location = New System.Drawing.Point(0, 136)
+        Me.pnlItemTracker.Location = New System.Drawing.Point(0, 116)
         Me.pnlItemTracker.Name = "pnlItemTracker"
         Me.pnlItemTracker.Size = New System.Drawing.Size(386, 156)
         Me.pnlItemTracker.TabIndex = 42
@@ -605,25 +629,141 @@ Partial Class DWRTackerWindow
         '
         Me.lblTimerOutput.BackColor = System.Drawing.Color.Transparent
         Me.lblTimerOutput.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lblTimerOutput.Location = New System.Drawing.Point(0, 78)
+        Me.lblTimerOutput.Location = New System.Drawing.Point(0, 58)
         Me.lblTimerOutput.Name = "lblTimerOutput"
         Me.lblTimerOutput.Size = New System.Drawing.Size(386, 58)
         Me.lblTimerOutput.TabIndex = 45
         Me.lblTimerOutput.Text = "0.000"
         Me.lblTimerOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'pnlRunPercentage
+        '
+        Me.pnlRunPercentage.Controls.Add(Me.lblDL2RunPercentOut)
+        Me.pnlRunPercentage.Controls.Add(Me.lblDL2RunPercent)
+        Me.pnlRunPercentage.Controls.Add(Me.lblDL1RunPercentOut)
+        Me.pnlRunPercentage.Controls.Add(Me.lblDL1RunPercent)
+        Me.pnlRunPercentage.Controls.Add(Me.lblArmKnightRunPercentOut)
+        Me.pnlRunPercentage.Controls.Add(Me.lblArmKnightRunPercent)
+        Me.pnlRunPercentage.Controls.Add(Me.lblRedDragRunPercentOut)
+        Me.pnlRunPercentage.Controls.Add(Me.lblRunPercent)
+        Me.pnlRunPercentage.Controls.Add(Me.lblRedDragRunPercent)
+        Me.pnlRunPercentage.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnlRunPercentage.Location = New System.Drawing.Point(0, 418)
+        Me.pnlRunPercentage.Name = "pnlRunPercentage"
+        Me.pnlRunPercentage.Size = New System.Drawing.Size(386, 100)
+        Me.pnlRunPercentage.TabIndex = 46
+        '
+        'lblRedDragRunPercent
+        '
+        Me.lblRedDragRunPercent.AutoSize = True
+        Me.lblRedDragRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRedDragRunPercent.Location = New System.Drawing.Point(28, 71)
+        Me.lblRedDragRunPercent.Name = "lblRedDragRunPercent"
+        Me.lblRedDragRunPercent.Size = New System.Drawing.Size(82, 20)
+        Me.lblRedDragRunPercent.TabIndex = 0
+        Me.lblRedDragRunPercent.Text = "R. Dragon"
+        Me.lblRedDragRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblRunPercent
+        '
+        Me.lblRunPercent.AutoSize = True
+        Me.lblRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRunPercent.Location = New System.Drawing.Point(95, 6)
+        Me.lblRunPercent.Name = "lblRunPercent"
+        Me.lblRunPercent.Size = New System.Drawing.Size(196, 20)
+        Me.lblRunPercent.TabIndex = 1
+        Me.lblRunPercent.Text = "Run/Back Attack Chances"
+        '
+        'lblRedDragRunPercentOut
+        '
+        Me.lblRedDragRunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblRedDragRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRedDragRunPercentOut.Location = New System.Drawing.Point(135, 68)
+        Me.lblRedDragRunPercentOut.Name = "lblRedDragRunPercentOut"
+        Me.lblRedDragRunPercentOut.Size = New System.Drawing.Size(69, 26)
+        Me.lblRedDragRunPercentOut.TabIndex = 2
+        Me.lblRedDragRunPercentOut.Text = "Label1"
+        Me.lblRedDragRunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblArmKnightRunPercentOut
+        '
+        Me.lblArmKnightRunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblArmKnightRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArmKnightRunPercentOut.Location = New System.Drawing.Point(135, 33)
+        Me.lblArmKnightRunPercentOut.Name = "lblArmKnightRunPercentOut"
+        Me.lblArmKnightRunPercentOut.Size = New System.Drawing.Size(69, 26)
+        Me.lblArmKnightRunPercentOut.TabIndex = 4
+        Me.lblArmKnightRunPercentOut.Text = "Label2"
+        Me.lblArmKnightRunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblArmKnightRunPercent
+        '
+        Me.lblArmKnightRunPercent.AutoSize = True
+        Me.lblArmKnightRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArmKnightRunPercent.Location = New System.Drawing.Point(28, 36)
+        Me.lblArmKnightRunPercent.Name = "lblArmKnightRunPercent"
+        Me.lblArmKnightRunPercent.Size = New System.Drawing.Size(91, 20)
+        Me.lblArmKnightRunPercent.TabIndex = 3
+        Me.lblArmKnightRunPercent.Text = "Arm. Knight"
+        Me.lblArmKnightRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblDL1RunPercentOut
+        '
+        Me.lblDL1RunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblDL1RunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDL1RunPercentOut.Location = New System.Drawing.Point(290, 33)
+        Me.lblDL1RunPercentOut.Name = "lblDL1RunPercentOut"
+        Me.lblDL1RunPercentOut.Size = New System.Drawing.Size(69, 26)
+        Me.lblDL1RunPercentOut.TabIndex = 6
+        Me.lblDL1RunPercentOut.Text = "Label4"
+        Me.lblDL1RunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblDL1RunPercent
+        '
+        Me.lblDL1RunPercent.AutoSize = True
+        Me.lblDL1RunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDL1RunPercent.Location = New System.Drawing.Point(227, 36)
+        Me.lblDL1RunPercent.Name = "lblDL1RunPercent"
+        Me.lblDL1RunPercent.Size = New System.Drawing.Size(43, 20)
+        Me.lblDL1RunPercent.TabIndex = 5
+        Me.lblDL1RunPercent.Text = "DL 1"
+        Me.lblDL1RunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblDL2RunPercentOut
+        '
+        Me.lblDL2RunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblDL2RunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDL2RunPercentOut.Location = New System.Drawing.Point(290, 68)
+        Me.lblDL2RunPercentOut.Name = "lblDL2RunPercentOut"
+        Me.lblDL2RunPercentOut.Size = New System.Drawing.Size(69, 26)
+        Me.lblDL2RunPercentOut.TabIndex = 8
+        Me.lblDL2RunPercentOut.Text = "Label6"
+        Me.lblDL2RunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblDL2RunPercent
+        '
+        Me.lblDL2RunPercent.AutoSize = True
+        Me.lblDL2RunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDL2RunPercent.Location = New System.Drawing.Point(227, 71)
+        Me.lblDL2RunPercent.Name = "lblDL2RunPercent"
+        Me.lblDL2RunPercent.Size = New System.Drawing.Size(43, 20)
+        Me.lblDL2RunPercent.TabIndex = 7
+        Me.lblDL2RunPercent.Text = "DL 2"
+        Me.lblDL2RunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'DWRTackerWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(386, 438)
+        Me.ClientSize = New System.Drawing.Size(386, 518)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblTimerOutput)
         Me.Controls.Add(Me.pnlItemTracker)
         Me.Controls.Add(Me.pnlStatsOutput)
         Me.Controls.Add(Me.pnlDLCalculations)
         Me.Controls.Add(Me.pnlHeaderOutput)
+        Me.Controls.Add(Me.pnlRunPercentage)
         Me.Name = "DWRTackerWindow"
         Me.ShowIcon = False
         Me.Text = "Tracker Display"
@@ -647,6 +787,8 @@ Partial Class DWRTackerWindow
         Me.pnlStatsOutput.PerformLayout()
         Me.pnlItemTracker.ResumeLayout(False)
         Me.pnlHeaderOutput.ResumeLayout(False)
+        Me.pnlRunPercentage.ResumeLayout(False)
+        Me.pnlRunPercentage.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -695,4 +837,15 @@ Partial Class DWRTackerWindow
     Friend WithEvents lblTimerOutput As Label
     Friend WithEvents chkAssumeFightersRing As CheckBox
     Friend WithEvents chkAssumeErdricksSword As CheckBox
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents pnlRunPercentage As Panel
+    Friend WithEvents lblDL2RunPercentOut As Label
+    Friend WithEvents lblDL2RunPercent As Label
+    Friend WithEvents lblDL1RunPercentOut As Label
+    Friend WithEvents lblDL1RunPercent As Label
+    Friend WithEvents lblArmKnightRunPercentOut As Label
+    Friend WithEvents lblArmKnightRunPercent As Label
+    Friend WithEvents lblRedDragRunPercentOut As Label
+    Friend WithEvents lblRunPercent As Label
+    Friend WithEvents lblRedDragRunPercent As Label
 End Class

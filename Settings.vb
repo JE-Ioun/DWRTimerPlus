@@ -19,6 +19,7 @@ Public Class Settings
     Dim tsPausedTime As TimeSpan = TimeSpan.Zero
     Dim blnIsInitializing As Boolean = True
     'Dim keyTimerStartPause As Keys.Multiply
+    Dim sngOtherTextSize As Single = 12
 
 
     Public Sub New()
@@ -151,11 +152,14 @@ Public Class Settings
     End Sub
 
     Private Sub LoadSettingSaves()
+        chkTimerView.Checked = My.Settings.blnTimerEnabled
+        chkTrackerView.Checked = My.Settings.blnTrackerEnabled
         chkEnableCalculation.Checked = My.Settings.blnCalculationBlockEnabled
         chkEnableStats.Checked = My.Settings.blnStatsBlockEnabled
         chkHeader1Enabled.Checked = My.Settings.blnEnableHeader1
         chkHeader2Enabled.Checked = My.Settings.blnEnableHeader2
         chkBackgroundImage.Checked = My.Settings.blnUseBackgroundImage
+        chkEnableRunPercent.Checked = My.Settings.blnEnableRunPercent
         txtImageFileLocation.Text = My.Settings.strBackgroundImageLocation
         frmTracker.BackColor = cmbBackColor.SelectedItem
         nudTimerFontSize.Value = My.Settings.FontSize
@@ -378,7 +382,6 @@ Public Class Settings
     End Sub
 
     Public Sub setFonts()
-        Dim sngOtherTextSize As Single = 12
         frmTracker.lblTimerOutput.Font = New Font(DirectCast(cmbTimerFont.SelectedItem, FontFamily), nudTimerFontSize.Value)
         frmTracker.lblHeader1Output.Font = New Font(DirectCast(cmbHeader1Font.SelectedItem, FontFamily), nudLine1FontSize.Value)
         frmTracker.lblHeader2Output.Font = New Font(DirectCast(cmbHeader2Font.SelectedItem, FontFamily), nudLine2FontSize.Value)
@@ -398,6 +401,11 @@ Public Class Settings
         frmTracker.lblAverageAttacks.ForeColor = clrOtherLabels
         frmTracker.lblHealmoreHeader.ForeColor = clrOtherLabels
         frmTracker.lblDeathNecklaceHPHeader.ForeColor = clrOtherLabels
+        frmTracker.lblArmKnightRunPercent.ForeColor = clrOtherLabels
+        frmTracker.lblRedDragRunPercent.ForeColor = clrOtherLabels
+        frmTracker.lblDL1RunPercent.ForeColor = clrOtherLabels
+        frmTracker.lblDL2RunPercent.ForeColor = clrOtherLabels
+        frmTracker.lblRunPercent.ForeColor = clrOtherLabels
         Dim OtherLabelFont As Font = New Font(DirectCast(cmbOtherLabelFont.SelectedItem, FontFamily), sngOtherTextSize)
         frmTracker.lblStrengthHeader.Font = OtherLabelFont
         frmTracker.lblAgilityHeader.Font = OtherLabelFont
@@ -411,6 +419,11 @@ Public Class Settings
         frmTracker.lblAverageAttacks.Font = OtherLabelFont
         frmTracker.lblHealmoreHeader.Font = OtherLabelFont
         frmTracker.lblDeathNecklaceHPHeader.Font = OtherLabelFont
+        frmTracker.lblArmKnightRunPercent.Font = OtherLabelFont
+        frmTracker.lblRedDragRunPercent.Font = OtherLabelFont
+        frmTracker.lblDL1RunPercent.Font = OtherLabelFont
+        frmTracker.lblDL2RunPercent.Font = OtherLabelFont
+        frmTracker.lblRunPercent.Font = OtherLabelFont
 
         'frmTracker.Label1.BackColor = ComboBox3.SelectedItem
         SetPanelHeights()
@@ -449,7 +462,27 @@ Public Class Settings
     End Sub
 
     Public Sub SetPanelHeights()
-        frmTracker.pnlHeaderOutput.Height = frmTracker.Height - (frmTracker.pnlDLCalculations.Height + frmTracker.pnlStatsOutput.Height + frmTracker.pnlItemTracker.Height + frmTracker.lblTimerOutput.Height + 40)
+        Dim intHeaderHeight As Integer = (sngOtherTextSize * 2) + 8
+        Dim intNewHeight As Integer = frmTracker.Height - 40
+        If frmTracker.pnlDLCalculations.Visible Then
+            intNewHeight -= frmTracker.pnlDLCalculations.Height
+        End If
+        If frmTracker.pnlStatsOutput.Visible Then
+            intNewHeight -= frmTracker.pnlStatsOutput.Height
+        End If
+        If frmTracker.pnlItemTracker.Visible Then
+            intNewHeight -= frmTracker.pnlItemTracker.Height
+        End If
+        If frmTracker.pnlRunPercentage.Visible Then
+            intNewHeight -= frmTracker.pnlRunPercentage.Height
+        End If
+        If frmTracker.lblTimerOutput.Visible Then
+            intNewHeight -= frmTracker.lblTimerOutput.Height
+        End If
+        If intNewHeight > intHeaderHeight Then
+            intHeaderHeight = intNewHeight
+        End If
+        frmTracker.pnlHeaderOutput.Height = intHeaderHeight
         frmTracker.lblHeader1Output.Height = Math.Ceiling(frmTracker.pnlHeaderOutput.Height / 2)
         frmTracker.lblHeader2Output.Height = Math.Floor(frmTracker.pnlHeaderOutput.Height / 2)
         If blnIsInitializing = False Then
@@ -495,6 +528,12 @@ Public Class Settings
         Else
             frmTracker.pnlItemTracker.Visible = False
         End If
+        If chkEnableRunPercent.Checked Then
+            frmTracker.pnlRunPercentage.Visible = True
+        Else
+            frmTracker.pnlRunPercentage.Visible = False
+        End If
+        SetPanelHeights()
     End Sub
 
     Private Sub chkEnableStats_CheckedChanged(sender As Object, e As EventArgs) Handles chkEnableStats.CheckedChanged
@@ -530,6 +569,15 @@ Public Class Settings
             My.Settings.Save()
         End If
     End Sub
+
+    Private Sub chkEnableRunPercent_CheckedChanged(sender As Object, e As EventArgs) Handles chkEnableRunPercent.CheckedChanged
+        If blnIsInitializing = False Then
+            SetEnabled()
+            My.Settings.blnEnableRunPercent = chkEnableRunPercent.Checked
+            My.Settings.Save()
+        End If
+    End Sub
+
 
     Private Sub btnOpenBGImgSelector_Click(sender As Object, e As EventArgs) Handles btnOpenBGImgSelector.Click
         OpenFileDialog1.Filter = "Image Files(*.BMP;*.JPG;*.PNG)|*.BMP;*.JPG;*.PNG"

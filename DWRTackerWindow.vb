@@ -53,6 +53,10 @@
         pbWeapons.Image = Image.FromFile(strBaseWeaponsPath & pbWeapons.Tag.ToString(), True)
         pbArmor.Image = Image.FromFile(strBaseArmorPath & pbArmor.Tag.ToString(), True)
         pbShields.Image = Image.FromFile(strBaseShieldsPath & pbShields.Tag.ToString(), True)
+        SetRotatingItemTooltip(pbWeapons)
+        SetRotatingItemTooltip(pbArmor)
+        SetRotatingItemTooltip(pbShields)
+
     End Sub
 
     Private Sub pbWeapons_Click(sender As Object, e As EventArgs) Handles pbWeapons.Click
@@ -77,6 +81,7 @@
         Else
             sender.Tag = lstItems(intItemIndex + 1)
         End If
+        SetRotatingItemTooltip(sender)
 
         sender.Image = Image.FromFile(strBasePath & sender.Tag.ToString(), True)
         UpdateStatsView(Me)
@@ -90,6 +95,10 @@
         Next
         Return lstrItems.Count
     End Function
+
+    Private Sub SetRotatingItemTooltip(control As PictureBox)
+        ToolTip1.SetToolTip(control, control.Tag.strItemName & " " & control.Tag.intStatValue & " " & control.Tag.strStatType)
+    End Sub
 
     Private Sub DWRTackerWindow_ResizeEnd(sender As Object, e As EventArgs) Handles Me.ResizeEnd
         Settings.SetPanelHeights()
