@@ -4,19 +4,19 @@
         Dim lintEnemyValues As New List(Of Integer)
         Dim intSuccessfulRunValues As Integer = 0
         Dim intAllPossibleOptions As Integer = 0
-        For intPossibleValue1 As Integer = 0 To 255
-            lintHeroValues.Add(intHeroAgility * intPossibleValue1)
-            lintEnemyValues.Add(Math.Floor(objEnemy.Agility * intPossibleValue1 * GetEnemyGroupRunFactor(objEnemy.RunGroup)))
+        For intPossibleValue As Integer = 0 To 255
+            lintHeroValues.Add(intHeroAgility * intPossibleValue)
+            lintEnemyValues.Add(Math.Floor(objEnemy.Agility * intPossibleValue * GetEnemyGroupRunFactor(objEnemy.RunGroup)))
         Next
         For Each intHeroValue As Integer In lintHeroValues
             For Each intEnemyValue As Integer In lintEnemyValues
                 intAllPossibleOptions += 1
-                If intHeroAgility >= intEnemyValue Then
+                If intHeroValue >= intEnemyValue Then
                     intSuccessfulRunValues += 1
                 End If
             Next
         Next
-        Return ((intSuccessfulRunValues / intAllPossibleOptions) * 10000)
+        Return ((intSuccessfulRunValues / intAllPossibleOptions) * 100)
     End Function
 
     Public Function GetEnemyGroupRunFactor(intEnemyGroup As Integer) As Decimal

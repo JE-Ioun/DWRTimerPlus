@@ -638,6 +638,7 @@ Partial Class DWRTackerWindow
         '
         'pnlRunPercentage
         '
+        Me.pnlRunPercentage.BackColor = System.Drawing.Color.Transparent
         Me.pnlRunPercentage.Controls.Add(Me.lblDL2RunPercentOut)
         Me.pnlRunPercentage.Controls.Add(Me.lblDL2RunPercent)
         Me.pnlRunPercentage.Controls.Add(Me.lblDL1RunPercentOut)
