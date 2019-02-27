@@ -1,2 +1,0 @@
-﻿The system will try to load true type fonts (with .ttf extension) that are in this directory.
-Dragon Warrior (NES) font - Copyright Patrick Lauke 2016
