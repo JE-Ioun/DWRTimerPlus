@@ -134,4 +134,15 @@
         UpdateStatsView(Me)
     End Sub
 
+    Private Sub pbWeapons_DoubleClick(sender As Object, e As EventArgs) Handles pbWeapons.DoubleClick
+        pbWeapons_Click(sender, e)
+    End Sub
+
+    Private Sub pbArmor_DoubleClick(sender As Object, e As EventArgs) Handles pbArmor.DoubleClick
+        pbArmor_Click(sender, e)
+    End Sub
+
+    Private Sub pbShields_DoubleClick(sender As Object, e As EventArgs) Handles pbShields.DoubleClick
+        pbShields_Click(sender, e)
+    End Sub
 End Class
