@@ -9,7 +9,7 @@
         strBaseWeaponsPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "img\Weapons\")
         strBaseArmorPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "img\Armor\")
         strBaseShieldsPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "img\Shields\")
-        ResetTracker()
+        'ResetTracker()
     End Sub
 
     Private Sub ItemTrackerNonRotation_Click(sender As Object, e As EventArgs) Handles pbScale.Click, pbRing.Click, pbFlute.Click, pbPrincess.Click, pbHarp.Click, pbKeys.Click, pbDrop.Click, pbDN.Click, pbStaff.Click, pbStones.Click, pbToken.Click
@@ -20,8 +20,28 @@
         Else
             pbBuffer.Tag = strTag.Replace(".png", strDarkIdentifier)
         End If
+        SaveTrackerItems()
+
         pbBuffer.Image = Image.FromFile(strBaseUsePath & pbBuffer.Tag, True)
         UpdateStatsView(Me)
+    End Sub
+
+    Public Sub SaveTrackerItems()
+        My.Settings.strScaleTag = pbScale.Tag
+        My.Settings.strRingTag = pbRing.Tag
+        My.Settings.strFluteTag = pbFlute.Tag
+        My.Settings.strPrincessTag = pbPrincess.Tag
+        My.Settings.strHarpTag = pbHarp.Tag
+        My.Settings.strKeyTag = pbKeys.Tag
+        My.Settings.strDropTag = pbDrop.Tag
+        My.Settings.strDNTag = pbDN.Tag
+        My.Settings.strStaffTag = pbStaff.Tag
+        My.Settings.strStonesTag = pbStones.Tag
+        My.Settings.strTokenTag = pbToken.Tag
+        My.Settings.objWeaponTag = pbWeapons.Tag.ToString
+        My.Settings.objArmorTag = pbArmor.Tag.ToString
+        My.Settings.objShieldTag = pbShields.Tag.ToString
+        My.Settings.Save()
     End Sub
 
     Public Sub ResetTracker()
@@ -39,6 +59,11 @@
         pbWeapons.Tag = GetWeapons()(0)
         pbArmor.Tag = GetArmor()(0)
         pbShields.Tag = GetShields()(0)
+        SaveTrackerItems()
+        SetTrackerImages()
+    End Sub
+
+    Public Sub SetTrackerImages()
         pbScale.Image = Image.FromFile(strBaseUsePath & pbScale.Tag, True)
         pbRing.Image = Image.FromFile(strBaseUsePath & pbRing.Tag, True)
         pbFlute.Image = Image.FromFile(strBaseUsePath & pbFlute.Tag, True)
@@ -56,21 +81,23 @@
         SetRotatingItemTooltip(pbWeapons)
         SetRotatingItemTooltip(pbArmor)
         SetRotatingItemTooltip(pbShields)
-
     End Sub
-
     Private Sub pbWeapons_Click(sender As Object, e As EventArgs) Handles pbWeapons.Click
         UpdateRotating(sender, strBaseWeaponsPath, GetWeapons())
+        My.Settings.objWeaponTag = pbWeapons.Tag.ToString
+        My.Settings.Save()
     End Sub
 
     Private Sub pbArmor_Click(sender As Object, e As EventArgs) Handles pbArmor.Click
         UpdateRotating(sender, strBaseArmorPath, GetArmor())
-
+        My.Settings.objArmorTag = pbArmor.Tag.ToString
+        My.Settings.Save()
     End Sub
 
     Private Sub pbShields_Click(sender As Object, e As EventArgs) Handles pbShields.Click
         UpdateRotating(sender, strBaseShieldsPath, GetShields())
-
+        My.Settings.objShieldTag = pbShields.Tag.ToString
+        My.Settings.Save()
     End Sub
 
     Private Sub UpdateRotating(sender As PictureBox, strBasePath As String, lstItems As List(Of StatItem))
@@ -87,14 +114,7 @@
         UpdateStatsView(Me)
     End Sub
 
-    Private Function GetIndexInList(lstrItems As List(Of StatItem), objString As StatItem)
-        For intIndex As Integer = 0 To lstrItems.Count - 1
-            If lstrItems(intIndex).ToString = objString.ToString Then
-                Return intIndex
-            End If
-        Next
-        Return lstrItems.Count
-    End Function
+
 
     Private Sub SetRotatingItemTooltip(control As PictureBox)
         ToolTip1.SetToolTip(control, control.Tag.strItemName & " " & control.Tag.intStatValue & " " & control.Tag.strStatType)

@@ -63,7 +63,7 @@
       <Value Profile="(Default)">10</Value>
     </Setting>
     <Setting Name="intDWRTrackerHeight" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">477</Value>
+      <Value Profile="(Default)">550</Value>
     </Setting>
     <Setting Name="intDWRTrackerWidth" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">402</Value>
@@ -112,6 +112,48 @@
     </Setting>
     <Setting Name="blnEnableRunPercent" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="objWeaponTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">erdricks_sword-grey.png</Value>
+    </Setting>
+    <Setting Name="objArmorTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">erdricks_armour-dark.png</Value>
+    </Setting>
+    <Setting Name="objShieldTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">silver_shield-grey.png</Value>
+    </Setting>
+    <Setting Name="strScaleTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dragon_scale-grey.png</Value>
+    </Setting>
+    <Setting Name="strRingTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fighters_ring-grey.png</Value>
+    </Setting>
+    <Setting Name="strFluteTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">flute-grey.png</Value>
+    </Setting>
+    <Setting Name="strPrincessTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">gwaelin-grey.png</Value>
+    </Setting>
+    <Setting Name="strHarpTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">harp-grey.png</Value>
+    </Setting>
+    <Setting Name="strKeyTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">key-grey.png</Value>
+    </Setting>
+    <Setting Name="strDropTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">rainbowdrop-grey.png</Value>
+    </Setting>
+    <Setting Name="strDNTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">reckless_necklace_th-grey.png</Value>
+    </Setting>
+    <Setting Name="strStaffTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">staff_of_rain-grey.png</Value>
+    </Setting>
+    <Setting Name="strStonesTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">stones_of_sunlight-grey.png</Value>
+    </Setting>
+    <Setting Name="strTokenTag" Type="System.String" Scope="User">
+      <Value Profile="(Default)">token-grey.png</Value>
     </Setting>
   </Settings>
 </SettingsFile>

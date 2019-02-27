@@ -40,6 +40,20 @@
         Next
         Return lsArmors
     End Function
+    Public Function GetIndexInList(lstrItems As List(Of StatItem), strItem As String)
+        For intIndex As Integer = 0 To lstrItems.Count - 1
+            If lstrItems(intIndex).ToString = strItem Then
+                Return intIndex
+            End If
+        Next
+        Return lstrItems.Count
+    End Function
+
+
+    Public Function GetIndexInList(lstrItems As List(Of StatItem), objString As StatItem)
+
+        Return GetIndexInList(lstrItems, objString.ToString)
+    End Function
 
     Public Class StatItem
         Public ReadOnly Property strFileName As String
@@ -62,21 +76,29 @@
         frmTracker.txtLastAgility.Text = My.Settings.intLastAgility
         frmTracker.txtLastHP.Text = My.Settings.intLastHP
         frmTracker.txtLastMP.Text = My.Settings.intLastMP
-        Dim intDisplayPower As Integer = My.Settings.intPower
+        Dim intAttackPower As Integer = My.Settings.intPower
+        Dim intDefensePower As Integer = Math.Floor(My.Settings.intAgility / 2)
+        intDefensePower += DirectCast(frmTracker.pbArmor.Tag, StatItem).intStatValue
         If frmTracker.chkAssumeErdricksSword.Checked Then
-            intDisplayPower += 40
+            intAttackPower += 40
         Else
-            intDisplayPower += DirectCast(frmTracker.pbWeapons.Tag, StatItem).intStatValue
+            intAttackPower += DirectCast(frmTracker.pbWeapons.Tag, StatItem).intStatValue
         End If
         If frmTracker.chkAssumeFightersRing.Checked OrElse frmTracker.pbRing.Tag = "fighters_ring.png" Then
-            intDisplayPower += 2
+            intAttackPower += 2
         End If
-        frmTracker.txtPower.Text = intDisplayPower
+        If frmTracker.pbScale.Tag = "dragon_scale.png" Then
+            intDefensePower += 2
+        End If
+        frmTracker.txtDefense.Text = intDefensePower
+
+        frmTracker.txtAP.Text = intAttackPower
+        frmTracker.txtPower.Text = My.Settings.intPower
         frmTracker.txtAgility.Text = My.Settings.intAgility
         frmTracker.txtHP.Text = My.Settings.intHP
         frmTracker.txtMP.Text = My.Settings.intMP
-        Dim intAverageAttacks As Integer = CalculateAverageHits(intDisplayPower)
-        Dim intAverageDNAttacks As Integer = CalculateAverageHits(intDisplayPower + 10)
+        Dim intAverageAttacks As Integer = CalculateAverageHits(intAttackPower)
+        Dim intAverageDNAttacks As Integer = CalculateAverageHits(intAttackPower + 10)
         If intAverageAttacks > 0 Then
             frmTracker.txtAverageAttacks.Text = intAverageAttacks
         Else

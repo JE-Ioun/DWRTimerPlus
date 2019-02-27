@@ -296,7 +296,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("477")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("550")>  _
         Public Property intDWRTrackerHeight() As Integer
             Get
                 Return CType(Me("intDWRTrackerHeight"),Integer)
@@ -495,6 +495,174 @@ Namespace My
             End Get
             Set
                 Me("blnEnableRunPercent") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("erdricks_sword-grey.png")>  _
+        Public Property objWeaponTag() As String
+            Get
+                Return CType(Me("objWeaponTag"),String)
+            End Get
+            Set
+                Me("objWeaponTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("erdricks_armour-dark.png")>  _
+        Public Property objArmorTag() As String
+            Get
+                Return CType(Me("objArmorTag"),String)
+            End Get
+            Set
+                Me("objArmorTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("silver_shield-grey.png")>  _
+        Public Property objShieldTag() As String
+            Get
+                Return CType(Me("objShieldTag"),String)
+            End Get
+            Set
+                Me("objShieldTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("dragon_scale-grey.png")>  _
+        Public Property strScaleTag() As String
+            Get
+                Return CType(Me("strScaleTag"),String)
+            End Get
+            Set
+                Me("strScaleTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("fighters_ring-grey.png")>  _
+        Public Property strRingTag() As String
+            Get
+                Return CType(Me("strRingTag"),String)
+            End Get
+            Set
+                Me("strRingTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("flute-grey.png")>  _
+        Public Property strFluteTag() As String
+            Get
+                Return CType(Me("strFluteTag"),String)
+            End Get
+            Set
+                Me("strFluteTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("gwaelin-grey.png")>  _
+        Public Property strPrincessTag() As String
+            Get
+                Return CType(Me("strPrincessTag"),String)
+            End Get
+            Set
+                Me("strPrincessTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("harp-grey.png")>  _
+        Public Property strHarpTag() As String
+            Get
+                Return CType(Me("strHarpTag"),String)
+            End Get
+            Set
+                Me("strHarpTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("key-grey.png")>  _
+        Public Property strKeyTag() As String
+            Get
+                Return CType(Me("strKeyTag"),String)
+            End Get
+            Set
+                Me("strKeyTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("rainbowdrop-grey.png")>  _
+        Public Property strDropTag() As String
+            Get
+                Return CType(Me("strDropTag"),String)
+            End Get
+            Set
+                Me("strDropTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("reckless_necklace_th-grey.png")>  _
+        Public Property strDNTag() As String
+            Get
+                Return CType(Me("strDNTag"),String)
+            End Get
+            Set
+                Me("strDNTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("staff_of_rain-grey.png")>  _
+        Public Property strStaffTag() As String
+            Get
+                Return CType(Me("strStaffTag"),String)
+            End Get
+            Set
+                Me("strStaffTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("stones_of_sunlight-grey.png")>  _
+        Public Property strStonesTag() As String
+            Get
+                Return CType(Me("strStonesTag"),String)
+            End Get
+            Set
+                Me("strStonesTag") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("token-grey.png")>  _
+        Public Property strTokenTag() As String
+            Get
+                Return CType(Me("strTokenTag"),String)
+            End Get
+            Set
+                Me("strTokenTag") = value
             End Set
         End Property
     End Class

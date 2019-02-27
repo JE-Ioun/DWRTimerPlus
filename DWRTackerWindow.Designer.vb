@@ -79,6 +79,10 @@ Partial Class DWRTackerWindow
         Me.lblDL1RunPercent = New System.Windows.Forms.Label()
         Me.lblDL2RunPercentOut = New System.Windows.Forms.Label()
         Me.lblDL2RunPercent = New System.Windows.Forms.Label()
+        Me.lblAttackPower = New System.Windows.Forms.Label()
+        Me.txtAP = New System.Windows.Forms.TextBox()
+        Me.lblDefense = New System.Windows.Forms.Label()
+        Me.txtDefense = New System.Windows.Forms.TextBox()
         CType(Me.pbToken, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbStones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbStaff, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +108,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbToken.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbToken.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbToken.Location = New System.Drawing.Point(53, 53)
+        Me.pbToken.Location = New System.Drawing.Point(53, 55)
         Me.pbToken.Name = "pbToken"
         Me.pbToken.Size = New System.Drawing.Size(51, 46)
         Me.pbToken.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -116,7 +120,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbStones.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbStones.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbStones.Location = New System.Drawing.Point(53, 5)
+        Me.pbStones.Location = New System.Drawing.Point(53, 7)
         Me.pbStones.Name = "pbStones"
         Me.pbStones.Size = New System.Drawing.Size(51, 46)
         Me.pbStones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -128,7 +132,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbStaff.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbStaff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbStaff.Location = New System.Drawing.Point(106, 5)
+        Me.pbStaff.Location = New System.Drawing.Point(106, 7)
         Me.pbStaff.Name = "pbStaff"
         Me.pbStaff.Size = New System.Drawing.Size(51, 46)
         Me.pbStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -140,7 +144,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbDN.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbDN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbDN.Location = New System.Drawing.Point(53, 101)
+        Me.pbDN.Location = New System.Drawing.Point(53, 103)
         Me.pbDN.Name = "pbDN"
         Me.pbDN.Size = New System.Drawing.Size(51, 46)
         Me.pbDN.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -152,7 +156,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbDrop.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbDrop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbDrop.Location = New System.Drawing.Point(106, 53)
+        Me.pbDrop.Location = New System.Drawing.Point(106, 55)
         Me.pbDrop.Name = "pbDrop"
         Me.pbDrop.Size = New System.Drawing.Size(51, 46)
         Me.pbDrop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -164,7 +168,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbKeys.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbKeys.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbKeys.Location = New System.Drawing.Point(159, 53)
+        Me.pbKeys.Location = New System.Drawing.Point(159, 55)
         Me.pbKeys.Name = "pbKeys"
         Me.pbKeys.Size = New System.Drawing.Size(51, 46)
         Me.pbKeys.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -176,7 +180,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbHarp.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbHarp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbHarp.Location = New System.Drawing.Point(159, 5)
+        Me.pbHarp.Location = New System.Drawing.Point(159, 7)
         Me.pbHarp.Name = "pbHarp"
         Me.pbHarp.Size = New System.Drawing.Size(51, 46)
         Me.pbHarp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -188,7 +192,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbPrincess.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbPrincess.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbPrincess.Location = New System.Drawing.Point(159, 101)
+        Me.pbPrincess.Location = New System.Drawing.Point(159, 103)
         Me.pbPrincess.Name = "pbPrincess"
         Me.pbPrincess.Size = New System.Drawing.Size(51, 46)
         Me.pbPrincess.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -200,7 +204,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbFlute.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbFlute.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbFlute.Location = New System.Drawing.Point(106, 101)
+        Me.pbFlute.Location = New System.Drawing.Point(106, 103)
         Me.pbFlute.Name = "pbFlute"
         Me.pbFlute.Size = New System.Drawing.Size(51, 46)
         Me.pbFlute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -212,7 +216,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbRing.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbRing.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbRing.Location = New System.Drawing.Point(212, 80)
+        Me.pbRing.Location = New System.Drawing.Point(212, 82)
         Me.pbRing.Name = "pbRing"
         Me.pbRing.Size = New System.Drawing.Size(51, 46)
         Me.pbRing.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -224,7 +228,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbScale.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbScale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbScale.Location = New System.Drawing.Point(212, 32)
+        Me.pbScale.Location = New System.Drawing.Point(212, 34)
         Me.pbScale.Name = "pbScale"
         Me.pbScale.Size = New System.Drawing.Size(51, 46)
         Me.pbScale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -236,7 +240,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbWeapons.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbWeapons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbWeapons.Location = New System.Drawing.Point(265, 5)
+        Me.pbWeapons.Location = New System.Drawing.Point(265, 7)
         Me.pbWeapons.Name = "pbWeapons"
         Me.pbWeapons.Size = New System.Drawing.Size(51, 46)
         Me.pbWeapons.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -247,7 +251,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbArmor.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbArmor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbArmor.Location = New System.Drawing.Point(265, 53)
+        Me.pbArmor.Location = New System.Drawing.Point(265, 55)
         Me.pbArmor.Name = "pbArmor"
         Me.pbArmor.Size = New System.Drawing.Size(51, 46)
         Me.pbArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -258,7 +262,7 @@ Partial Class DWRTackerWindow
         '
         Me.pbShields.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.pbShields.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pbShields.Location = New System.Drawing.Point(265, 101)
+        Me.pbShields.Location = New System.Drawing.Point(265, 103)
         Me.pbShields.Name = "pbShields"
         Me.pbShields.Size = New System.Drawing.Size(51, 46)
         Me.pbShields.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -270,7 +274,8 @@ Partial Class DWRTackerWindow
         Me.lblCurrentStats.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.lblCurrentStats.AutoSize = True
         Me.lblCurrentStats.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCurrentStats.Location = New System.Drawing.Point(57, 21)
+        Me.lblCurrentStats.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblCurrentStats.Location = New System.Drawing.Point(62, 23)
         Me.lblCurrentStats.Name = "lblCurrentStats"
         Me.lblCurrentStats.Size = New System.Drawing.Size(66, 20)
         Me.lblCurrentStats.TabIndex = 15
@@ -281,7 +286,8 @@ Partial Class DWRTackerWindow
         Me.lblLastLevel.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.lblLastLevel.AutoSize = True
         Me.lblLastLevel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLastLevel.Location = New System.Drawing.Point(42, 43)
+        Me.lblLastLevel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblLastLevel.Location = New System.Drawing.Point(43, 45)
         Me.lblLastLevel.Name = "lblLastLevel"
         Me.lblLastLevel.Size = New System.Drawing.Size(85, 20)
         Me.lblLastLevel.TabIndex = 16
@@ -291,7 +297,7 @@ Partial Class DWRTackerWindow
         '
         Me.txtPower.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtPower.Enabled = False
-        Me.txtPower.Location = New System.Drawing.Point(128, 21)
+        Me.txtPower.Location = New System.Drawing.Point(129, 23)
         Me.txtPower.Name = "txtPower"
         Me.txtPower.Size = New System.Drawing.Size(33, 20)
         Me.txtPower.TabIndex = 17
@@ -302,7 +308,7 @@ Partial Class DWRTackerWindow
         '
         Me.txtMP.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtMP.Enabled = False
-        Me.txtMP.Location = New System.Drawing.Point(233, 21)
+        Me.txtMP.Location = New System.Drawing.Point(234, 23)
         Me.txtMP.Name = "txtMP"
         Me.txtMP.Size = New System.Drawing.Size(33, 20)
         Me.txtMP.TabIndex = 18
@@ -312,7 +318,7 @@ Partial Class DWRTackerWindow
         '
         Me.txtHP.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtHP.Enabled = False
-        Me.txtHP.Location = New System.Drawing.Point(198, 21)
+        Me.txtHP.Location = New System.Drawing.Point(199, 23)
         Me.txtHP.Name = "txtHP"
         Me.txtHP.Size = New System.Drawing.Size(33, 20)
         Me.txtHP.TabIndex = 19
@@ -322,7 +328,7 @@ Partial Class DWRTackerWindow
         '
         Me.txtAgility.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtAgility.Enabled = False
-        Me.txtAgility.Location = New System.Drawing.Point(163, 21)
+        Me.txtAgility.Location = New System.Drawing.Point(164, 23)
         Me.txtAgility.Name = "txtAgility"
         Me.txtAgility.Size = New System.Drawing.Size(33, 20)
         Me.txtAgility.TabIndex = 20
@@ -332,7 +338,7 @@ Partial Class DWRTackerWindow
         '
         Me.txtLastAgility.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtLastAgility.Enabled = False
-        Me.txtLastAgility.Location = New System.Drawing.Point(163, 43)
+        Me.txtLastAgility.Location = New System.Drawing.Point(164, 45)
         Me.txtLastAgility.Name = "txtLastAgility"
         Me.txtLastAgility.Size = New System.Drawing.Size(33, 20)
         Me.txtLastAgility.TabIndex = 24
@@ -342,7 +348,7 @@ Partial Class DWRTackerWindow
         '
         Me.txtLastHP.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtLastHP.Enabled = False
-        Me.txtLastHP.Location = New System.Drawing.Point(198, 43)
+        Me.txtLastHP.Location = New System.Drawing.Point(199, 45)
         Me.txtLastHP.Name = "txtLastHP"
         Me.txtLastHP.Size = New System.Drawing.Size(33, 20)
         Me.txtLastHP.TabIndex = 23
@@ -352,7 +358,7 @@ Partial Class DWRTackerWindow
         '
         Me.txtLastMP.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtLastMP.Enabled = False
-        Me.txtLastMP.Location = New System.Drawing.Point(233, 43)
+        Me.txtLastMP.Location = New System.Drawing.Point(234, 45)
         Me.txtLastMP.Name = "txtLastMP"
         Me.txtLastMP.Size = New System.Drawing.Size(33, 20)
         Me.txtLastMP.TabIndex = 22
@@ -362,7 +368,7 @@ Partial Class DWRTackerWindow
         '
         Me.txtLastPower.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.txtLastPower.Enabled = False
-        Me.txtLastPower.Location = New System.Drawing.Point(128, 43)
+        Me.txtLastPower.Location = New System.Drawing.Point(129, 45)
         Me.txtLastPower.Name = "txtLastPower"
         Me.txtLastPower.Size = New System.Drawing.Size(33, 20)
         Me.txtLastPower.TabIndex = 21
@@ -412,7 +418,7 @@ Partial Class DWRTackerWindow
         Me.lblAverageAttacks.Size = New System.Drawing.Size(111, 20)
         Me.lblAverageAttacks.TabIndex = 30
         Me.lblAverageAttacks.Text = "Ave Atks / DN:"
-        Me.lblAverageAttacks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblAverageAttacks.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblHealmoreHeader
         '
@@ -424,14 +430,14 @@ Partial Class DWRTackerWindow
         Me.lblHealmoreHeader.Size = New System.Drawing.Size(90, 20)
         Me.lblHealmoreHeader.TabIndex = 31
         Me.lblHealmoreHeader.Text = "Healmores:"
-        Me.lblHealmoreHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblHealmoreHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblStrengthHeader
         '
         Me.lblStrengthHeader.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.lblStrengthHeader.AutoSize = True
         Me.lblStrengthHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStrengthHeader.Location = New System.Drawing.Point(126, 1)
+        Me.lblStrengthHeader.Location = New System.Drawing.Point(127, 1)
         Me.lblStrengthHeader.Name = "lblStrengthHeader"
         Me.lblStrengthHeader.Size = New System.Drawing.Size(41, 20)
         Me.lblStrengthHeader.TabIndex = 32
@@ -442,7 +448,7 @@ Partial Class DWRTackerWindow
         Me.lblAgilityHeader.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.lblAgilityHeader.AutoSize = True
         Me.lblAgilityHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAgilityHeader.Location = New System.Drawing.Point(163, 1)
+        Me.lblAgilityHeader.Location = New System.Drawing.Point(164, 1)
         Me.lblAgilityHeader.Name = "lblAgilityHeader"
         Me.lblAgilityHeader.Size = New System.Drawing.Size(38, 20)
         Me.lblAgilityHeader.TabIndex = 33
@@ -453,7 +459,7 @@ Partial Class DWRTackerWindow
         Me.lblHPHeader.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.lblHPHeader.AutoSize = True
         Me.lblHPHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHPHeader.Location = New System.Drawing.Point(199, 1)
+        Me.lblHPHeader.Location = New System.Drawing.Point(200, 1)
         Me.lblHPHeader.Name = "lblHPHeader"
         Me.lblHPHeader.Size = New System.Drawing.Size(31, 20)
         Me.lblHPHeader.TabIndex = 34
@@ -464,7 +470,7 @@ Partial Class DWRTackerWindow
         Me.lblMPHeader.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.lblMPHeader.AutoSize = True
         Me.lblMPHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMPHeader.Location = New System.Drawing.Point(234, 1)
+        Me.lblMPHeader.Location = New System.Drawing.Point(235, 1)
         Me.lblMPHeader.Name = "lblMPHeader"
         Me.lblMPHeader.Size = New System.Drawing.Size(32, 20)
         Me.lblMPHeader.TabIndex = 35
@@ -491,7 +497,7 @@ Partial Class DWRTackerWindow
         Me.lblDeathNecklaceHPHeader.Size = New System.Drawing.Size(62, 20)
         Me.lblDeathNecklaceHPHeader.TabIndex = 38
         Me.lblDeathNecklaceHPHeader.Text = "DN HP:"
-        Me.lblDeathNecklaceHPHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblDeathNecklaceHPHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'txtDeathNecklaceHP
         '
@@ -518,7 +524,7 @@ Partial Class DWRTackerWindow
         Me.pnlDLCalculations.Controls.Add(Me.txtAverageAttacks)
         Me.pnlDLCalculations.Controls.Add(Me.lblDLHeader)
         Me.pnlDLCalculations.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlDLCalculations.Location = New System.Drawing.Point(0, 342)
+        Me.pnlDLCalculations.Location = New System.Drawing.Point(0, 335)
         Me.pnlDLCalculations.Name = "pnlDLCalculations"
         Me.pnlDLCalculations.Size = New System.Drawing.Size(386, 76)
         Me.pnlDLCalculations.TabIndex = 40
@@ -550,6 +556,10 @@ Partial Class DWRTackerWindow
         'pnlStatsOutput
         '
         Me.pnlStatsOutput.BackColor = System.Drawing.Color.Transparent
+        Me.pnlStatsOutput.Controls.Add(Me.lblDefense)
+        Me.pnlStatsOutput.Controls.Add(Me.txtDefense)
+        Me.pnlStatsOutput.Controls.Add(Me.lblAttackPower)
+        Me.pnlStatsOutput.Controls.Add(Me.txtAP)
         Me.pnlStatsOutput.Controls.Add(Me.lblMPHeader)
         Me.pnlStatsOutput.Controls.Add(Me.lblHPHeader)
         Me.pnlStatsOutput.Controls.Add(Me.lblAgilityHeader)
@@ -565,7 +575,7 @@ Partial Class DWRTackerWindow
         Me.pnlStatsOutput.Controls.Add(Me.lblLastLevel)
         Me.pnlStatsOutput.Controls.Add(Me.lblCurrentStats)
         Me.pnlStatsOutput.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlStatsOutput.Location = New System.Drawing.Point(0, 272)
+        Me.pnlStatsOutput.Location = New System.Drawing.Point(0, 265)
         Me.pnlStatsOutput.Name = "pnlStatsOutput"
         Me.pnlStatsOutput.Size = New System.Drawing.Size(386, 70)
         Me.pnlStatsOutput.TabIndex = 41
@@ -588,7 +598,7 @@ Partial Class DWRTackerWindow
         Me.pnlItemTracker.Controls.Add(Me.pbRing)
         Me.pnlItemTracker.Controls.Add(Me.pbScale)
         Me.pnlItemTracker.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlItemTracker.Location = New System.Drawing.Point(0, 116)
+        Me.pnlItemTracker.Location = New System.Drawing.Point(0, 109)
         Me.pnlItemTracker.Name = "pnlItemTracker"
         Me.pnlItemTracker.Size = New System.Drawing.Size(386, 156)
         Me.pnlItemTracker.TabIndex = 42
@@ -629,7 +639,7 @@ Partial Class DWRTackerWindow
         '
         Me.lblTimerOutput.BackColor = System.Drawing.Color.Transparent
         Me.lblTimerOutput.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lblTimerOutput.Location = New System.Drawing.Point(0, 58)
+        Me.lblTimerOutput.Location = New System.Drawing.Point(0, 51)
         Me.lblTimerOutput.Name = "lblTimerOutput"
         Me.lblTimerOutput.Size = New System.Drawing.Size(386, 58)
         Me.lblTimerOutput.TabIndex = 45
@@ -649,24 +659,26 @@ Partial Class DWRTackerWindow
         Me.pnlRunPercentage.Controls.Add(Me.lblRunPercent)
         Me.pnlRunPercentage.Controls.Add(Me.lblRedDragRunPercent)
         Me.pnlRunPercentage.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnlRunPercentage.Location = New System.Drawing.Point(0, 418)
+        Me.pnlRunPercentage.Location = New System.Drawing.Point(0, 411)
         Me.pnlRunPercentage.Name = "pnlRunPercentage"
         Me.pnlRunPercentage.Size = New System.Drawing.Size(386, 100)
         Me.pnlRunPercentage.TabIndex = 46
         '
         'lblRedDragRunPercent
         '
+        Me.lblRedDragRunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblRedDragRunPercent.AutoSize = True
         Me.lblRedDragRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRedDragRunPercent.Location = New System.Drawing.Point(28, 71)
+        Me.lblRedDragRunPercent.Location = New System.Drawing.Point(42, 68)
         Me.lblRedDragRunPercent.Name = "lblRedDragRunPercent"
         Me.lblRedDragRunPercent.Size = New System.Drawing.Size(82, 20)
         Me.lblRedDragRunPercent.TabIndex = 0
         Me.lblRedDragRunPercent.Text = "R. Dragon"
-        Me.lblRedDragRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblRedDragRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblRunPercent
         '
+        Me.lblRunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblRunPercent.AutoSize = True
         Me.lblRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRunPercent.Location = New System.Drawing.Point(95, 6)
@@ -677,87 +689,140 @@ Partial Class DWRTackerWindow
         '
         'lblRedDragRunPercentOut
         '
+        Me.lblRedDragRunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblRedDragRunPercentOut.BackColor = System.Drawing.SystemColors.Window
         Me.lblRedDragRunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblRedDragRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRedDragRunPercentOut.Location = New System.Drawing.Point(135, 68)
+        Me.lblRedDragRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRedDragRunPercentOut.Location = New System.Drawing.Point(130, 67)
         Me.lblRedDragRunPercentOut.Name = "lblRedDragRunPercentOut"
-        Me.lblRedDragRunPercentOut.Size = New System.Drawing.Size(69, 26)
+        Me.lblRedDragRunPercentOut.Size = New System.Drawing.Size(69, 22)
         Me.lblRedDragRunPercentOut.TabIndex = 2
         Me.lblRedDragRunPercentOut.Text = "Label1"
         Me.lblRedDragRunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblArmKnightRunPercentOut
         '
+        Me.lblArmKnightRunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblArmKnightRunPercentOut.BackColor = System.Drawing.SystemColors.Window
         Me.lblArmKnightRunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblArmKnightRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblArmKnightRunPercentOut.Location = New System.Drawing.Point(135, 33)
+        Me.lblArmKnightRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArmKnightRunPercentOut.Location = New System.Drawing.Point(130, 35)
         Me.lblArmKnightRunPercentOut.Name = "lblArmKnightRunPercentOut"
-        Me.lblArmKnightRunPercentOut.Size = New System.Drawing.Size(69, 26)
+        Me.lblArmKnightRunPercentOut.Size = New System.Drawing.Size(69, 22)
         Me.lblArmKnightRunPercentOut.TabIndex = 4
         Me.lblArmKnightRunPercentOut.Text = "Label2"
         Me.lblArmKnightRunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblArmKnightRunPercent
         '
+        Me.lblArmKnightRunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblArmKnightRunPercent.AutoSize = True
         Me.lblArmKnightRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblArmKnightRunPercent.Location = New System.Drawing.Point(28, 36)
+        Me.lblArmKnightRunPercent.Location = New System.Drawing.Point(33, 36)
         Me.lblArmKnightRunPercent.Name = "lblArmKnightRunPercent"
         Me.lblArmKnightRunPercent.Size = New System.Drawing.Size(91, 20)
         Me.lblArmKnightRunPercent.TabIndex = 3
         Me.lblArmKnightRunPercent.Text = "Arm. Knight"
-        Me.lblArmKnightRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblArmKnightRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblDL1RunPercentOut
         '
+        Me.lblDL1RunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblDL1RunPercentOut.BackColor = System.Drawing.SystemColors.Window
         Me.lblDL1RunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblDL1RunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDL1RunPercentOut.Location = New System.Drawing.Point(290, 33)
+        Me.lblDL1RunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDL1RunPercentOut.Location = New System.Drawing.Point(285, 35)
         Me.lblDL1RunPercentOut.Name = "lblDL1RunPercentOut"
-        Me.lblDL1RunPercentOut.Size = New System.Drawing.Size(69, 26)
+        Me.lblDL1RunPercentOut.Size = New System.Drawing.Size(69, 22)
         Me.lblDL1RunPercentOut.TabIndex = 6
         Me.lblDL1RunPercentOut.Text = "Label4"
         Me.lblDL1RunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblDL1RunPercent
         '
+        Me.lblDL1RunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblDL1RunPercent.AutoSize = True
         Me.lblDL1RunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDL1RunPercent.Location = New System.Drawing.Point(227, 36)
+        Me.lblDL1RunPercent.Location = New System.Drawing.Point(236, 36)
         Me.lblDL1RunPercent.Name = "lblDL1RunPercent"
         Me.lblDL1RunPercent.Size = New System.Drawing.Size(43, 20)
         Me.lblDL1RunPercent.TabIndex = 5
         Me.lblDL1RunPercent.Text = "DL 1"
-        Me.lblDL1RunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblDL1RunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblDL2RunPercentOut
         '
+        Me.lblDL2RunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblDL2RunPercentOut.BackColor = System.Drawing.SystemColors.Window
         Me.lblDL2RunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblDL2RunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDL2RunPercentOut.Location = New System.Drawing.Point(290, 68)
+        Me.lblDL2RunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDL2RunPercentOut.Location = New System.Drawing.Point(285, 67)
         Me.lblDL2RunPercentOut.Name = "lblDL2RunPercentOut"
-        Me.lblDL2RunPercentOut.Size = New System.Drawing.Size(69, 26)
+        Me.lblDL2RunPercentOut.Size = New System.Drawing.Size(69, 22)
         Me.lblDL2RunPercentOut.TabIndex = 8
         Me.lblDL2RunPercentOut.Text = "Label6"
         Me.lblDL2RunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblDL2RunPercent
         '
+        Me.lblDL2RunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblDL2RunPercent.AutoSize = True
         Me.lblDL2RunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDL2RunPercent.Location = New System.Drawing.Point(227, 71)
+        Me.lblDL2RunPercent.Location = New System.Drawing.Point(236, 68)
         Me.lblDL2RunPercent.Name = "lblDL2RunPercent"
         Me.lblDL2RunPercent.Size = New System.Drawing.Size(43, 20)
         Me.lblDL2RunPercent.TabIndex = 7
         Me.lblDL2RunPercent.Text = "DL 2"
-        Me.lblDL2RunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblDL2RunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'lblAttackPower
+        '
+        Me.lblAttackPower.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.lblAttackPower.AutoSize = True
+        Me.lblAttackPower.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAttackPower.Location = New System.Drawing.Point(270, 1)
+        Me.lblAttackPower.Name = "lblAttackPower"
+        Me.lblAttackPower.Size = New System.Drawing.Size(30, 20)
+        Me.lblAttackPower.TabIndex = 38
+        Me.lblAttackPower.Text = "AP"
+        '
+        'txtAP
+        '
+        Me.txtAP.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtAP.Enabled = False
+        Me.txtAP.Location = New System.Drawing.Point(269, 23)
+        Me.txtAP.Name = "txtAP"
+        Me.txtAP.Size = New System.Drawing.Size(33, 20)
+        Me.txtAP.TabIndex = 36
+        Me.txtAP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblDefense
+        '
+        Me.lblDefense.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.lblDefense.AutoSize = True
+        Me.lblDefense.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDefense.Location = New System.Drawing.Point(301, 1)
+        Me.lblDefense.Name = "lblDefense"
+        Me.lblDefense.Size = New System.Drawing.Size(42, 20)
+        Me.lblDefense.TabIndex = 41
+        Me.lblDefense.Text = "DEF"
+        '
+        'txtDefense
+        '
+        Me.txtDefense.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtDefense.Enabled = False
+        Me.txtDefense.Location = New System.Drawing.Point(304, 23)
+        Me.txtDefense.Name = "txtDefense"
+        Me.txtDefense.Size = New System.Drawing.Size(33, 20)
+        Me.txtDefense.TabIndex = 39
+        Me.txtDefense.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DWRTackerWindow
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(386, 518)
+        Me.ClientSize = New System.Drawing.Size(386, 511)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblTimerOutput)
         Me.Controls.Add(Me.pnlItemTracker)
@@ -849,4 +914,8 @@ Partial Class DWRTackerWindow
     Friend WithEvents lblRedDragRunPercentOut As Label
     Friend WithEvents lblRunPercent As Label
     Friend WithEvents lblRedDragRunPercent As Label
+    Friend WithEvents lblDefense As Label
+    Friend WithEvents txtDefense As TextBox
+    Friend WithEvents lblAttackPower As Label
+    Friend WithEvents txtAP As TextBox
 End Class

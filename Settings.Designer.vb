@@ -104,6 +104,9 @@ Partial Class Settings
         Me.btnOpenMapForm = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.chkEnableRunPercent = New System.Windows.Forms.CheckBox()
+        Me.tpAdmin = New System.Windows.Forms.TabPage()
+        Me.btnResetToFactory = New System.Windows.Forms.Button()
+        Me.chkEnableFactoryReset = New System.Windows.Forms.CheckBox()
         CType(Me.nudTimerFontSize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,6 +128,7 @@ Partial Class Settings
         Me.tbOther.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.tpAdmin.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmbTimerFont
@@ -132,7 +136,7 @@ Partial Class Settings
         Me.cmbTimerFont.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cmbTimerFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTimerFont.FormattingEnabled = True
-        Me.cmbTimerFont.Location = New System.Drawing.Point(113, 14)
+        Me.cmbTimerFont.Location = New System.Drawing.Point(113, 19)
         Me.cmbTimerFont.Name = "cmbTimerFont"
         Me.cmbTimerFont.Size = New System.Drawing.Size(186, 21)
         Me.cmbTimerFont.TabIndex = 0
@@ -143,7 +147,7 @@ Partial Class Settings
         Me.cmbTimerFontColor.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cmbTimerFontColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTimerFontColor.FormattingEnabled = True
-        Me.cmbTimerFontColor.Location = New System.Drawing.Point(113, 41)
+        Me.cmbTimerFontColor.Location = New System.Drawing.Point(113, 46)
         Me.cmbTimerFontColor.Name = "cmbTimerFontColor"
         Me.cmbTimerFontColor.Size = New System.Drawing.Size(186, 21)
         Me.cmbTimerFontColor.TabIndex = 1
@@ -154,7 +158,7 @@ Partial Class Settings
         Me.cmbBackColor.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.cmbBackColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbBackColor.FormattingEnabled = True
-        Me.cmbBackColor.Location = New System.Drawing.Point(113, 68)
+        Me.cmbBackColor.Location = New System.Drawing.Point(113, 73)
         Me.cmbBackColor.Name = "cmbBackColor"
         Me.cmbBackColor.Size = New System.Drawing.Size(186, 21)
         Me.cmbBackColor.TabIndex = 2
@@ -164,7 +168,7 @@ Partial Class Settings
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(29, 18)
+        Me.Label1.Location = New System.Drawing.Point(29, 23)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(31, 13)
         Me.Label1.TabIndex = 3
@@ -174,7 +178,7 @@ Partial Class Settings
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(29, 45)
+        Me.Label2.Location = New System.Drawing.Point(29, 50)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 4
@@ -184,7 +188,7 @@ Partial Class Settings
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(29, 72)
+        Me.Label3.Location = New System.Drawing.Point(29, 77)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(68, 13)
         Me.Label3.TabIndex = 5
@@ -193,7 +197,7 @@ Partial Class Settings
         'btnStartPauseTimer
         '
         Me.btnStartPauseTimer.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnStartPauseTimer.Location = New System.Drawing.Point(102, 12)
+        Me.btnStartPauseTimer.Location = New System.Drawing.Point(102, 17)
         Me.btnStartPauseTimer.Name = "btnStartPauseTimer"
         Me.btnStartPauseTimer.Size = New System.Drawing.Size(129, 44)
         Me.btnStartPauseTimer.TabIndex = 6
@@ -204,7 +208,7 @@ Partial Class Settings
         'btnResetTimer
         '
         Me.btnResetTimer.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnResetTimer.Location = New System.Drawing.Point(254, 17)
+        Me.btnResetTimer.Location = New System.Drawing.Point(254, 22)
         Me.btnResetTimer.Name = "btnResetTimer"
         Me.btnResetTimer.Size = New System.Drawing.Size(49, 35)
         Me.btnResetTimer.TabIndex = 7
@@ -215,7 +219,7 @@ Partial Class Settings
         'btnResetTracker
         '
         Me.btnResetTracker.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnResetTracker.Location = New System.Drawing.Point(23, 219)
+        Me.btnResetTracker.Location = New System.Drawing.Point(23, 224)
         Me.btnResetTracker.Name = "btnResetTracker"
         Me.btnResetTracker.Size = New System.Drawing.Size(91, 23)
         Me.btnResetTracker.TabIndex = 8
@@ -226,7 +230,7 @@ Partial Class Settings
         'btnResetAll
         '
         Me.btnResetAll.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnResetAll.Location = New System.Drawing.Point(217, 219)
+        Me.btnResetAll.Location = New System.Drawing.Point(217, 224)
         Me.btnResetAll.Name = "btnResetAll"
         Me.btnResetAll.Size = New System.Drawing.Size(91, 23)
         Me.btnResetAll.TabIndex = 9
@@ -237,7 +241,7 @@ Partial Class Settings
         'nudTimerFontSize
         '
         Me.nudTimerFontSize.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudTimerFontSize.Location = New System.Drawing.Point(113, 95)
+        Me.nudTimerFontSize.Location = New System.Drawing.Point(113, 100)
         Me.nudTimerFontSize.Minimum = New Decimal(New Integer() {6, 0, 0, 0})
         Me.nudTimerFontSize.Name = "nudTimerFontSize"
         Me.nudTimerFontSize.Size = New System.Drawing.Size(186, 20)
@@ -248,7 +252,7 @@ Partial Class Settings
         'nudTimerSetHours
         '
         Me.nudTimerSetHours.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudTimerSetHours.Location = New System.Drawing.Point(32, 169)
+        Me.nudTimerSetHours.Location = New System.Drawing.Point(32, 174)
         Me.nudTimerSetHours.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
         Me.nudTimerSetHours.Name = "nudTimerSetHours"
         Me.nudTimerSetHours.Size = New System.Drawing.Size(57, 20)
@@ -258,7 +262,7 @@ Partial Class Settings
         'nudTimerSetMinutes
         '
         Me.nudTimerSetMinutes.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudTimerSetMinutes.Location = New System.Drawing.Point(102, 169)
+        Me.nudTimerSetMinutes.Location = New System.Drawing.Point(102, 174)
         Me.nudTimerSetMinutes.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
         Me.nudTimerSetMinutes.Name = "nudTimerSetMinutes"
         Me.nudTimerSetMinutes.Size = New System.Drawing.Size(57, 20)
@@ -268,7 +272,7 @@ Partial Class Settings
         'nudTimerSetSeconds
         '
         Me.nudTimerSetSeconds.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudTimerSetSeconds.Location = New System.Drawing.Point(172, 169)
+        Me.nudTimerSetSeconds.Location = New System.Drawing.Point(172, 174)
         Me.nudTimerSetSeconds.Maximum = New Decimal(New Integer() {60, 0, 0, 0})
         Me.nudTimerSetSeconds.Name = "nudTimerSetSeconds"
         Me.nudTimerSetSeconds.Size = New System.Drawing.Size(57, 20)
@@ -280,7 +284,7 @@ Partial Class Settings
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(86, 164)
+        Me.Label4.Location = New System.Drawing.Point(86, 169)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(19, 26)
         Me.Label4.TabIndex = 16
@@ -291,7 +295,7 @@ Partial Class Settings
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(156, 164)
+        Me.Label5.Location = New System.Drawing.Point(156, 169)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(19, 26)
         Me.Label5.TabIndex = 17
@@ -302,7 +306,7 @@ Partial Class Settings
         Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(226, 166)
+        Me.Label6.Location = New System.Drawing.Point(226, 171)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(19, 26)
         Me.Label6.TabIndex = 19
@@ -311,7 +315,7 @@ Partial Class Settings
         'nudTimerSetMseconds
         '
         Me.nudTimerSetMseconds.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudTimerSetMseconds.Location = New System.Drawing.Point(242, 169)
+        Me.nudTimerSetMseconds.Location = New System.Drawing.Point(242, 174)
         Me.nudTimerSetMseconds.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.nudTimerSetMseconds.Name = "nudTimerSetMseconds"
         Me.nudTimerSetMseconds.Size = New System.Drawing.Size(57, 20)
@@ -322,7 +326,7 @@ Partial Class Settings
         '
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(43, 153)
+        Me.Label7.Location = New System.Drawing.Point(43, 158)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(35, 13)
         Me.Label7.TabIndex = 20
@@ -332,7 +336,7 @@ Partial Class Settings
         '
         Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(108, 153)
+        Me.Label8.Location = New System.Drawing.Point(108, 158)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(44, 13)
         Me.Label8.TabIndex = 21
@@ -342,7 +346,7 @@ Partial Class Settings
         '
         Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(176, 153)
+        Me.Label9.Location = New System.Drawing.Point(176, 158)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(49, 13)
         Me.Label9.TabIndex = 22
@@ -352,7 +356,7 @@ Partial Class Settings
         '
         Me.Label10.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(260, 153)
+        Me.Label10.Location = New System.Drawing.Point(260, 158)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(20, 13)
         Me.Label10.TabIndex = 23
@@ -361,7 +365,7 @@ Partial Class Settings
         'btnSetTimerTime
         '
         Me.btnSetTimerTime.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnSetTimerTime.Location = New System.Drawing.Point(69, 208)
+        Me.btnSetTimerTime.Location = New System.Drawing.Point(69, 213)
         Me.btnSetTimerTime.Name = "btnSetTimerTime"
         Me.btnSetTimerTime.Size = New System.Drawing.Size(89, 43)
         Me.btnSetTimerTime.TabIndex = 24
@@ -373,7 +377,7 @@ Partial Class Settings
         '
         Me.btnSetTimeInputsFromTimer.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnSetTimeInputsFromTimer.Enabled = False
-        Me.btnSetTimeInputsFromTimer.Location = New System.Drawing.Point(172, 208)
+        Me.btnSetTimeInputsFromTimer.Location = New System.Drawing.Point(172, 213)
         Me.btnSetTimeInputsFromTimer.Name = "btnSetTimeInputsFromTimer"
         Me.btnSetTimeInputsFromTimer.Size = New System.Drawing.Size(89, 43)
         Me.btnSetTimeInputsFromTimer.TabIndex = 25
@@ -385,7 +389,7 @@ Partial Class Settings
         '
         Me.lblPower.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblPower.AutoSize = True
-        Me.lblPower.Location = New System.Drawing.Point(100, 73)
+        Me.lblPower.Location = New System.Drawing.Point(100, 78)
         Me.lblPower.Name = "lblPower"
         Me.lblPower.Size = New System.Drawing.Size(28, 13)
         Me.lblPower.TabIndex = 30
@@ -395,7 +399,7 @@ Partial Class Settings
         '
         Me.lblAgility.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblAgility.AutoSize = True
-        Me.lblAgility.Location = New System.Drawing.Point(100, 99)
+        Me.lblAgility.Location = New System.Drawing.Point(100, 104)
         Me.lblAgility.Name = "lblAgility"
         Me.lblAgility.Size = New System.Drawing.Size(25, 13)
         Me.lblAgility.TabIndex = 31
@@ -405,7 +409,7 @@ Partial Class Settings
         '
         Me.lblHP.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblHP.AutoSize = True
-        Me.lblHP.Location = New System.Drawing.Point(100, 121)
+        Me.lblHP.Location = New System.Drawing.Point(100, 126)
         Me.lblHP.Name = "lblHP"
         Me.lblHP.Size = New System.Drawing.Size(22, 13)
         Me.lblHP.TabIndex = 32
@@ -415,7 +419,7 @@ Partial Class Settings
         '
         Me.lblMP.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblMP.AutoSize = True
-        Me.lblMP.Location = New System.Drawing.Point(100, 147)
+        Me.lblMP.Location = New System.Drawing.Point(100, 152)
         Me.lblMP.Name = "lblMP"
         Me.lblMP.Size = New System.Drawing.Size(23, 13)
         Me.lblMP.TabIndex = 33
@@ -424,7 +428,7 @@ Partial Class Settings
         'btnSaveStats
         '
         Me.btnSaveStats.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnSaveStats.Location = New System.Drawing.Point(102, 171)
+        Me.btnSaveStats.Location = New System.Drawing.Point(102, 176)
         Me.btnSaveStats.Name = "btnSaveStats"
         Me.btnSaveStats.Size = New System.Drawing.Size(129, 30)
         Me.btnSaveStats.TabIndex = 4
@@ -434,7 +438,7 @@ Partial Class Settings
         'nudPower
         '
         Me.nudPower.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudPower.Location = New System.Drawing.Point(138, 69)
+        Me.nudPower.Location = New System.Drawing.Point(138, 74)
         Me.nudPower.Name = "nudPower"
         Me.nudPower.Size = New System.Drawing.Size(93, 20)
         Me.nudPower.TabIndex = 0
@@ -442,7 +446,7 @@ Partial Class Settings
         'nudAgility
         '
         Me.nudAgility.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudAgility.Location = New System.Drawing.Point(138, 95)
+        Me.nudAgility.Location = New System.Drawing.Point(138, 100)
         Me.nudAgility.Name = "nudAgility"
         Me.nudAgility.Size = New System.Drawing.Size(93, 20)
         Me.nudAgility.TabIndex = 1
@@ -450,7 +454,7 @@ Partial Class Settings
         'nudHP
         '
         Me.nudHP.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudHP.Location = New System.Drawing.Point(138, 117)
+        Me.nudHP.Location = New System.Drawing.Point(138, 122)
         Me.nudHP.Name = "nudHP"
         Me.nudHP.Size = New System.Drawing.Size(93, 20)
         Me.nudHP.TabIndex = 2
@@ -458,7 +462,7 @@ Partial Class Settings
         'nudMP
         '
         Me.nudMP.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudMP.Location = New System.Drawing.Point(138, 143)
+        Me.nudMP.Location = New System.Drawing.Point(138, 148)
         Me.nudMP.Name = "nudMP"
         Me.nudMP.Size = New System.Drawing.Size(93, 20)
         Me.nudMP.TabIndex = 3
@@ -466,7 +470,7 @@ Partial Class Settings
         'btnResetStats
         '
         Me.btnResetStats.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btnResetStats.Location = New System.Drawing.Point(120, 219)
+        Me.btnResetStats.Location = New System.Drawing.Point(120, 224)
         Me.btnResetStats.Name = "btnResetStats"
         Me.btnResetStats.Size = New System.Drawing.Size(91, 23)
         Me.btnResetStats.TabIndex = 39
@@ -480,6 +484,7 @@ Partial Class Settings
         Me.tabForms.Controls.Add(Me.tpTimerSettings)
         Me.tabForms.Controls.Add(Me.tpHeaderSettings)
         Me.tabForms.Controls.Add(Me.tbOther)
+        Me.tabForms.Controls.Add(Me.tpAdmin)
         Me.tabForms.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tabForms.Location = New System.Drawing.Point(0, 0)
         Me.tabForms.Name = "tabForms"
@@ -507,7 +512,7 @@ Partial Class Settings
         Me.tpControls.Location = New System.Drawing.Point(4, 22)
         Me.tpControls.Name = "tpControls"
         Me.tpControls.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpControls.Size = New System.Drawing.Size(331, 258)
+        Me.tpControls.Size = New System.Drawing.Size(331, 268)
         Me.tpControls.TabIndex = 0
         Me.tpControls.Text = "Controls"
         Me.tpControls.UseVisualStyleBackColor = True
@@ -540,7 +545,7 @@ Partial Class Settings
         Me.tpTimerSettings.Location = New System.Drawing.Point(4, 22)
         Me.tpTimerSettings.Name = "tpTimerSettings"
         Me.tpTimerSettings.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpTimerSettings.Size = New System.Drawing.Size(331, 258)
+        Me.tpTimerSettings.Size = New System.Drawing.Size(331, 268)
         Me.tpTimerSettings.TabIndex = 1
         Me.tpTimerSettings.Text = "Timer Settings"
         Me.tpTimerSettings.UseVisualStyleBackColor = True
@@ -549,7 +554,7 @@ Partial Class Settings
         '
         Me.Label12.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(29, 125)
+        Me.Label12.Location = New System.Drawing.Point(29, 130)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(83, 13)
         Me.Label12.TabIndex = 28
@@ -558,7 +563,7 @@ Partial Class Settings
         'nudTimerDecimalPlaces
         '
         Me.nudTimerDecimalPlaces.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.nudTimerDecimalPlaces.Location = New System.Drawing.Point(113, 121)
+        Me.nudTimerDecimalPlaces.Location = New System.Drawing.Point(113, 126)
         Me.nudTimerDecimalPlaces.Maximum = New Decimal(New Integer() {3, 0, 0, 0})
         Me.nudTimerDecimalPlaces.Name = "nudTimerDecimalPlaces"
         Me.nudTimerDecimalPlaces.Size = New System.Drawing.Size(186, 20)
@@ -570,7 +575,7 @@ Partial Class Settings
         '
         Me.Label11.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(29, 99)
+        Me.Label11.Location = New System.Drawing.Point(29, 104)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(54, 13)
         Me.Label11.TabIndex = 26
@@ -583,7 +588,7 @@ Partial Class Settings
         Me.tpHeaderSettings.Location = New System.Drawing.Point(4, 22)
         Me.tpHeaderSettings.Name = "tpHeaderSettings"
         Me.tpHeaderSettings.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpHeaderSettings.Size = New System.Drawing.Size(331, 258)
+        Me.tpHeaderSettings.Size = New System.Drawing.Size(331, 268)
         Me.tpHeaderSettings.TabIndex = 3
         Me.tpHeaderSettings.Text = "Header Settings"
         Me.tpHeaderSettings.UseVisualStyleBackColor = True
@@ -601,7 +606,7 @@ Partial Class Settings
         Me.GroupBox2.Controls.Add(Me.nudLine2FontSize)
         Me.GroupBox2.Controls.Add(Me.txtHeader2String)
         Me.GroupBox2.Controls.Add(Me.Label14)
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 132)
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 137)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(314, 118)
         Me.GroupBox2.TabIndex = 42
@@ -725,7 +730,7 @@ Partial Class Settings
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.nudLine1FontSize)
         Me.GroupBox1.Controls.Add(Me.Label15)
-        Me.GroupBox1.Location = New System.Drawing.Point(8, 8)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 13)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(314, 118)
         Me.GroupBox1.TabIndex = 41
@@ -1052,6 +1057,38 @@ Partial Class Settings
         Me.chkEnableRunPercent.Text = "Enable Run/Back Attack Percentage"
         Me.chkEnableRunPercent.UseVisualStyleBackColor = True
         '
+        'tpAdmin
+        '
+        Me.tpAdmin.Controls.Add(Me.chkEnableFactoryReset)
+        Me.tpAdmin.Controls.Add(Me.btnResetToFactory)
+        Me.tpAdmin.Location = New System.Drawing.Point(4, 22)
+        Me.tpAdmin.Name = "tpAdmin"
+        Me.tpAdmin.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpAdmin.Size = New System.Drawing.Size(331, 268)
+        Me.tpAdmin.TabIndex = 4
+        Me.tpAdmin.Text = "Admin"
+        Me.tpAdmin.UseVisualStyleBackColor = True
+        '
+        'btnResetToFactory
+        '
+        Me.btnResetToFactory.Enabled = False
+        Me.btnResetToFactory.Location = New System.Drawing.Point(9, 7)
+        Me.btnResetToFactory.Name = "btnResetToFactory"
+        Me.btnResetToFactory.Size = New System.Drawing.Size(98, 47)
+        Me.btnResetToFactory.TabIndex = 0
+        Me.btnResetToFactory.Text = "Reset To Factory"
+        Me.btnResetToFactory.UseVisualStyleBackColor = True
+        '
+        'chkEnableFactoryReset
+        '
+        Me.chkEnableFactoryReset.AutoSize = True
+        Me.chkEnableFactoryReset.Location = New System.Drawing.Point(114, 23)
+        Me.chkEnableFactoryReset.Name = "chkEnableFactoryReset"
+        Me.chkEnableFactoryReset.Size = New System.Drawing.Size(59, 17)
+        Me.chkEnableFactoryReset.TabIndex = 1
+        Me.chkEnableFactoryReset.Text = "Enable"
+        Me.chkEnableFactoryReset.UseVisualStyleBackColor = True
+        '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1088,6 +1125,8 @@ Partial Class Settings
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.tpAdmin.ResumeLayout(False)
+        Me.tpAdmin.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1174,4 +1213,7 @@ Partial Class Settings
     Friend WithEvents Label23 As Label
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents chkEnableRunPercent As CheckBox
+    Friend WithEvents tpAdmin As TabPage
+    Friend WithEvents chkEnableFactoryReset As CheckBox
+    Friend WithEvents btnResetToFactory As Button
 End Class

@@ -23,32 +23,28 @@ Public Class Settings
 
 
     Public Sub New()
-        Try
-            ' This call is required by the designer.
-            InitializeComponent()
 
-            ' Add any initialization after the InitializeComponent() call.
-            timer = New Timer()
-            AddHandler timer.Tick, AddressOf updatetime
+        ' This call is required by the designer.
+        InitializeComponent()
 
-            InitializeFonts()
+        ' Add any initialization after the InitializeComponent() call.
+        timer = New Timer()
+        AddHandler timer.Tick, AddressOf updatetime
+        InitializeFonts()
 
-            btnStartPauseTimer.Tag = False
+        btnStartPauseTimer.Tag = False
 
-            frmTracker = New DWRTackerWindow
-            frmTracker.Show()
+        frmTracker = New DWRTackerWindow
+        frmTracker.Show()
+        LoadSettingSaves()
 
-            LoadSettingSaves()
+        SetEnabled()
+        SetPanelHeights()
+        setFonts()
+        InitializeTrackerItems()
+        UpdateStatsView(frmTracker)
+        RegisterKeys()
 
-            SetEnabled()
-            SetPanelHeights()
-            setFonts()
-            UpdateStatsView(frmTracker)
-            RegisterKeys()
-
-        Catch e As Exception
-            Dim t = e
-        End Try
 
     End Sub
 
@@ -212,9 +208,15 @@ Public Class Settings
         Dim intSeconds As Integer = tsValue.Seconds
         Dim strMilliseconds As String = tsValue.Milliseconds.ToString()
         Dim strSeconds As String = intSeconds
+        Dim strMinutes As String = intMinutes
         If intMinutes > 0 OrElse intHours > 0 Then
             While strSeconds.Length < 2
                 strSeconds = "0" & strSeconds
+            End While
+        End If
+        If intHours > 0 Then
+            While strMinutes.Length < 2
+                strMinutes = "0" & strMinutes
             End While
         End If
         While strMilliseconds.Length < 3
@@ -223,7 +225,7 @@ Public Class Settings
         Dim strOutput = ""
         If intHours > 0 Then strOutput &= intHours.ToString & ":"
         If intMinutes > 0 Then
-            strOutput &= intMinutes.ToString & ":"
+            strOutput &= strMinutes.ToString & ":"
         Else
             If intHours > 0 Then
                 strOutput &= "00:"
@@ -406,6 +408,8 @@ Public Class Settings
         frmTracker.lblDL1RunPercent.ForeColor = clrOtherLabels
         frmTracker.lblDL2RunPercent.ForeColor = clrOtherLabels
         frmTracker.lblRunPercent.ForeColor = clrOtherLabels
+        frmTracker.lblAttackPower.ForeColor = clrOtherLabels
+        frmTracker.lblDefense.ForeColor = clrOtherLabels
         Dim OtherLabelFont As Font = New Font(DirectCast(cmbOtherLabelFont.SelectedItem, FontFamily), sngOtherTextSize)
         frmTracker.lblStrengthHeader.Font = OtherLabelFont
         frmTracker.lblAgilityHeader.Font = OtherLabelFont
@@ -424,9 +428,28 @@ Public Class Settings
         frmTracker.lblDL1RunPercent.Font = OtherLabelFont
         frmTracker.lblDL2RunPercent.Font = OtherLabelFont
         frmTracker.lblRunPercent.Font = OtherLabelFont
-
+        frmTracker.lblAttackPower.Font = OtherLabelFont
+        frmTracker.lblDefense.Font = OtherLabelFont
         'frmTracker.Label1.BackColor = ComboBox3.SelectedItem
         SetPanelHeights()
+    End Sub
+
+    Private Sub InitializeTrackerItems()
+        frmTracker.pbArmor.Tag = GetArmor(GetIndexInList(GetArmor, My.Settings.objArmorTag))
+        frmTracker.pbWeapons.Tag = GetWeapons(GetIndexInList(GetWeapons, My.Settings.objWeaponTag))
+        frmTracker.pbShields.Tag = GetShields(GetIndexInList(GetShields, My.Settings.objShieldTag))
+        frmTracker.pbScale.Tag = My.Settings.strScaleTag
+        frmTracker.pbRing.Tag = My.Settings.strRingTag
+        frmTracker.pbFlute.Tag = My.Settings.strFluteTag
+        frmTracker.pbPrincess.Tag = My.Settings.strPrincessTag
+        frmTracker.pbHarp.Tag = My.Settings.strHarpTag
+        frmTracker.pbKeys.Tag = My.Settings.strKeyTag
+        frmTracker.pbDrop.Tag = My.Settings.strDropTag
+        frmTracker.pbDN.Tag = My.Settings.strDNTag
+        frmTracker.pbStaff.Tag = My.Settings.strStaffTag
+        frmTracker.pbStones.Tag = My.Settings.strStonesTag
+        frmTracker.pbToken.Tag = My.Settings.strTokenTag
+        frmTracker.SetTrackerImages()
     End Sub
 
     Private Sub txtHeader1String_TextChanged(sender As Object, e As EventArgs) Handles txtHeader1String.TextChanged
@@ -808,4 +831,34 @@ Public Class Settings
         cmbOtherLabelColor.Text = cmbTimerFontColor.Text
     End Sub
 
+    Private Sub chkEnableFactoryReset_CheckedChanged(sender As Object, e As EventArgs) Handles chkEnableFactoryReset.CheckedChanged
+        btnResetToFactory.Enabled = chkEnableFactoryReset.Checked
+    End Sub
+
+    Private Sub btnResetToFactory_Click(sender As Object, e As EventArgs) Handles btnResetToFactory.Click
+        If MessageBox.Show("This will reset all settings back to factory defaults.  Press Ok to accept.",
+                                   "warning", MessageBoxButtons.OKCancel) = DialogResult.OK Then
+            ResetTimer()
+            frmTracker.ResetTracker()
+            ResetStats()
+            My.Settings.Reset()
+            My.Settings.Save()
+            Dim intTrackerHeight As Integer = My.Settings.intDWRTrackerHeight
+            Dim intTrackerWidth As Integer = My.Settings.intDWRTrackerWidth
+            InitializeFonts()
+
+            btnStartPauseTimer.Tag = False
+
+            LoadSettingSaves()
+
+            SetEnabled()
+            SetPanelHeights()
+            setFonts()
+            UpdateStatsView(frmTracker)
+            RegisterKeys()
+            frmTracker.Height = intTrackerHeight
+            frmTracker.Width = intTrackerWidth
+
+        End If
+    End Sub
 End Class
