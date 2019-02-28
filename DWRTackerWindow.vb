@@ -83,31 +83,53 @@
         SetRotatingItemTooltip(pbShields)
     End Sub
     Private Sub pbWeapons_Click(sender As Object, e As EventArgs) Handles pbWeapons.Click
-        UpdateRotating(sender, strBaseWeaponsPath, GetWeapons())
+        If DirectCast(e, MouseEventArgs).Button = MouseButtons.Right Then
+            UpdateRotating(sender, strBaseWeaponsPath, GetWeapons(), True)
+        Else
+            UpdateRotating(sender, strBaseWeaponsPath, GetWeapons(), False)
+        End If
         My.Settings.objWeaponTag = pbWeapons.Tag.ToString
         My.Settings.Save()
     End Sub
 
     Private Sub pbArmor_Click(sender As Object, e As EventArgs) Handles pbArmor.Click
-        UpdateRotating(sender, strBaseArmorPath, GetArmor())
+        If DirectCast(e, MouseEventArgs).Button = MouseButtons.Right Then
+            UpdateRotating(sender, strBaseArmorPath, GetArmor(), True)
+        Else
+            UpdateRotating(sender, strBaseArmorPath, GetArmor(), False)
+        End If
         My.Settings.objArmorTag = pbArmor.Tag.ToString
         My.Settings.Save()
     End Sub
 
     Private Sub pbShields_Click(sender As Object, e As EventArgs) Handles pbShields.Click
-        UpdateRotating(sender, strBaseShieldsPath, GetShields())
+        If DirectCast(e, MouseEventArgs).Button = MouseButtons.Right Then
+            UpdateRotating(sender, strBaseShieldsPath, GetShields(), True)
+        Else
+            UpdateRotating(sender, strBaseShieldsPath, GetShields(), False)
+        End If
         My.Settings.objShieldTag = pbShields.Tag.ToString
         My.Settings.Save()
     End Sub
 
-    Private Sub UpdateRotating(sender As PictureBox, strBasePath As String, lstItems As List(Of StatItem))
+    Private Sub UpdateRotating(sender As PictureBox, strBasePath As String, lstItems As List(Of StatItem), Optional blnReverse As Boolean = False)
 
         Dim intItemIndex As Integer = GetIndexInList(lstItems, sender.Tag)
-        If intItemIndex = lstItems.Count - 1 Then
-            sender.Tag = lstItems(0)
-        Else
-            sender.Tag = lstItems(intItemIndex + 1)
-        End If
+        Select Case blnReverse
+            Case True
+                If intItemIndex = 0 Then
+                    sender.Tag = lstItems(lstItems.Count - 1)
+                Else
+                    sender.Tag = lstItems(intItemIndex - 1)
+                End If
+            Case False
+                If intItemIndex = lstItems.Count - 1 Then
+                    sender.Tag = lstItems(0)
+                Else
+                    sender.Tag = lstItems(intItemIndex + 1)
+                End If
+        End Select
+
         SetRotatingItemTooltip(sender)
 
         sender.Image = Image.FromFile(strBasePath & sender.Tag.ToString(), True)
