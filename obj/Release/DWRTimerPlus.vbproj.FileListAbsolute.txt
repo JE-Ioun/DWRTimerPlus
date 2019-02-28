@@ -77,7 +77,6 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe.config
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.pdb
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.xml
-F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.vbprojResolveAssemblyReference.cache
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.DWRTackerWindow.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.FMaps.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.Resources.resources

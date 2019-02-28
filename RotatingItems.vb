@@ -79,6 +79,8 @@
         Dim intAttackPower As Integer = My.Settings.intPower
         Dim intDefensePower As Integer = Math.Floor(My.Settings.intAgility / 2)
         intDefensePower += DirectCast(frmTracker.pbArmor.Tag, StatItem).intStatValue
+        intDefensePower += DirectCast(frmTracker.pbShields.Tag, StatItem).intStatValue
+
         If frmTracker.chkAssumeErdricksSword.Checked Then
             intAttackPower += 40
         Else
