@@ -125,7 +125,13 @@ Public Module FightSimulator
         Dim DL1HP As Integer = GetRandomDecimal(75, 100)
         Dim DL1AP As Integer = 90
         Dim DL1Agil As Integer = 75
-        Dim decBackAttackPercent As Decimal = 17 / (2 * intHeroAgil)
+        Dim decBackAttackPercent As Decimal
+        If Double.IsInfinity(17 / (2 * intHeroAgil)) Then
+            decBackAttackPercent = 100
+        Else
+            decBackAttackPercent = 17 / (2 * intHeroAgil)
+        End If
+
         Dim intCurrentHerbs As Integer = intNumberOfHerbs
         Dim intCurrentHP As Integer = intHeroMaxHP
         Dim intCurrentMP As Integer = intHeroMP
