@@ -58,6 +58,7 @@ Partial Class Settings
         Me.btnResetStats = New System.Windows.Forms.Button()
         Me.tabForms = New System.Windows.Forms.TabControl()
         Me.tpControls = New System.Windows.Forms.TabPage()
+        Me.btnSimulateDLFights = New System.Windows.Forms.Button()
         Me.tpTimerSettings = New System.Windows.Forms.TabPage()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.nudTimerDecimalPlaces = New System.Windows.Forms.NumericUpDown()
@@ -86,6 +87,9 @@ Partial Class Settings
         Me.nudLine1FontSize = New System.Windows.Forms.NumericUpDown()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.tbOther = New System.Windows.Forms.TabPage()
+        Me.lblSimulations = New System.Windows.Forms.Label()
+        Me.nudNumberOfSimulations = New System.Windows.Forms.NumericUpDown()
+        Me.chkMHImages = New System.Windows.Forms.CheckBox()
         Me.chkEnableRunPercent = New System.Windows.Forms.CheckBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btnOpenBGImgSelector = New System.Windows.Forms.Button()
@@ -107,10 +111,6 @@ Partial Class Settings
         Me.chkEnableFactoryReset = New System.Windows.Forms.CheckBox()
         Me.btnResetToFactory = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.chkMHImages = New System.Windows.Forms.CheckBox()
-        Me.nudNumberOfSimulations = New System.Windows.Forms.NumericUpDown()
-        Me.lblSimulations = New System.Windows.Forms.Label()
-        Me.btnSimulateDLFights = New System.Windows.Forms.Button()
         CType(Me.nudTimerFontSize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,10 +130,10 @@ Partial Class Settings
         Me.GroupBox1.SuspendLayout()
         CType(Me.nudLine1FontSize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbOther.SuspendLayout()
+        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.tpAdmin.SuspendLayout()
-        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmbTimerFont
@@ -444,6 +444,8 @@ Partial Class Settings
         '
         Me.nudPower.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.nudPower.Location = New System.Drawing.Point(138, 74)
+        Me.nudPower.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.nudPower.Minimum = New Decimal(New Integer() {200, 0, 0, -2147483648})
         Me.nudPower.Name = "nudPower"
         Me.nudPower.Size = New System.Drawing.Size(93, 20)
         Me.nudPower.TabIndex = 0
@@ -452,6 +454,8 @@ Partial Class Settings
         '
         Me.nudAgility.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.nudAgility.Location = New System.Drawing.Point(138, 100)
+        Me.nudAgility.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.nudAgility.Minimum = New Decimal(New Integer() {200, 0, 0, -2147483648})
         Me.nudAgility.Name = "nudAgility"
         Me.nudAgility.Size = New System.Drawing.Size(93, 20)
         Me.nudAgility.TabIndex = 1
@@ -460,6 +464,8 @@ Partial Class Settings
         '
         Me.nudHP.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.nudHP.Location = New System.Drawing.Point(138, 122)
+        Me.nudHP.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.nudHP.Minimum = New Decimal(New Integer() {200, 0, 0, -2147483648})
         Me.nudHP.Name = "nudHP"
         Me.nudHP.Size = New System.Drawing.Size(93, 20)
         Me.nudHP.TabIndex = 2
@@ -468,6 +474,8 @@ Partial Class Settings
         '
         Me.nudMP.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.nudMP.Location = New System.Drawing.Point(138, 148)
+        Me.nudMP.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.nudMP.Minimum = New Decimal(New Integer() {200, 0, 0, -2147483648})
         Me.nudMP.Name = "nudMP"
         Me.nudMP.Size = New System.Drawing.Size(93, 20)
         Me.nudMP.TabIndex = 3
@@ -522,6 +530,15 @@ Partial Class Settings
         Me.tpControls.TabIndex = 0
         Me.tpControls.Text = "Controls"
         Me.tpControls.UseVisualStyleBackColor = True
+        '
+        'btnSimulateDLFights
+        '
+        Me.btnSimulateDLFights.Location = New System.Drawing.Point(254, 176)
+        Me.btnSimulateDLFights.Name = "btnSimulateDLFights"
+        Me.btnSimulateDLFights.Size = New System.Drawing.Size(49, 30)
+        Me.btnSimulateDLFights.TabIndex = 40
+        Me.btnSimulateDLFights.Text = "Sim DL"
+        Me.btnSimulateDLFights.UseVisualStyleBackColor = True
         '
         'tpTimerSettings
         '
@@ -869,6 +886,37 @@ Partial Class Settings
         Me.tbOther.Text = "Extras"
         Me.tbOther.UseVisualStyleBackColor = True
         '
+        'lblSimulations
+        '
+        Me.lblSimulations.AutoSize = True
+        Me.lblSimulations.Location = New System.Drawing.Point(17, 110)
+        Me.lblSimulations.Name = "lblSimulations"
+        Me.lblSimulations.Size = New System.Drawing.Size(85, 13)
+        Me.lblSimulations.TabIndex = 47
+        Me.lblSimulations.Text = "# of Simulations:"
+        '
+        'nudNumberOfSimulations
+        '
+        Me.nudNumberOfSimulations.Increment = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudNumberOfSimulations.Location = New System.Drawing.Point(108, 108)
+        Me.nudNumberOfSimulations.Maximum = New Decimal(New Integer() {-1530494976, 232830, 0, 0})
+        Me.nudNumberOfSimulations.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudNumberOfSimulations.Name = "nudNumberOfSimulations"
+        Me.nudNumberOfSimulations.Size = New System.Drawing.Size(183, 20)
+        Me.nudNumberOfSimulations.TabIndex = 46
+        Me.nudNumberOfSimulations.Value = New Decimal(New Integer() {10000, 0, 0, 0})
+        '
+        'chkMHImages
+        '
+        Me.chkMHImages.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.chkMHImages.AutoSize = True
+        Me.chkMHImages.Location = New System.Drawing.Point(171, 90)
+        Me.chkMHImages.Name = "chkMHImages"
+        Me.chkMHImages.Size = New System.Drawing.Size(124, 17)
+        Me.chkMHImages.TabIndex = 45
+        Me.chkMHImages.Text = "MisterHomes Images"
+        Me.chkMHImages.UseVisualStyleBackColor = True
+        '
         'chkEnableRunPercent
         '
         Me.chkEnableRunPercent.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -1098,46 +1146,6 @@ Partial Class Settings
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'chkMHImages
-        '
-        Me.chkMHImages.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.chkMHImages.AutoSize = True
-        Me.chkMHImages.Location = New System.Drawing.Point(171, 90)
-        Me.chkMHImages.Name = "chkMHImages"
-        Me.chkMHImages.Size = New System.Drawing.Size(124, 17)
-        Me.chkMHImages.TabIndex = 45
-        Me.chkMHImages.Text = "MisterHomes Images"
-        Me.chkMHImages.UseVisualStyleBackColor = True
-        '
-        'nudNumberOfSimulations
-        '
-        Me.nudNumberOfSimulations.Increment = New Decimal(New Integer() {100, 0, 0, 0})
-        Me.nudNumberOfSimulations.Location = New System.Drawing.Point(108, 108)
-        Me.nudNumberOfSimulations.Maximum = New Decimal(New Integer() {-1530494976, 232830, 0, 0})
-        Me.nudNumberOfSimulations.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
-        Me.nudNumberOfSimulations.Name = "nudNumberOfSimulations"
-        Me.nudNumberOfSimulations.Size = New System.Drawing.Size(183, 20)
-        Me.nudNumberOfSimulations.TabIndex = 46
-        Me.nudNumberOfSimulations.Value = New Decimal(New Integer() {10000, 0, 0, 0})
-        '
-        'lblSimulations
-        '
-        Me.lblSimulations.AutoSize = True
-        Me.lblSimulations.Location = New System.Drawing.Point(17, 110)
-        Me.lblSimulations.Name = "lblSimulations"
-        Me.lblSimulations.Size = New System.Drawing.Size(85, 13)
-        Me.lblSimulations.TabIndex = 47
-        Me.lblSimulations.Text = "# of Simulations:"
-        '
-        'btnSimulateDLFights
-        '
-        Me.btnSimulateDLFights.Location = New System.Drawing.Point(254, 176)
-        Me.btnSimulateDLFights.Name = "btnSimulateDLFights"
-        Me.btnSimulateDLFights.Size = New System.Drawing.Size(49, 30)
-        Me.btnSimulateDLFights.TabIndex = 40
-        Me.btnSimulateDLFights.Text = "Sim DL"
-        Me.btnSimulateDLFights.UseVisualStyleBackColor = True
-        '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1170,13 +1178,13 @@ Partial Class Settings
         CType(Me.nudLine1FontSize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbOther.ResumeLayout(False)
         Me.tbOther.PerformLayout()
+        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.tpAdmin.ResumeLayout(False)
         Me.tpAdmin.PerformLayout()
-        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
