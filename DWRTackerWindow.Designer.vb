@@ -63,6 +63,10 @@ Partial Class DWRTackerWindow
         Me.chkAssumeFightersRing = New System.Windows.Forms.CheckBox()
         Me.chkAssumeErdricksSword = New System.Windows.Forms.CheckBox()
         Me.pnlStatsOutput = New System.Windows.Forms.Panel()
+        Me.lblDefense = New System.Windows.Forms.Label()
+        Me.txtDefense = New System.Windows.Forms.TextBox()
+        Me.lblAttackPower = New System.Windows.Forms.Label()
+        Me.txtAP = New System.Windows.Forms.TextBox()
         Me.pnlItemTracker = New System.Windows.Forms.Panel()
         Me.pnlHeaderOutput = New System.Windows.Forms.Panel()
         Me.lblHeader2Output = New System.Windows.Forms.Label()
@@ -70,19 +74,18 @@ Partial Class DWRTackerWindow
         Me.lblTimerOutput = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.pnlRunPercentage = New System.Windows.Forms.Panel()
-        Me.lblRedDragRunPercent = New System.Windows.Forms.Label()
-        Me.lblRunPercent = New System.Windows.Forms.Label()
-        Me.lblRedDragRunPercentOut = New System.Windows.Forms.Label()
-        Me.lblArmKnightRunPercentOut = New System.Windows.Forms.Label()
-        Me.lblArmKnightRunPercent = New System.Windows.Forms.Label()
-        Me.lblDL1RunPercentOut = New System.Windows.Forms.Label()
-        Me.lblDL1RunPercent = New System.Windows.Forms.Label()
         Me.lblDL2RunPercentOut = New System.Windows.Forms.Label()
         Me.lblDL2RunPercent = New System.Windows.Forms.Label()
-        Me.lblAttackPower = New System.Windows.Forms.Label()
-        Me.txtAP = New System.Windows.Forms.TextBox()
-        Me.lblDefense = New System.Windows.Forms.Label()
-        Me.txtDefense = New System.Windows.Forms.TextBox()
+        Me.lblDL1RunPercentOut = New System.Windows.Forms.Label()
+        Me.lblDL1RunPercent = New System.Windows.Forms.Label()
+        Me.lblArmKnightRunPercentOut = New System.Windows.Forms.Label()
+        Me.lblArmKnightRunPercent = New System.Windows.Forms.Label()
+        Me.lblRedDragRunPercentOut = New System.Windows.Forms.Label()
+        Me.lblRunPercent = New System.Windows.Forms.Label()
+        Me.lblRedDragRunPercent = New System.Windows.Forms.Label()
+        Me.lblDLFightSimHeader = New System.Windows.Forms.Label()
+        Me.txtDragonLordSimChance = New System.Windows.Forms.TextBox()
+        Me.txtDragonLordSimChanceDN = New System.Windows.Forms.TextBox()
         CType(Me.pbToken, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbStones, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbStaff, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -513,6 +516,9 @@ Partial Class DWRTackerWindow
         'pnlDLCalculations
         '
         Me.pnlDLCalculations.BackColor = System.Drawing.Color.Transparent
+        Me.pnlDLCalculations.Controls.Add(Me.txtDragonLordSimChanceDN)
+        Me.pnlDLCalculations.Controls.Add(Me.lblDLFightSimHeader)
+        Me.pnlDLCalculations.Controls.Add(Me.txtDragonLordSimChance)
         Me.pnlDLCalculations.Controls.Add(Me.chkAssumeFightersRing)
         Me.pnlDLCalculations.Controls.Add(Me.chkAssumeErdricksSword)
         Me.pnlDLCalculations.Controls.Add(Me.lblDeathNecklaceHPHeader)
@@ -579,6 +585,48 @@ Partial Class DWRTackerWindow
         Me.pnlStatsOutput.Name = "pnlStatsOutput"
         Me.pnlStatsOutput.Size = New System.Drawing.Size(386, 70)
         Me.pnlStatsOutput.TabIndex = 41
+        '
+        'lblDefense
+        '
+        Me.lblDefense.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.lblDefense.AutoSize = True
+        Me.lblDefense.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDefense.Location = New System.Drawing.Point(301, 1)
+        Me.lblDefense.Name = "lblDefense"
+        Me.lblDefense.Size = New System.Drawing.Size(42, 20)
+        Me.lblDefense.TabIndex = 41
+        Me.lblDefense.Text = "DEF"
+        '
+        'txtDefense
+        '
+        Me.txtDefense.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtDefense.Enabled = False
+        Me.txtDefense.Location = New System.Drawing.Point(304, 23)
+        Me.txtDefense.Name = "txtDefense"
+        Me.txtDefense.Size = New System.Drawing.Size(33, 20)
+        Me.txtDefense.TabIndex = 39
+        Me.txtDefense.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lblAttackPower
+        '
+        Me.lblAttackPower.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.lblAttackPower.AutoSize = True
+        Me.lblAttackPower.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAttackPower.Location = New System.Drawing.Point(270, 1)
+        Me.lblAttackPower.Name = "lblAttackPower"
+        Me.lblAttackPower.Size = New System.Drawing.Size(30, 20)
+        Me.lblAttackPower.TabIndex = 38
+        Me.lblAttackPower.Text = "AP"
+        '
+        'txtAP
+        '
+        Me.txtAP.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtAP.Enabled = False
+        Me.txtAP.Location = New System.Drawing.Point(269, 23)
+        Me.txtAP.Name = "txtAP"
+        Me.txtAP.Size = New System.Drawing.Size(33, 20)
+        Me.txtAP.TabIndex = 36
+        Me.txtAP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'pnlItemTracker
         '
@@ -664,66 +712,30 @@ Partial Class DWRTackerWindow
         Me.pnlRunPercentage.Size = New System.Drawing.Size(386, 100)
         Me.pnlRunPercentage.TabIndex = 46
         '
-        'lblRedDragRunPercent
+        'lblDL2RunPercentOut
         '
-        Me.lblRedDragRunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblRedDragRunPercent.AutoSize = True
-        Me.lblRedDragRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRedDragRunPercent.Location = New System.Drawing.Point(42, 68)
-        Me.lblRedDragRunPercent.Name = "lblRedDragRunPercent"
-        Me.lblRedDragRunPercent.Size = New System.Drawing.Size(82, 20)
-        Me.lblRedDragRunPercent.TabIndex = 0
-        Me.lblRedDragRunPercent.Text = "R. Dragon"
-        Me.lblRedDragRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblDL2RunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblDL2RunPercentOut.BackColor = System.Drawing.SystemColors.Window
+        Me.lblDL2RunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblDL2RunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDL2RunPercentOut.Location = New System.Drawing.Point(285, 67)
+        Me.lblDL2RunPercentOut.Name = "lblDL2RunPercentOut"
+        Me.lblDL2RunPercentOut.Size = New System.Drawing.Size(69, 22)
+        Me.lblDL2RunPercentOut.TabIndex = 8
+        Me.lblDL2RunPercentOut.Text = "Label6"
+        Me.lblDL2RunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblRunPercent
+        'lblDL2RunPercent
         '
-        Me.lblRunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblRunPercent.AutoSize = True
-        Me.lblRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRunPercent.Location = New System.Drawing.Point(95, 6)
-        Me.lblRunPercent.Name = "lblRunPercent"
-        Me.lblRunPercent.Size = New System.Drawing.Size(196, 20)
-        Me.lblRunPercent.TabIndex = 1
-        Me.lblRunPercent.Text = "Run/Back Attack Chances"
-        '
-        'lblRedDragRunPercentOut
-        '
-        Me.lblRedDragRunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblRedDragRunPercentOut.BackColor = System.Drawing.SystemColors.Window
-        Me.lblRedDragRunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblRedDragRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRedDragRunPercentOut.Location = New System.Drawing.Point(130, 67)
-        Me.lblRedDragRunPercentOut.Name = "lblRedDragRunPercentOut"
-        Me.lblRedDragRunPercentOut.Size = New System.Drawing.Size(69, 22)
-        Me.lblRedDragRunPercentOut.TabIndex = 2
-        Me.lblRedDragRunPercentOut.Text = "Label1"
-        Me.lblRedDragRunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblArmKnightRunPercentOut
-        '
-        Me.lblArmKnightRunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblArmKnightRunPercentOut.BackColor = System.Drawing.SystemColors.Window
-        Me.lblArmKnightRunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblArmKnightRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblArmKnightRunPercentOut.Location = New System.Drawing.Point(130, 35)
-        Me.lblArmKnightRunPercentOut.Name = "lblArmKnightRunPercentOut"
-        Me.lblArmKnightRunPercentOut.Size = New System.Drawing.Size(69, 22)
-        Me.lblArmKnightRunPercentOut.TabIndex = 4
-        Me.lblArmKnightRunPercentOut.Text = "Label2"
-        Me.lblArmKnightRunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'lblArmKnightRunPercent
-        '
-        Me.lblArmKnightRunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblArmKnightRunPercent.AutoSize = True
-        Me.lblArmKnightRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblArmKnightRunPercent.Location = New System.Drawing.Point(33, 36)
-        Me.lblArmKnightRunPercent.Name = "lblArmKnightRunPercent"
-        Me.lblArmKnightRunPercent.Size = New System.Drawing.Size(91, 20)
-        Me.lblArmKnightRunPercent.TabIndex = 3
-        Me.lblArmKnightRunPercent.Text = "Arm. Knight"
-        Me.lblArmKnightRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblDL2RunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblDL2RunPercent.AutoSize = True
+        Me.lblDL2RunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDL2RunPercent.Location = New System.Drawing.Point(236, 68)
+        Me.lblDL2RunPercent.Name = "lblDL2RunPercent"
+        Me.lblDL2RunPercent.Size = New System.Drawing.Size(43, 20)
+        Me.lblDL2RunPercent.TabIndex = 7
+        Me.lblDL2RunPercent.Text = "DL 2"
+        Me.lblDL2RunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lblDL1RunPercentOut
         '
@@ -750,72 +762,102 @@ Partial Class DWRTackerWindow
         Me.lblDL1RunPercent.Text = "DL 1"
         Me.lblDL1RunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'lblDL2RunPercentOut
+        'lblArmKnightRunPercentOut
         '
-        Me.lblDL2RunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblDL2RunPercentOut.BackColor = System.Drawing.SystemColors.Window
-        Me.lblDL2RunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblDL2RunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDL2RunPercentOut.Location = New System.Drawing.Point(285, 67)
-        Me.lblDL2RunPercentOut.Name = "lblDL2RunPercentOut"
-        Me.lblDL2RunPercentOut.Size = New System.Drawing.Size(69, 22)
-        Me.lblDL2RunPercentOut.TabIndex = 8
-        Me.lblDL2RunPercentOut.Text = "Label6"
-        Me.lblDL2RunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblArmKnightRunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblArmKnightRunPercentOut.BackColor = System.Drawing.SystemColors.Window
+        Me.lblArmKnightRunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblArmKnightRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArmKnightRunPercentOut.Location = New System.Drawing.Point(130, 35)
+        Me.lblArmKnightRunPercentOut.Name = "lblArmKnightRunPercentOut"
+        Me.lblArmKnightRunPercentOut.Size = New System.Drawing.Size(69, 22)
+        Me.lblArmKnightRunPercentOut.TabIndex = 4
+        Me.lblArmKnightRunPercentOut.Text = "Label2"
+        Me.lblArmKnightRunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblDL2RunPercent
+        'lblArmKnightRunPercent
         '
-        Me.lblDL2RunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblDL2RunPercent.AutoSize = True
-        Me.lblDL2RunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDL2RunPercent.Location = New System.Drawing.Point(236, 68)
-        Me.lblDL2RunPercent.Name = "lblDL2RunPercent"
-        Me.lblDL2RunPercent.Size = New System.Drawing.Size(43, 20)
-        Me.lblDL2RunPercent.TabIndex = 7
-        Me.lblDL2RunPercent.Text = "DL 2"
-        Me.lblDL2RunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lblArmKnightRunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblArmKnightRunPercent.AutoSize = True
+        Me.lblArmKnightRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblArmKnightRunPercent.Location = New System.Drawing.Point(33, 36)
+        Me.lblArmKnightRunPercent.Name = "lblArmKnightRunPercent"
+        Me.lblArmKnightRunPercent.Size = New System.Drawing.Size(91, 20)
+        Me.lblArmKnightRunPercent.TabIndex = 3
+        Me.lblArmKnightRunPercent.Text = "Arm. Knight"
+        Me.lblArmKnightRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'lblAttackPower
+        'lblRedDragRunPercentOut
         '
-        Me.lblAttackPower.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.lblAttackPower.AutoSize = True
-        Me.lblAttackPower.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAttackPower.Location = New System.Drawing.Point(270, 1)
-        Me.lblAttackPower.Name = "lblAttackPower"
-        Me.lblAttackPower.Size = New System.Drawing.Size(30, 20)
-        Me.lblAttackPower.TabIndex = 38
-        Me.lblAttackPower.Text = "AP"
+        Me.lblRedDragRunPercentOut.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblRedDragRunPercentOut.BackColor = System.Drawing.SystemColors.Window
+        Me.lblRedDragRunPercentOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblRedDragRunPercentOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRedDragRunPercentOut.Location = New System.Drawing.Point(130, 67)
+        Me.lblRedDragRunPercentOut.Name = "lblRedDragRunPercentOut"
+        Me.lblRedDragRunPercentOut.Size = New System.Drawing.Size(69, 22)
+        Me.lblRedDragRunPercentOut.TabIndex = 2
+        Me.lblRedDragRunPercentOut.Text = "Label1"
+        Me.lblRedDragRunPercentOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'txtAP
+        'lblRunPercent
         '
-        Me.txtAP.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtAP.Enabled = False
-        Me.txtAP.Location = New System.Drawing.Point(269, 23)
-        Me.txtAP.Name = "txtAP"
-        Me.txtAP.Size = New System.Drawing.Size(33, 20)
-        Me.txtAP.TabIndex = 36
-        Me.txtAP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.lblRunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblRunPercent.AutoSize = True
+        Me.lblRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRunPercent.Location = New System.Drawing.Point(95, 6)
+        Me.lblRunPercent.Name = "lblRunPercent"
+        Me.lblRunPercent.Size = New System.Drawing.Size(196, 20)
+        Me.lblRunPercent.TabIndex = 1
+        Me.lblRunPercent.Text = "Run/Back Attack Chances"
         '
-        'lblDefense
+        'lblRedDragRunPercent
         '
-        Me.lblDefense.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.lblDefense.AutoSize = True
-        Me.lblDefense.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDefense.Location = New System.Drawing.Point(301, 1)
-        Me.lblDefense.Name = "lblDefense"
-        Me.lblDefense.Size = New System.Drawing.Size(42, 20)
-        Me.lblDefense.TabIndex = 41
-        Me.lblDefense.Text = "DEF"
+        Me.lblRedDragRunPercent.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblRedDragRunPercent.AutoSize = True
+        Me.lblRedDragRunPercent.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRedDragRunPercent.Location = New System.Drawing.Point(42, 68)
+        Me.lblRedDragRunPercent.Name = "lblRedDragRunPercent"
+        Me.lblRedDragRunPercent.Size = New System.Drawing.Size(82, 20)
+        Me.lblRedDragRunPercent.TabIndex = 0
+        Me.lblRedDragRunPercent.Text = "R. Dragon"
+        Me.lblRedDragRunPercent.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'txtDefense
+        'lblDLFightSimHeader
         '
-        Me.txtDefense.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.txtDefense.Enabled = False
-        Me.txtDefense.Location = New System.Drawing.Point(304, 23)
-        Me.txtDefense.Name = "txtDefense"
-        Me.txtDefense.Size = New System.Drawing.Size(33, 20)
-        Me.txtDefense.TabIndex = 39
-        Me.txtDefense.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.lblDLFightSimHeader.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.lblDLFightSimHeader.AutoSize = True
+        Me.lblDLFightSimHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDLFightSimHeader.Location = New System.Drawing.Point(208, 52)
+        Me.lblDLFightSimHeader.Name = "lblDLFightSimHeader"
+        Me.lblDLFightSimHeader.Size = New System.Drawing.Size(89, 20)
+        Me.lblDLFightSimHeader.TabIndex = 42
+        Me.lblDLFightSimHeader.Text = "Sim % /DN:"
+        Me.lblDLFightSimHeader.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txtDragonLordSimChance
+        '
+        Me.txtDragonLordSimChance.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtDragonLordSimChance.Enabled = False
+        Me.txtDragonLordSimChance.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDragonLordSimChance.Location = New System.Drawing.Point(299, 52)
+        Me.txtDragonLordSimChance.Name = "txtDragonLordSimChance"
+        Me.txtDragonLordSimChance.Size = New System.Drawing.Size(30, 22)
+        Me.txtDragonLordSimChance.TabIndex = 41
+        Me.txtDragonLordSimChance.Text = "N/A"
+        Me.txtDragonLordSimChance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txtDragonLordSimChanceDN
+        '
+        Me.txtDragonLordSimChanceDN.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.txtDragonLordSimChanceDN.Enabled = False
+        Me.txtDragonLordSimChanceDN.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDragonLordSimChanceDN.Location = New System.Drawing.Point(332, 52)
+        Me.txtDragonLordSimChanceDN.Name = "txtDragonLordSimChanceDN"
+        Me.txtDragonLordSimChanceDN.Size = New System.Drawing.Size(30, 22)
+        Me.txtDragonLordSimChanceDN.TabIndex = 43
+        Me.txtDragonLordSimChanceDN.Text = "N/A"
+        Me.txtDragonLordSimChanceDN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'DWRTackerWindow
         '
@@ -918,4 +960,7 @@ Partial Class DWRTackerWindow
     Friend WithEvents txtDefense As TextBox
     Friend WithEvents lblAttackPower As Label
     Friend WithEvents txtAP As TextBox
+    Friend WithEvents lblDLFightSimHeader As Label
+    Friend WithEvents txtDragonLordSimChance As TextBox
+    Friend WithEvents txtDragonLordSimChanceDN As TextBox
 End Class

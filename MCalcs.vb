@@ -109,7 +109,7 @@ Public Module FightSimulator
         If intCurrentHP <= 0 Then
             Return False
         Else
-            Return SimulateDL1Fight(intHeroAP, intHeroDef, intHeroAgil, intCurrentHP, intHeroMP, intNumberOfHerbs)
+            Return SimulateDL2Fight(intHeroAP, intHeroDef, intHeroAgil, intCurrentHP, intHeroMP, intNumberOfHerbs)
         End If
 
     End Function
@@ -119,32 +119,111 @@ Public Module FightSimulator
     Public Function SimulateDL1Fight(intHeroAP As Integer,
                                     intHeroDef As Integer,
                                     intHeroAgil As Integer,
-                                    intHeroHP As Integer,
+                                    intHeroMaxHP As Integer,
                                     intHeroMP As Integer,
                                     intNumberOfHerbs As Integer) As Integer
         Dim DL1HP As Integer = GetRandomDecimal(75, 100)
         Dim DL1AP As Integer = 90
         Dim DL1Agil As Integer = 75
+        Dim decBackAttackPercent As Decimal = 17 / (2 * intHeroAgil)
         Dim intCurrentHerbs As Integer = intNumberOfHerbs
-        Dim intCurrentHP As Integer = intHeroHP
+        Dim intCurrentHP As Integer = intHeroMaxHP
         Dim intCurrentMP As Integer = intHeroMP
 
         'Back Attack?
-        'If GetRandomDecimal() Then
+        If GetRandomDecimal(1, 100) < decBackAttackPercent * 100 Then
+            intCurrentHP -= DL1TurnDamage(intHeroDef, DL1AP)
+            If IsDead(intCurrentHP) Then
+                Return 0
+            End If
+        End If
 
+        While IsDead(DL1HP) = False AndAlso IsDead(intCurrentHP) = False
+            If (intHeroMaxHP - intCurrentHP) >= 15 AndAlso intNumberOfHerbs > 0 Then
+                'Take Herb if lost 15 hp
+                intCurrentHerbs -= 1
+                intCurrentHP = TakeHerb(intCurrentHP)
+                If intCurrentHP > intHeroMaxHP Then intCurrentHP = intHeroMaxHP
+            Else
+                'otherwise attack
+                DL1HP -= GetAttackDamage(DL1Agil, intHeroAP)
+            End If
+
+
+            If IsDead(DL1HP) Then
+                Return intCurrentHP
+            End If
+
+            'DL1 attacks
+            intCurrentHP -= DL1TurnDamage(intHeroDef, DL1AP)
+
+            If IsDead(intCurrentHP) Then
+                Return 0
+            End If
+
+        End While
+        Return intCurrentHP
     End Function
 
-
+    Private Function IsDead(intHP As Integer) As Boolean
+        If intHP <= 0 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 
     Public Function SimulateDL2Fight(intHeroAP As Integer,
                                     intHeroDef As Integer,
                                     intHeroAgil As Integer,
-                                    intHeroHP As Integer,
+                                    intHeroMaxHP As Integer,
                                     intHeroMP As Integer,
                                     intNumberOfHerbs As Integer) As Boolean
         Dim DL2HP As Integer = GetRandomDecimal(150, 165)
         Dim DL2AP As Integer = 140
         Dim DL2Agil As Integer = 200
+        Dim decBackAttackPercent As Decimal = 50 / (2 * intHeroAgil)
+        Dim intCurrentHerbs As Integer = intNumberOfHerbs
+        Dim intCurrentHP As Integer = intHeroMaxHP
+        Dim intCurrentMP As Integer = intHeroMP
+
+
+        'Back Attack?
+        If GetRandomDecimal(1, 100) < decBackAttackPercent * 100 Then
+            intCurrentHP -= DL2TurnDamage(intHeroDef, DL2AP)
+            If IsDead(intCurrentHP) Then
+                Return False
+            End If
+        End If
+
+        While IsDead(DL2HP) = False AndAlso IsDead(intCurrentHP) = False
+            If intCurrentHP <= 48 AndAlso intCurrentMP >= 8 Then
+                'Do Healmore
+                intCurrentMP -= 8
+                intCurrentHP += GetRandomDecimal(85, 101)
+                If intCurrentHP > intHeroMaxHP Then intCurrentHP = intHeroMaxHP
+            Else
+                'otherwise attack
+                DL2HP -= GetAttackDamage(DL2Agil, intHeroAP)
+            End If
+
+
+            If IsDead(DL2HP) Then
+                Return True
+            End If
+
+            'DL1 attacks
+            intCurrentHP -= DL2TurnDamage(intHeroDef, DL2AP)
+
+            If IsDead(intCurrentHP) Then
+                Return False
+            End If
+
+        End While
+
+
+        Return True
+
 
 
     End Function
@@ -183,8 +262,14 @@ Public Module FightSimulator
     Public Function GetAttackDamage(intDefenderDefense As Integer, intAttackerAttackPower As Integer) As Integer
         Dim intMinAttack As Integer = Math.Floor((intAttackerAttackPower / 4) - (intDefenderDefense / 8))
         Dim intMaxAttack As Integer = Math.Floor((intAttackerAttackPower / 2) - (intDefenderDefense / 4))
+        If intMaxAttack < 0 Then intMinAttack = 0
+        If intMaxAttack < 0 Then intMaxAttack = 0
 
-        Return (GetRandomDecimal(intMinAttack, intMaxAttack) + 1)
+        Dim intDamage As Integer = (GetRandomDecimal(intMinAttack, intMaxAttack) + 1)
+        If intDamage = 0 Then
+            intDamage = GetRandomDecimal(0, 1)
+        End If
+        Return intDamage
     End Function
 
     Public Function GetRandomDecimal(decLowerBound As Decimal, decUpperBound As Decimal) As Decimal
@@ -200,7 +285,7 @@ Public Module FightSimulator
         intRandomUpper = decUpperBound * intMultiplier
         intRandomLower = decLowerBound * intMultiplier
 
-        Return rng.Next(intRandomUpper, intRandomLower) / intMultiplier
+        Return rng.Next(intRandomLower, intRandomUpper) / intMultiplier
 
     End Function
 

@@ -108,6 +108,9 @@ Partial Class Settings
         Me.btnResetToFactory = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.chkMHImages = New System.Windows.Forms.CheckBox()
+        Me.nudNumberOfSimulations = New System.Windows.Forms.NumericUpDown()
+        Me.lblSimulations = New System.Windows.Forms.Label()
+        Me.btnSimulateDLFights = New System.Windows.Forms.Button()
         CType(Me.nudTimerFontSize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,6 +133,7 @@ Partial Class Settings
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.tpAdmin.SuspendLayout()
+        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmbTimerFont
@@ -496,6 +500,7 @@ Partial Class Settings
         '
         'tpControls
         '
+        Me.tpControls.Controls.Add(Me.btnSimulateDLFights)
         Me.tpControls.Controls.Add(Me.btnStartPauseTimer)
         Me.tpControls.Controls.Add(Me.btnResetStats)
         Me.tpControls.Controls.Add(Me.nudMP)
@@ -844,6 +849,8 @@ Partial Class Settings
         '
         'tbOther
         '
+        Me.tbOther.Controls.Add(Me.lblSimulations)
+        Me.tbOther.Controls.Add(Me.nudNumberOfSimulations)
         Me.tbOther.Controls.Add(Me.chkMHImages)
         Me.tbOther.Controls.Add(Me.chkEnableRunPercent)
         Me.tbOther.Controls.Add(Me.GroupBox4)
@@ -881,7 +888,7 @@ Partial Class Settings
         Me.GroupBox4.Controls.Add(Me.btnOpenBGImgSelector)
         Me.GroupBox4.Controls.Add(Me.chkBackgroundImage)
         Me.GroupBox4.Controls.Add(Me.txtImageFileLocation)
-        Me.GroupBox4.Location = New System.Drawing.Point(8, 103)
+        Me.GroupBox4.Location = New System.Drawing.Point(8, 128)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(315, 62)
         Me.GroupBox4.TabIndex = 43
@@ -925,9 +932,9 @@ Partial Class Settings
         Me.GroupBox3.Controls.Add(Me.cmbOtherLabelFont)
         Me.GroupBox3.Controls.Add(Me.cmbOtherLabelColor)
         Me.GroupBox3.Controls.Add(Me.Label23)
-        Me.GroupBox3.Location = New System.Drawing.Point(8, 165)
+        Me.GroupBox3.Location = New System.Drawing.Point(8, 191)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(315, 90)
+        Me.GroupBox3.Size = New System.Drawing.Size(315, 74)
         Me.GroupBox3.TabIndex = 42
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Other Labels"
@@ -935,7 +942,7 @@ Partial Class Settings
         'btnMatchOtherLabelsToTimer
         '
         Me.btnMatchOtherLabelsToTimer.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnMatchOtherLabelsToTimer.Location = New System.Drawing.Point(251, 24)
+        Me.btnMatchOtherLabelsToTimer.Location = New System.Drawing.Point(251, 17)
         Me.btnMatchOtherLabelsToTimer.Name = "btnMatchOtherLabelsToTimer"
         Me.btnMatchOtherLabelsToTimer.Size = New System.Drawing.Size(58, 48)
         Me.btnMatchOtherLabelsToTimer.TabIndex = 37
@@ -945,7 +952,7 @@ Partial Class Settings
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(9, 28)
+        Me.Label22.Location = New System.Drawing.Point(9, 21)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(31, 13)
         Me.Label22.TabIndex = 35
@@ -957,7 +964,7 @@ Partial Class Settings
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbOtherLabelFont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbOtherLabelFont.FormattingEnabled = True
-        Me.cmbOtherLabelFont.Location = New System.Drawing.Point(77, 24)
+        Me.cmbOtherLabelFont.Location = New System.Drawing.Point(77, 17)
         Me.cmbOtherLabelFont.Name = "cmbOtherLabelFont"
         Me.cmbOtherLabelFont.Size = New System.Drawing.Size(168, 21)
         Me.cmbOtherLabelFont.TabIndex = 33
@@ -969,7 +976,7 @@ Partial Class Settings
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbOtherLabelColor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbOtherLabelColor.FormattingEnabled = True
-        Me.cmbOtherLabelColor.Location = New System.Drawing.Point(77, 51)
+        Me.cmbOtherLabelColor.Location = New System.Drawing.Point(77, 44)
         Me.cmbOtherLabelColor.Name = "cmbOtherLabelColor"
         Me.cmbOtherLabelColor.Size = New System.Drawing.Size(168, 21)
         Me.cmbOtherLabelColor.TabIndex = 34
@@ -978,7 +985,7 @@ Partial Class Settings
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(9, 55)
+        Me.Label23.Location = New System.Drawing.Point(9, 48)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(58, 13)
         Me.Label23.TabIndex = 36
@@ -1102,6 +1109,35 @@ Partial Class Settings
         Me.chkMHImages.Text = "MisterHomes Images"
         Me.chkMHImages.UseVisualStyleBackColor = True
         '
+        'nudNumberOfSimulations
+        '
+        Me.nudNumberOfSimulations.Increment = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudNumberOfSimulations.Location = New System.Drawing.Point(108, 108)
+        Me.nudNumberOfSimulations.Maximum = New Decimal(New Integer() {-1530494976, 232830, 0, 0})
+        Me.nudNumberOfSimulations.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudNumberOfSimulations.Name = "nudNumberOfSimulations"
+        Me.nudNumberOfSimulations.Size = New System.Drawing.Size(183, 20)
+        Me.nudNumberOfSimulations.TabIndex = 46
+        Me.nudNumberOfSimulations.Value = New Decimal(New Integer() {10000, 0, 0, 0})
+        '
+        'lblSimulations
+        '
+        Me.lblSimulations.AutoSize = True
+        Me.lblSimulations.Location = New System.Drawing.Point(17, 110)
+        Me.lblSimulations.Name = "lblSimulations"
+        Me.lblSimulations.Size = New System.Drawing.Size(85, 13)
+        Me.lblSimulations.TabIndex = 47
+        Me.lblSimulations.Text = "# of Simulations:"
+        '
+        'btnSimulateDLFights
+        '
+        Me.btnSimulateDLFights.Location = New System.Drawing.Point(254, 176)
+        Me.btnSimulateDLFights.Name = "btnSimulateDLFights"
+        Me.btnSimulateDLFights.Size = New System.Drawing.Size(49, 30)
+        Me.btnSimulateDLFights.TabIndex = 40
+        Me.btnSimulateDLFights.Text = "Sim DL"
+        Me.btnSimulateDLFights.UseVisualStyleBackColor = True
+        '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1140,6 +1176,7 @@ Partial Class Settings
         Me.GroupBox3.PerformLayout()
         Me.tpAdmin.ResumeLayout(False)
         Me.tpAdmin.PerformLayout()
+        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1230,4 +1267,7 @@ Partial Class Settings
     Friend WithEvents chkEnableFactoryReset As CheckBox
     Friend WithEvents btnResetToFactory As Button
     Friend WithEvents chkMHImages As CheckBox
+    Friend WithEvents btnSimulateDLFights As Button
+    Friend WithEvents lblSimulations As Label
+    Friend WithEvents nudNumberOfSimulations As NumericUpDown
 End Class

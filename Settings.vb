@@ -403,6 +403,7 @@ Public Class Settings
         frmTracker.chkAssumeErdricksSword.ForeColor = clrOtherLabels
         frmTracker.lblAverageAttacks.ForeColor = clrOtherLabels
         frmTracker.lblHealmoreHeader.ForeColor = clrOtherLabels
+        frmTracker.lblDLFightSimHeader.ForeColor = clrOtherLabels
         frmTracker.lblDeathNecklaceHPHeader.ForeColor = clrOtherLabels
         frmTracker.lblArmKnightRunPercent.ForeColor = clrOtherLabels
         frmTracker.lblRedDragRunPercent.ForeColor = clrOtherLabels
@@ -423,6 +424,7 @@ Public Class Settings
         frmTracker.chkAssumeErdricksSword.Font = OtherLabelFont
         frmTracker.lblAverageAttacks.Font = OtherLabelFont
         frmTracker.lblHealmoreHeader.Font = OtherLabelFont
+        frmTracker.lblDLFightSimHeader.Font = OtherLabelFont
         frmTracker.lblDeathNecklaceHPHeader.Font = OtherLabelFont
         frmTracker.lblArmKnightRunPercent.Font = OtherLabelFont
         frmTracker.lblRedDragRunPercent.Font = OtherLabelFont
@@ -910,5 +912,10 @@ Public Class Settings
         InitializeTrackerItems()
         My.Settings.Save()
         'frmTracker.SetTrackerImages()
+    End Sub
+
+    Private Sub btnSimulateDLFights_Click(sender As Object, e As EventArgs) Handles btnSimulateDLFights.Click
+        frmTracker.txtDragonLordSimChance.Text = SimulateDLFights(CalculateAttackPower(frmTracker), CalculateDefense(frmTracker), My.Settings.intAgility, My.Settings.intHP, My.Settings.intMP, 6, nudNumberOfSimulations.Value)
+        frmTracker.txtDragonLordSimChanceDN.Text = SimulateDLFights((CalculateAttackPower(frmTracker)) + 10, CalculateDefense(frmTracker), My.Settings.intAgility, Math.Floor(My.Settings.intHP * 0.75), My.Settings.intMP, 6, nudNumberOfSimulations.Value)
     End Sub
 End Class

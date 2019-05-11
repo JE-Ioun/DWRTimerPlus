@@ -76,24 +76,9 @@
         frmTracker.txtLastAgility.Text = My.Settings.intLastAgility
         frmTracker.txtLastHP.Text = My.Settings.intLastHP
         frmTracker.txtLastMP.Text = My.Settings.intLastMP
-        Dim intAttackPower As Integer = My.Settings.intPower
-        Dim intDefensePower As Integer = Math.Floor(My.Settings.intAgility / 2)
-        intDefensePower += DirectCast(frmTracker.pbArmor.Tag, StatItem).intStatValue
-        intDefensePower += DirectCast(frmTracker.pbShields.Tag, StatItem).intStatValue
+        Dim intAttackPower As Integer = CalculateAttackPower(frmTracker)
 
-        If frmTracker.chkAssumeErdricksSword.Checked Then
-            intAttackPower += 40
-        Else
-            intAttackPower += DirectCast(frmTracker.pbWeapons.Tag, StatItem).intStatValue
-        End If
-        If frmTracker.chkAssumeFightersRing.Checked OrElse frmTracker.pbRing.Tag = "fighters_ring.png" Then
-            intAttackPower += 2
-        End If
-        If frmTracker.pbScale.Tag = "dragon_scale.png" Then
-            intDefensePower += 2
-        End If
-        frmTracker.txtDefense.Text = intDefensePower
-
+        frmTracker.txtDefense.Text = CalculateDefense(frmTracker)
         frmTracker.txtAP.Text = intAttackPower
         frmTracker.txtPower.Text = My.Settings.intPower
         frmTracker.txtAgility.Text = My.Settings.intAgility
@@ -116,6 +101,31 @@
         UpdateRunPercentages(frmTracker)
         My.Settings.Save()
     End Sub
+
+    Public Function CalculateDefense(frmTracker As DWRTackerWindow) As Integer
+        Dim intDefensePower As Integer = Math.Floor(My.Settings.intAgility / 2)
+        intDefensePower += DirectCast(frmTracker.pbArmor.Tag, StatItem).intStatValue
+        intDefensePower += DirectCast(frmTracker.pbShields.Tag, StatItem).intStatValue
+
+
+        If frmTracker.pbScale.Tag = "dragon_scale.png" Then
+            intDefensePower += 2
+        End If
+        Return intDefensePower
+    End Function
+
+    Public Function CalculateAttackPower(frmTracker As DWRTackerWindow)
+        Dim intAttackPower As Integer = My.Settings.intPower
+        If frmTracker.chkAssumeErdricksSword.Checked Then
+            intAttackPower += 40
+        Else
+            intAttackPower += DirectCast(frmTracker.pbWeapons.Tag, StatItem).intStatValue
+        End If
+        If frmTracker.chkAssumeFightersRing.Checked OrElse frmTracker.pbRing.Tag = "fighters_ring.png" Then
+            intAttackPower += 2
+        End If
+        Return intAttackPower
+    End Function
 
     Private Function CalculateAverageHits(intAttackPower As Integer) As Integer
         Dim intMaxDamage As Integer = Math.Floor((intAttackPower - 100) / 2)
