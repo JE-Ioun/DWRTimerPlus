@@ -86,6 +86,7 @@ Partial Class Settings
         Me.nudLine1FontSize = New System.Windows.Forms.NumericUpDown()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.tbOther = New System.Windows.Forms.TabPage()
+        Me.chkEnableRunPercent = New System.Windows.Forms.CheckBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btnOpenBGImgSelector = New System.Windows.Forms.Button()
         Me.chkBackgroundImage = New System.Windows.Forms.CheckBox()
@@ -102,11 +103,11 @@ Partial Class Settings
         Me.chkEnableCalculation = New System.Windows.Forms.CheckBox()
         Me.chkEnableStats = New System.Windows.Forms.CheckBox()
         Me.btnOpenMapForm = New System.Windows.Forms.Button()
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.chkEnableRunPercent = New System.Windows.Forms.CheckBox()
         Me.tpAdmin = New System.Windows.Forms.TabPage()
-        Me.btnResetToFactory = New System.Windows.Forms.Button()
         Me.chkEnableFactoryReset = New System.Windows.Forms.CheckBox()
+        Me.btnResetToFactory = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.chkMHImages = New System.Windows.Forms.CheckBox()
         CType(Me.nudTimerFontSize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -843,6 +844,7 @@ Partial Class Settings
         '
         'tbOther
         '
+        Me.tbOther.Controls.Add(Me.chkMHImages)
         Me.tbOther.Controls.Add(Me.chkEnableRunPercent)
         Me.tbOther.Controls.Add(Me.GroupBox4)
         Me.tbOther.Controls.Add(Me.GroupBox3)
@@ -859,6 +861,19 @@ Partial Class Settings
         Me.tbOther.TabIndex = 2
         Me.tbOther.Text = "Extras"
         Me.tbOther.UseVisualStyleBackColor = True
+        '
+        'chkEnableRunPercent
+        '
+        Me.chkEnableRunPercent.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.chkEnableRunPercent.AutoSize = True
+        Me.chkEnableRunPercent.Checked = True
+        Me.chkEnableRunPercent.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkEnableRunPercent.Location = New System.Drawing.Point(20, 90)
+        Me.chkEnableRunPercent.Name = "chkEnableRunPercent"
+        Me.chkEnableRunPercent.Size = New System.Drawing.Size(142, 17)
+        Me.chkEnableRunPercent.TabIndex = 44
+        Me.chkEnableRunPercent.Text = "Enable Run/Back Atk %"
+        Me.chkEnableRunPercent.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
@@ -1040,23 +1055,6 @@ Partial Class Settings
         Me.btnOpenMapForm.Text = "Show Maps Page"
         Me.btnOpenMapForm.UseVisualStyleBackColor = True
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'chkEnableRunPercent
-        '
-        Me.chkEnableRunPercent.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.chkEnableRunPercent.AutoSize = True
-        Me.chkEnableRunPercent.Checked = True
-        Me.chkEnableRunPercent.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkEnableRunPercent.Location = New System.Drawing.Point(20, 90)
-        Me.chkEnableRunPercent.Name = "chkEnableRunPercent"
-        Me.chkEnableRunPercent.Size = New System.Drawing.Size(204, 17)
-        Me.chkEnableRunPercent.TabIndex = 44
-        Me.chkEnableRunPercent.Text = "Enable Run/Back Attack Percentage"
-        Me.chkEnableRunPercent.UseVisualStyleBackColor = True
-        '
         'tpAdmin
         '
         Me.tpAdmin.Controls.Add(Me.chkEnableFactoryReset)
@@ -1069,6 +1067,16 @@ Partial Class Settings
         Me.tpAdmin.Text = "Admin"
         Me.tpAdmin.UseVisualStyleBackColor = True
         '
+        'chkEnableFactoryReset
+        '
+        Me.chkEnableFactoryReset.AutoSize = True
+        Me.chkEnableFactoryReset.Location = New System.Drawing.Point(114, 23)
+        Me.chkEnableFactoryReset.Name = "chkEnableFactoryReset"
+        Me.chkEnableFactoryReset.Size = New System.Drawing.Size(59, 17)
+        Me.chkEnableFactoryReset.TabIndex = 1
+        Me.chkEnableFactoryReset.Text = "Enable"
+        Me.chkEnableFactoryReset.UseVisualStyleBackColor = True
+        '
         'btnResetToFactory
         '
         Me.btnResetToFactory.Enabled = False
@@ -1079,15 +1087,20 @@ Partial Class Settings
         Me.btnResetToFactory.Text = "Reset To Factory"
         Me.btnResetToFactory.UseVisualStyleBackColor = True
         '
-        'chkEnableFactoryReset
+        'OpenFileDialog1
         '
-        Me.chkEnableFactoryReset.AutoSize = True
-        Me.chkEnableFactoryReset.Location = New System.Drawing.Point(114, 23)
-        Me.chkEnableFactoryReset.Name = "chkEnableFactoryReset"
-        Me.chkEnableFactoryReset.Size = New System.Drawing.Size(59, 17)
-        Me.chkEnableFactoryReset.TabIndex = 1
-        Me.chkEnableFactoryReset.Text = "Enable"
-        Me.chkEnableFactoryReset.UseVisualStyleBackColor = True
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'chkMHImages
+        '
+        Me.chkMHImages.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.chkMHImages.AutoSize = True
+        Me.chkMHImages.Location = New System.Drawing.Point(171, 90)
+        Me.chkMHImages.Name = "chkMHImages"
+        Me.chkMHImages.Size = New System.Drawing.Size(124, 17)
+        Me.chkMHImages.TabIndex = 45
+        Me.chkMHImages.Text = "MisterHomes Images"
+        Me.chkMHImages.UseVisualStyleBackColor = True
         '
         'Settings
         '
@@ -1216,4 +1229,5 @@ Partial Class Settings
     Friend WithEvents tpAdmin As TabPage
     Friend WithEvents chkEnableFactoryReset As CheckBox
     Friend WithEvents btnResetToFactory As Button
+    Friend WithEvents chkMHImages As CheckBox
 End Class

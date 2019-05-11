@@ -170,6 +170,7 @@ Public Class Settings
         nudTimerDecimalPlaces.Value = My.Settings.intDecimalPlaces
         nudLine1FontSize.Value = My.Settings.intLine1FontSize
         nudLine2FontSize.Value = My.Settings.intLine2FontSize
+        chkMHImages.Checked = My.Settings.blnMisterHomesImages
         If chkBackgroundImage.Checked AndAlso My.Settings.strBackgroundImageLocation.Length > 0 Then
             SetBackgroundImage(My.Settings.strBackgroundImageLocation)
         End If
@@ -435,6 +436,48 @@ Public Class Settings
     End Sub
 
     Private Sub InitializeTrackerItems()
+
+        If My.Settings.blnMisterHomesImages = True Then
+            If My.Settings.strStaffTag.Contains("_h") = False Then
+                My.Settings.strStaffTag = My.Settings.strStaffTag.Replace(".png", "_h.png")
+            End If
+
+            If My.Settings.strStonesTag.Contains("_h") = False Then
+                My.Settings.strStonesTag = My.Settings.strStonesTag.Replace(".png", "_h.png")
+            End If
+
+            If My.Settings.strHarpTag.Contains("_h") = False Then
+                My.Settings.strHarpTag = My.Settings.strHarpTag.Replace(".png", "_h.png")
+            End If
+
+            If My.Settings.strTokenTag.Contains("_h") = False Then
+                My.Settings.strTokenTag = My.Settings.strTokenTag.Replace(".png", "_h.png")
+            End If
+
+            If My.Settings.strDropTag.Contains("_h") = False Then
+                My.Settings.strDropTag = My.Settings.strDropTag.Replace(".png", "_h.png")
+            End If
+        Else
+            If My.Settings.strStaffTag.Contains("_h") Then
+                My.Settings.strStaffTag = My.Settings.strStaffTag.Replace("_h", "")
+            End If
+
+            If My.Settings.strStonesTag.Contains("_h") Then
+                My.Settings.strStonesTag = My.Settings.strStonesTag.Replace("_h", "")
+            End If
+
+            If My.Settings.strHarpTag.Contains("_h") Then
+                My.Settings.strHarpTag = My.Settings.strHarpTag.Replace("_h", "")
+            End If
+
+            If My.Settings.strTokenTag.Contains("_h") Then
+                My.Settings.strTokenTag = My.Settings.strTokenTag.Replace("_h", "")
+            End If
+
+            If My.Settings.strDropTag.Contains("_h") Then
+                My.Settings.strDropTag = My.Settings.strDropTag.Replace("_h", "")
+            End If
+        End If
         frmTracker.pbArmor.Tag = GetArmor(GetIndexInList(GetArmor, My.Settings.objArmorTag))
         frmTracker.pbWeapons.Tag = GetWeapons(GetIndexInList(GetWeapons, My.Settings.objWeaponTag))
         frmTracker.pbShields.Tag = GetShields(GetIndexInList(GetShields, My.Settings.objShieldTag))
@@ -442,13 +485,13 @@ Public Class Settings
         frmTracker.pbRing.Tag = My.Settings.strRingTag
         frmTracker.pbFlute.Tag = My.Settings.strFluteTag
         frmTracker.pbPrincess.Tag = My.Settings.strPrincessTag
-        frmTracker.pbHarp.Tag = My.Settings.strHarpTag
         frmTracker.pbKeys.Tag = My.Settings.strKeyTag
-        frmTracker.pbDrop.Tag = My.Settings.strDropTag
-        frmTracker.pbDN.Tag = My.Settings.strDNTag
+        frmTracker.pbHarp.Tag = My.Settings.strHarpTag
         frmTracker.pbStaff.Tag = My.Settings.strStaffTag
-        frmTracker.pbStones.Tag = My.Settings.strStonesTag
+        frmTracker.pbDrop.Tag = My.Settings.strDropTag
         frmTracker.pbToken.Tag = My.Settings.strTokenTag
+        frmTracker.pbDN.Tag = My.Settings.strDNTag
+        frmTracker.pbStones.Tag = My.Settings.strStonesTag
         frmTracker.SetTrackerImages()
     End Sub
 
@@ -860,5 +903,12 @@ Public Class Settings
             frmTracker.Width = intTrackerWidth
 
         End If
+    End Sub
+
+    Private Sub chkMHImages_CheckedChanged(sender As Object, e As EventArgs) Handles chkMHImages.CheckedChanged
+        My.Settings.blnMisterHomesImages = chkMHImages.Checked
+        InitializeTrackerItems()
+        My.Settings.Save()
+        'frmTracker.SetTrackerImages()
     End Sub
 End Class

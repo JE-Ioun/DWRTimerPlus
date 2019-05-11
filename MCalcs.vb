@@ -1,4 +1,5 @@
 ﻿Module MCalcs
+    Public Property rng As New Random()
     Public Function GetRunPercentage(intHeroAgility As Integer, objEnemy As Enemy)
         Dim lintHeroValues As New List(Of Integer)
         Dim lintEnemyValues As New List(Of Integer)
@@ -76,4 +77,139 @@
         DragonLord1
         DragonLord2
     End Enum
+
+End Module
+Public Module FightSimulator
+
+    Public Function SimulateDLFights(intHeroAP As Integer,
+                                    intHeroDef As Integer,
+                                    intHeroAgil As Integer,
+                                    intHeroHP As Integer,
+                                    intHeroMP As Integer,
+                                    intNumberOfHerbs As Integer,
+                                    intNumberOfSimulations As Integer) As Integer
+        Dim intNumberSuccesses As Integer = 0
+        For intIndex As Integer = 1 To intNumberOfSimulations
+            If SimulateDLFight(intHeroAP, intHeroDef, intHeroAgil, intHeroHP, intHeroMP, intNumberOfHerbs) Then
+                intNumberSuccesses += 1
+            End If
+        Next
+        Return Math.Floor((intNumberSuccesses / intNumberOfSimulations) * 100)
+    End Function
+
+    Public Function SimulateDLFight(intHeroAP As Integer,
+                                    intHeroDef As Integer,
+                                    intHeroAgil As Integer,
+                                    intHeroHP As Integer,
+                                    intHeroMP As Integer,
+                                    intNumberOfHerbs As Integer) As Boolean
+
+        Dim intCurrentHP As Integer = intHeroHP
+        intCurrentHP = SimulateDL1Fight(intHeroAP, intHeroDef, intHeroAgil, intHeroHP, intHeroMP, intNumberOfHerbs)
+        If intCurrentHP <= 0 Then
+            Return False
+        Else
+            Return SimulateDL1Fight(intHeroAP, intHeroDef, intHeroAgil, intCurrentHP, intHeroMP, intNumberOfHerbs)
+        End If
+
+    End Function
+
+
+
+    Public Function SimulateDL1Fight(intHeroAP As Integer,
+                                    intHeroDef As Integer,
+                                    intHeroAgil As Integer,
+                                    intHeroHP As Integer,
+                                    intHeroMP As Integer,
+                                    intNumberOfHerbs As Integer) As Integer
+        Dim DL1HP As Integer = GetRandomDecimal(75, 100)
+        Dim DL1AP As Integer = 90
+        Dim DL1Agil As Integer = 75
+        Dim intCurrentHerbs As Integer = intNumberOfHerbs
+        Dim intCurrentHP As Integer = intHeroHP
+        Dim intCurrentMP As Integer = intHeroMP
+
+        'Back Attack?
+        'If GetRandomDecimal() Then
+
+    End Function
+
+
+
+    Public Function SimulateDL2Fight(intHeroAP As Integer,
+                                    intHeroDef As Integer,
+                                    intHeroAgil As Integer,
+                                    intHeroHP As Integer,
+                                    intHeroMP As Integer,
+                                    intNumberOfHerbs As Integer) As Boolean
+        Dim DL2HP As Integer = GetRandomDecimal(150, 165)
+        Dim DL2AP As Integer = 140
+        Dim DL2Agil As Integer = 200
+
+
+    End Function
+
+
+
+    Public Function TakeHerb(intCurrentHealth As Integer) As Integer
+        Return intCurrentHealth + (GetRandomDecimal(24, 32))
+    End Function
+
+    Public Function DL1TurnDamage(intHeroDefense As Integer, intDLAttackPower As Integer) As Integer
+        Dim intDamageDealt As Integer = 0
+        If GetRandomDecimal(1, 4) = 1 Then
+            Return 0
+
+        End If
+
+        If GetRandomDecimal(1, 4) < 4 Then
+            intDamageDealt = GetRandomDecimal(20, 31)
+        Else
+            intDamageDealt = GetAttackDamage(intHeroDefense, intDLAttackPower)
+        End If
+        Return intDamageDealt
+    End Function
+    Public Function DL2TurnDamage(intHeroDefense As Integer, intDLAttackPower As Integer) As Integer
+        Dim intDamageDealt As Integer = 0
+        If GetRandomDecimal(1, 2) = 1 Then
+            intDamageDealt = 40 + (2 * GetRandomDecimal(1, 4))
+
+        Else
+            intDamageDealt = GetAttackDamage(intHeroDefense, intDLAttackPower)
+        End If
+        Return intDamageDealt
+    End Function
+
+    Public Function GetAttackDamage(intDefenderDefense As Integer, intAttackerAttackPower As Integer) As Integer
+        Dim intMinAttack As Integer = Math.Floor((intAttackerAttackPower / 4) - (intDefenderDefense / 8))
+        Dim intMaxAttack As Integer = Math.Floor((intAttackerAttackPower / 2) - (intDefenderDefense / 4))
+
+        Return (GetRandomDecimal(intMinAttack, intMaxAttack) + 1)
+    End Function
+
+    Public Function GetRandomDecimal(decLowerBound As Decimal, decUpperBound As Decimal) As Decimal
+        Dim intLargestDecimalCount As Integer = GetDecimalCount(decLowerBound)
+        Dim intUpperBoundDecimalCount As Integer = GetDecimalCount(decUpperBound)
+        Dim intRandomUpper As Integer = 0
+        Dim intRandomLower As Integer = 0
+        Dim intMultiplier As Integer = 0
+        If intUpperBoundDecimalCount > intLargestDecimalCount Then
+            intLargestDecimalCount = intUpperBoundDecimalCount
+        End If
+        intMultiplier = (Math.Pow(10, intLargestDecimalCount))
+        intRandomUpper = decUpperBound * intMultiplier
+        intRandomLower = decLowerBound * intMultiplier
+
+        Return rng.Next(intRandomUpper, intRandomLower) / intMultiplier
+
+    End Function
+
+    Public Function GetDecimalCount(decValue As Decimal) As Integer
+        Dim strValue As String = decValue.ToString
+        Dim intDecimalCount As Integer = 0
+        If strValue.IndexOf(".") > -1 Then
+            intDecimalCount = strValue.Length - strValue.IndexOf(".")
+        End If
+        Return intDecimalCount
+    End Function
 End Module

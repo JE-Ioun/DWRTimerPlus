@@ -3,7 +3,7 @@
     Dim strBaseWeaponsPath As String = ""
     Dim strBaseArmorPath As String = ""
     Dim strBaseShieldsPath As String = ""
-    Dim strDarkIdentifier As String = "-grey.png"
+    Dim strDarkIdentifier As String = "-grey"
     Private Sub DWRTackerWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         strBaseUsePath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "img\used\")
         strBaseWeaponsPath = System.IO.Path.Combine(System.IO.Directory.GetCurrentDirectory(), "img\Weapons\")
@@ -16,9 +16,14 @@
         Dim pbBuffer As PictureBox = DirectCast(sender, PictureBox)
         Dim strTag As String = DirectCast(pbBuffer.Tag, String)
         If strTag.Contains(strDarkIdentifier) Then
-            pbBuffer.Tag = strTag.Replace(strDarkIdentifier, ".png")
+            pbBuffer.Tag = strTag.Replace(strDarkIdentifier, "")
         Else
-            pbBuffer.Tag = strTag.Replace(".png", strDarkIdentifier)
+            If pbBuffer.Tag.Contains("_h") Then
+                pbBuffer.Tag = strTag.Replace("_h.png", strDarkIdentifier & "_h.png")
+            Else
+                pbBuffer.Tag = strTag.Replace(".png", strDarkIdentifier & ".png")
+
+            End If
         End If
         SaveTrackerItems()
 
@@ -56,6 +61,29 @@
         pbStaff.Tag = "staff_of_rain-grey.png"
         pbStones.Tag = "stones_of_sunlight-grey.png"
         pbToken.Tag = "token-grey.png"
+        If My.Settings.blnMisterHomesImages = True Then
+            If pbStaff.Tag.Contains("_h") = False Then
+                pbStaff.Tag = pbStaff.Tag.Replace(".png", "_h.png")
+            End If
+
+            If pbStones.Tag.Contains("_h") = False Then
+                pbStones.Tag = pbStones.Tag.Replace(".png", "_h.png")
+            End If
+
+            If pbHarp.Tag.Contains("_h") = False Then
+                pbHarp.Tag = pbHarp.Tag.Replace(".png", "_h.png")
+            End If
+
+            If pbToken.Tag.Contains("_h") = False Then
+                pbToken.Tag = pbToken.Tag.Replace(".png", "_h.png")
+            End If
+
+            If pbDrop.Tag.Contains("_h") = False Then
+                pbDrop.Tag = pbDrop.Tag.Replace(".png", "_h.png")
+            End If
+
+        End If
+
         pbWeapons.Tag = GetWeapons()(0)
         pbArmor.Tag = GetArmor()(0)
         pbShields.Tag = GetShields()(0)

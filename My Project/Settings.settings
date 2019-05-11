@@ -155,5 +155,8 @@
     <Setting Name="strTokenTag" Type="System.String" Scope="User">
       <Value Profile="(Default)">token-grey.png</Value>
     </Setting>
+    <Setting Name="blnMisterHomesImages" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
