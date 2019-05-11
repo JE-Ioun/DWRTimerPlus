@@ -11,4 +11,5 @@ To get:
 - Extract compressed files
 - Run Executable file
 
-For usage documentation see Github Wiki https://github.com/JE-Ioun/DWRTimerPlus/wiki
+For usage documentation see Github Wiki https://github.com/JE-Ioun/DWRTimerPlus/wiki  
+For a video tutorial on usage see https://youtu.be/jto35D-bp-U or https://www.twitch.tv/videos/387803250
