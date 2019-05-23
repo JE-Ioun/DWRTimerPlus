@@ -87,8 +87,6 @@ Partial Class Settings
         Me.nudLine1FontSize = New System.Windows.Forms.NumericUpDown()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.tbOther = New System.Windows.Forms.TabPage()
-        Me.lblSimulations = New System.Windows.Forms.Label()
-        Me.nudNumberOfSimulations = New System.Windows.Forms.NumericUpDown()
         Me.chkMHImages = New System.Windows.Forms.CheckBox()
         Me.chkEnableRunPercent = New System.Windows.Forms.CheckBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -111,6 +109,13 @@ Partial Class Settings
         Me.chkEnableFactoryReset = New System.Windows.Forms.CheckBox()
         Me.btnResetToFactory = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.lblSimulations = New System.Windows.Forms.Label()
+        Me.nudNumberOfSimulations = New System.Windows.Forms.NumericUpDown()
+        Me.grpDLSimulationSettings = New System.Windows.Forms.GroupBox()
+        Me.nudDLSimMinHealth = New System.Windows.Forms.NumericUpDown()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.nudDLSimStartingHerbs = New System.Windows.Forms.NumericUpDown()
+        Me.Label25 = New System.Windows.Forms.Label()
         CType(Me.nudTimerFontSize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,10 +135,13 @@ Partial Class Settings
         Me.GroupBox1.SuspendLayout()
         CType(Me.nudLine1FontSize, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbOther.SuspendLayout()
-        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.tpAdmin.SuspendLayout()
+        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpDLSimulationSettings.SuspendLayout()
+        CType(Me.nudDLSimMinHealth, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudDLSimStartingHerbs, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'cmbTimerFont
@@ -866,8 +874,6 @@ Partial Class Settings
         '
         'tbOther
         '
-        Me.tbOther.Controls.Add(Me.lblSimulations)
-        Me.tbOther.Controls.Add(Me.nudNumberOfSimulations)
         Me.tbOther.Controls.Add(Me.chkMHImages)
         Me.tbOther.Controls.Add(Me.chkEnableRunPercent)
         Me.tbOther.Controls.Add(Me.GroupBox4)
@@ -885,26 +891,6 @@ Partial Class Settings
         Me.tbOther.TabIndex = 2
         Me.tbOther.Text = "Extras"
         Me.tbOther.UseVisualStyleBackColor = True
-        '
-        'lblSimulations
-        '
-        Me.lblSimulations.AutoSize = True
-        Me.lblSimulations.Location = New System.Drawing.Point(17, 110)
-        Me.lblSimulations.Name = "lblSimulations"
-        Me.lblSimulations.Size = New System.Drawing.Size(85, 13)
-        Me.lblSimulations.TabIndex = 47
-        Me.lblSimulations.Text = "# of Simulations:"
-        '
-        'nudNumberOfSimulations
-        '
-        Me.nudNumberOfSimulations.Increment = New Decimal(New Integer() {100, 0, 0, 0})
-        Me.nudNumberOfSimulations.Location = New System.Drawing.Point(108, 108)
-        Me.nudNumberOfSimulations.Maximum = New Decimal(New Integer() {-1530494976, 232830, 0, 0})
-        Me.nudNumberOfSimulations.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
-        Me.nudNumberOfSimulations.Name = "nudNumberOfSimulations"
-        Me.nudNumberOfSimulations.Size = New System.Drawing.Size(183, 20)
-        Me.nudNumberOfSimulations.TabIndex = 46
-        Me.nudNumberOfSimulations.Value = New Decimal(New Integer() {10000, 0, 0, 0})
         '
         'chkMHImages
         '
@@ -1112,6 +1098,7 @@ Partial Class Settings
         '
         'tpAdmin
         '
+        Me.tpAdmin.Controls.Add(Me.grpDLSimulationSettings)
         Me.tpAdmin.Controls.Add(Me.chkEnableFactoryReset)
         Me.tpAdmin.Controls.Add(Me.btnResetToFactory)
         Me.tpAdmin.Location = New System.Drawing.Point(4, 22)
@@ -1146,6 +1133,77 @@ Partial Class Settings
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'lblSimulations
+        '
+        Me.lblSimulations.AutoSize = True
+        Me.lblSimulations.Location = New System.Drawing.Point(14, 21)
+        Me.lblSimulations.Name = "lblSimulations"
+        Me.lblSimulations.Size = New System.Drawing.Size(85, 13)
+        Me.lblSimulations.TabIndex = 49
+        Me.lblSimulations.Text = "# of Simulations:"
+        '
+        'nudNumberOfSimulations
+        '
+        Me.nudNumberOfSimulations.Increment = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudNumberOfSimulations.Location = New System.Drawing.Point(105, 19)
+        Me.nudNumberOfSimulations.Maximum = New Decimal(New Integer() {-1530494976, 232830, 0, 0})
+        Me.nudNumberOfSimulations.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudNumberOfSimulations.Name = "nudNumberOfSimulations"
+        Me.nudNumberOfSimulations.Size = New System.Drawing.Size(183, 20)
+        Me.nudNumberOfSimulations.TabIndex = 48
+        Me.nudNumberOfSimulations.Value = New Decimal(New Integer() {10000, 0, 0, 0})
+        '
+        'grpDLSimulationSettings
+        '
+        Me.grpDLSimulationSettings.Controls.Add(Me.nudDLSimStartingHerbs)
+        Me.grpDLSimulationSettings.Controls.Add(Me.Label25)
+        Me.grpDLSimulationSettings.Controls.Add(Me.nudDLSimMinHealth)
+        Me.grpDLSimulationSettings.Controls.Add(Me.Label24)
+        Me.grpDLSimulationSettings.Controls.Add(Me.nudNumberOfSimulations)
+        Me.grpDLSimulationSettings.Controls.Add(Me.lblSimulations)
+        Me.grpDLSimulationSettings.Location = New System.Drawing.Point(8, 60)
+        Me.grpDLSimulationSettings.Name = "grpDLSimulationSettings"
+        Me.grpDLSimulationSettings.Size = New System.Drawing.Size(314, 98)
+        Me.grpDLSimulationSettings.TabIndex = 50
+        Me.grpDLSimulationSettings.TabStop = False
+        Me.grpDLSimulationSettings.Text = "DL Fight Simulation"
+        '
+        'nudDLSimMinHealth
+        '
+        Me.nudDLSimMinHealth.Location = New System.Drawing.Point(142, 45)
+        Me.nudDLSimMinHealth.Maximum = New Decimal(New Integer() {150, 0, 0, 0})
+        Me.nudDLSimMinHealth.Name = "nudDLSimMinHealth"
+        Me.nudDLSimMinHealth.Size = New System.Drawing.Size(146, 20)
+        Me.nudDLSimMinHealth.TabIndex = 50
+        Me.nudDLSimMinHealth.Value = New Decimal(New Integer() {48, 0, 0, 0})
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(14, 47)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(122, 13)
+        Me.Label24.TabIndex = 51
+        Me.Label24.Text = "Maximum Attack Health:"
+        '
+        'nudDLSimStartingHerbs
+        '
+        Me.nudDLSimStartingHerbs.Location = New System.Drawing.Point(142, 71)
+        Me.nudDLSimStartingHerbs.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
+        Me.nudDLSimStartingHerbs.Name = "nudDLSimStartingHerbs"
+        Me.nudDLSimStartingHerbs.Size = New System.Drawing.Size(146, 20)
+        Me.nudDLSimStartingHerbs.TabIndex = 52
+        Me.nudDLSimStartingHerbs.Value = New Decimal(New Integer() {6, 0, 0, 0})
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(14, 73)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(77, 13)
+        Me.Label25.TabIndex = 53
+        Me.Label25.Text = "Starting Herbs:"
+        '
         'Settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1178,13 +1236,17 @@ Partial Class Settings
         CType(Me.nudLine1FontSize, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbOther.ResumeLayout(False)
         Me.tbOther.PerformLayout()
-        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.tpAdmin.ResumeLayout(False)
         Me.tpAdmin.PerformLayout()
+        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpDLSimulationSettings.ResumeLayout(False)
+        Me.grpDLSimulationSettings.PerformLayout()
+        CType(Me.nudDLSimMinHealth, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudDLSimStartingHerbs, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1278,4 +1340,9 @@ Partial Class Settings
     Friend WithEvents btnSimulateDLFights As Button
     Friend WithEvents lblSimulations As Label
     Friend WithEvents nudNumberOfSimulations As NumericUpDown
+    Friend WithEvents grpDLSimulationSettings As GroupBox
+    Friend WithEvents nudDLSimMinHealth As NumericUpDown
+    Friend WithEvents Label24 As Label
+    Friend WithEvents nudDLSimStartingHerbs As NumericUpDown
+    Friend WithEvents Label25 As Label
 End Class

@@ -915,7 +915,11 @@ Public Class Settings
     End Sub
 
     Private Sub btnSimulateDLFights_Click(sender As Object, e As EventArgs) Handles btnSimulateDLFights.Click
-        frmTracker.txtDragonLordSimChance.Text = SimulateDLFights(CalculateAttackPower(frmTracker), CalculateDefense(frmTracker), My.Settings.intAgility, My.Settings.intHP, My.Settings.intMP, 6, nudNumberOfSimulations.Value)
-        frmTracker.txtDragonLordSimChanceDN.Text = SimulateDLFights((CalculateAttackPower(frmTracker)) + 10, CalculateDefense(frmTracker), My.Settings.intAgility, Math.Floor(My.Settings.intHP * 0.75), My.Settings.intMP, 6, nudNumberOfSimulations.Value)
+        frmTracker.txtDragonLordSimChance.Text = SimulateDLFights(CalculateAttackPower(frmTracker), CalculateDefense(frmTracker), My.Settings.intAgility, My.Settings.intHP, My.Settings.intMP, nudDLSimStartingHerbs.Value, nudNumberOfSimulations.Value, nudDLSimMinHealth.Value)
+        frmTracker.txtDragonLordSimChanceDN.Text = SimulateDLFights((CalculateAttackPower(frmTracker)) + 10, CalculateDefense(frmTracker), My.Settings.intAgility, Math.Floor(My.Settings.intHP * 0.75), My.Settings.intMP, nudDLSimStartingHerbs.Value, nudNumberOfSimulations.Value, nudDLSimMinHealth.Value)
+    End Sub
+
+    Private Sub nudNumberOfSimulations_ValueChanged(sender As Object, e As EventArgs) Handles nudNumberOfSimulations.ValueChanged
+
     End Sub
 End Class
