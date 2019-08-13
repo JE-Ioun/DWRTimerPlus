@@ -1,14 +1,22 @@
 ﻿Module RotatingItems
     Public Function GetWeapons() As List(Of StatItem)
         Dim lsWeapons As New List(Of StatItem)
-        lsWeapons.Add(New StatItem("erdricks_sword-grey.png", 0, "None"))
+        If My.Settings.blnMisterHomesImages Then
+            lsWeapons.Add(New StatItem("erdricks_sword-grey_h.png", 0, "None"))
+        Else
+            lsWeapons.Add(New StatItem("erdricks_sword-grey.png", 0, "None"))
+        End If
         lsWeapons.Add(New StatItem("bamboo_pole.png", 2, "Bamboo Pole"))
         lsWeapons.Add(New StatItem("club.png", 4, "Club"))
         lsWeapons.Add(New StatItem("copper_sword.png", 10, "Copper Sword"))
         lsWeapons.Add(New StatItem("hand_axe.png", 15, "Hand Axe"))
         lsWeapons.Add(New StatItem("broadsword.png", 20, "Broadsword"))
         lsWeapons.Add(New StatItem("flame_sword.png", 28, "Flame Sword"))
-        lsWeapons.Add(New StatItem("erdricks_sword.png", 40, "Erdrick's Sword"))
+        If My.Settings.blnMisterHomesImages Then
+            lsWeapons.Add(New StatItem("erdricks_sword_h.png", 40, "Erdrick's Sword"))
+        Else
+            lsWeapons.Add(New StatItem("erdricks_sword.png", 40, "Erdrick's Sword"))
+        End If
         For Each objWeapon In lsWeapons
             objWeapon.strStatType = "Attack Power"
         Next
@@ -16,6 +24,7 @@
     End Function
     Public Function GetShields() As List(Of StatItem)
         Dim lsShields As New List(Of StatItem)
+
         lsShields.Add(New StatItem("silver_shield-grey.png", 0, "None"))
         lsShields.Add(New StatItem("small_shield.png", 4, "None"))
         lsShields.Add(New StatItem("large_shield.png", 10, "None"))
@@ -27,14 +36,22 @@
     End Function
     Public Function GetArmor() As List(Of StatItem)
         Dim lsArmors As New List(Of StatItem)
-        lsArmors.Add(New StatItem("erdricks_armour-dark.png", 0, "None"))
+        If My.Settings.blnMisterHomesImages Then
+            lsArmors.Add(New StatItem("erdricks_armour-dark_h.png", 0, "None"))
+        Else
+            lsArmors.Add(New StatItem("erdricks_armour-dark.png", 0, "None"))
+        End If
         lsArmors.Add(New StatItem("plain_clothes.png", 2, "Clothes"))
         lsArmors.Add(New StatItem("leather_armour.png", 4, "Leather Armor"))
         lsArmors.Add(New StatItem("chain_mail.png", 10, "Chain Mail"))
         lsArmors.Add(New StatItem("half_plate.png", 16, "Half Plate"))
         lsArmors.Add(New StatItem("full_plate_armour.png", 24, "Full Plate"))
         lsArmors.Add(New StatItem("magic_armour.png", 24, "Magic Armor"))
-        lsArmors.Add(New StatItem("erdricks_armour.png", 28, "Erdrick's Armor"))
+        If My.Settings.blnMisterHomesImages Then
+            lsArmors.Add(New StatItem("erdricks_armour_h.png", 28, "Erdrick's Armor"))
+        Else
+            lsArmors.Add(New StatItem("erdricks_armour.png", 28, "Erdrick's Armor"))
+        End If
         For Each objArmor In lsArmors
             objArmor.strStatType = "Defense"
         Next

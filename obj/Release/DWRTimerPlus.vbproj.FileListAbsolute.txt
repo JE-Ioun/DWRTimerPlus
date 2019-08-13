@@ -83,11 +83,15 @@ F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\erdricks_sword.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\flame_sword.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\hand_axe.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\Fonts\Dragon Warrior (NES).ttf
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\erdricks_armour-dark_h.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Armor\erdricks_armour_h.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\erdricks_sword-grey_h.png
+F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\img\Weapons\erdricks_sword_h.png
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe.config
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.exe
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.pdb
 F:\Projects\DWRTimerPlus\DWRTimerPlus\bin\Release\DWRTimerPlus.xml
-F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.vbprojResolveAssemblyReference.cache
+F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.vbprojAssemblyReference.cache
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.DWRTackerWindow.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.FMaps.resources
 F:\Projects\DWRTimerPlus\DWRTimerPlus\obj\Release\DWRTimerPlus.Resources.resources

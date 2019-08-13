@@ -35,6 +35,7 @@ Public Class Settings
         btnStartPauseTimer.Tag = False
 
         frmTracker = New DWRTackerWindow
+        My.Settings.Reset()
         frmTracker.Show()
         LoadSettingSaves()
 
@@ -459,6 +460,14 @@ Public Class Settings
             If My.Settings.strDropTag.Contains("_h") = False Then
                 My.Settings.strDropTag = My.Settings.strDropTag.Replace(".png", "_h.png")
             End If
+
+            If My.Settings.objArmorTag.Contains("_h") = False Then
+                My.Settings.objArmorTag = My.Settings.objArmorTag.Replace(".png", "_h.png")
+            End If
+
+            If My.Settings.objWeaponTag.Contains("_h") = False Then
+                My.Settings.objWeaponTag = My.Settings.objWeaponTag.Replace(".png", "_h.png")
+            End If
         Else
             If My.Settings.strStaffTag.Contains("_h") Then
                 My.Settings.strStaffTag = My.Settings.strStaffTag.Replace("_h", "")
@@ -478,6 +487,12 @@ Public Class Settings
 
             If My.Settings.strDropTag.Contains("_h") Then
                 My.Settings.strDropTag = My.Settings.strDropTag.Replace("_h", "")
+            End If
+            If My.Settings.objArmorTag.Contains("_h") Then
+                My.Settings.objArmorTag = My.Settings.objArmorTag.Replace("_h", "")
+            End If
+            If My.Settings.objWeaponTag.Contains("_h") Then
+                My.Settings.objWeaponTag = My.Settings.objWeaponTag.Replace("_h", "")
             End If
         End If
         frmTracker.pbArmor.Tag = GetArmor(GetIndexInList(GetArmor, My.Settings.objArmorTag))

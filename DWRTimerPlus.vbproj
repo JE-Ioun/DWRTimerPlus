@@ -168,8 +168,14 @@
     <Content Include="img\Armor\erdricks_armour-dark.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="img\Armor\erdricks_armour-dark_h.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="img\Armor\erdricks_armour.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\Armor\erdricks_armour_h.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\Armor\full_plate_armour.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -472,8 +478,14 @@
     <Content Include="img\Weapons\erdricks_sword-grey.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="img\Weapons\erdricks_sword-grey_h.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="img\Weapons\erdricks_sword.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="img\Weapons\erdricks_sword_h.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="img\Weapons\flame_sword.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
