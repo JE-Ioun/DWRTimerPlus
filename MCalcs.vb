@@ -88,16 +88,42 @@ Public Module FightSimulator
                                     intHeroMP As Integer,
                                     intNumberOfHerbs As Integer,
                                     intNumberOfSimulations As Integer,
-                                    intDL2HealmoreHealth As Integer) As Integer
+                                    intDL2HealmoreHealth As Integer,
+                                     intEstimatedDifficulty As Integer) As Integer
         Dim intNumberSuccesses As Integer = 0
         For intIndex As Integer = 1 To intNumberOfSimulations
-            If SimulateDLFight(intHeroAP, intHeroDef, intHeroAgil, intHeroHP, intHeroMP, intNumberOfHerbs, intDL2HealmoreHealth) Then
+            Dim intCurrentHerbs As Integer = intNumberOfHerbs
+            Dim intCurrentMP As Integer = intHeroMP
+            EstimateDiveLosses(intEstimatedDifficulty, intCurrentHerbs, intCurrentMP)
+            If SimulateDLFight(intHeroAP, intHeroDef, intHeroAgil, intHeroHP, intCurrentMP, intCurrentHerbs, intDL2HealmoreHealth) Then
                 intNumberSuccesses += 1
             End If
         Next
         Return Math.Floor((intNumberSuccesses / intNumberOfSimulations) * 100)
     End Function
-
+    Public Sub EstimateDiveLosses(intEstimatedDifficulty As Integer, ByRef intNumberOfHerbs As Integer, ByRef intCurrentMP As Integer)
+        Select Case intEstimatedDifficulty
+            Case 1
+                Exit Sub
+            Case 2
+                intNumberOfHerbs = intNumberOfHerbs - Math.Floor(GetRandomDecimal(0, 2))
+            Case 3
+                intNumberOfHerbs = intNumberOfHerbs - Math.Floor(GetRandomDecimal(0, 3))
+                intCurrentMP = intCurrentMP - (Math.Floor(GetRandomDecimal(0, 1)) * 8)
+            Case 4
+                intNumberOfHerbs = intNumberOfHerbs - Math.Floor(GetRandomDecimal(1, 3))
+                intCurrentMP = intCurrentMP - (Math.Floor(GetRandomDecimal(0, 2)) * 8)
+            Case 5
+                intNumberOfHerbs = intNumberOfHerbs - Math.Floor(GetRandomDecimal(1, 3))
+                intCurrentMP = intCurrentMP - (Math.Floor(GetRandomDecimal(0, 3)) * 8)
+            Case 6
+                intNumberOfHerbs = intNumberOfHerbs - Math.Floor(GetRandomDecimal(1, 5))
+                intCurrentMP = intCurrentMP - (Math.Floor(GetRandomDecimal(1, 3)) * 8)
+            Case 7
+                intNumberOfHerbs = intNumberOfHerbs - Math.Floor(GetRandomDecimal(3, 5))
+                intCurrentMP = intCurrentMP - (Math.Floor(GetRandomDecimal(1, 5)) * 8)
+        End Select
+    End Sub
     Public Function SimulateDLFight(intHeroAP As Integer,
                                     intHeroDef As Integer,
                                     intHeroAgil As Integer,
@@ -111,7 +137,7 @@ Public Module FightSimulator
         If intCurrentHP <= 0 Then
             Return False
         Else
-            Return SimulateDL2Fight(intHeroAP, intHeroDef, intHeroAgil, intCurrentHP, intHeroMP, intNumberOfHerbs, intDL2HealmoreHealth)
+            Return SimulateDL2Fight(intHeroAP, intHeroDef, intHeroAgil, intHeroHP, intCurrentHP, intHeroMP, intNumberOfHerbs, intDL2HealmoreHealth)
         End If
 
     End Function
@@ -185,22 +211,27 @@ Public Module FightSimulator
                                     intHeroDef As Integer,
                                     intHeroAgil As Integer,
                                     intHeroMaxHP As Integer,
+                                    intCurrentHP As Integer,
                                     intHeroMP As Integer,
                                     intNumberOfHerbs As Integer,
-                                     intHealmoreHealth As Integer) As Boolean
+                                    intHealmoreHealth As Integer) As Boolean
         Dim DL2HP As Integer = GetRandomDecimal(150, 166)
         Dim DL2AP As Integer = 140
         Dim DL2Agil As Integer = 200
         Dim decBackAttackPercent As Decimal = 50 / (2 * intHeroAgil)
         Dim intCurrentHerbs As Integer = intNumberOfHerbs
-        Dim intCurrentHP As Integer = intHeroMaxHP
+        'Dim intCurrentHP As Integer = intHeroMaxHP
         Dim intCurrentMP As Integer = intHeroMP
-
+        Dim strStats As String = "H_HP | H_MP | DL_HP | AP | Agi | MaxHP | MaxMP | hrbs" & vbNewLine
+        strStats &= "Starting: " & vbTab & vbTab & intCurrentHP & " | " & intCurrentMP & " | " & DL2HP & " | " & intHeroAP & " | " & intHeroAgil & " | " & intHeroMaxHP & " | " & intHeroMP & " | " & intNumberOfHerbs & vbNewLine
 
         'Back Attack?
         If GetRandomDecimal(1, 101) < decBackAttackPercent * 100 Then
             intCurrentHP -= DL2TurnDamage(intHeroDef, DL2AP)
+            strStats &= "BackAttack: " & vbTab & intCurrentHP & " | " & intCurrentMP & " | " & DL2HP & " | " & intHeroAP & " | " & intHeroAgil & " | " & intHeroMaxHP & " | " & intHeroMP & " | " & intNumberOfHerbs & vbNewLine
             If IsDead(intCurrentHP) Then
+                strStats &= "206"
+                'MessageBox.Show(strStats)
                 Return False
             End If
         End If
@@ -211,14 +242,18 @@ Public Module FightSimulator
                 intCurrentHP >= intHealmoreHealth AndAlso intCurrentHP < 48 Then
                 'Do risky attack
                 DL2HP -= GetAttackDamage(DL2Agil, intHeroAP)
+                strStats &= "Risky Attack: " & vbTab & vbTab & intCurrentHP & " | " & intCurrentMP & " | " & DL2HP & " | " & intHeroAP & " | " & intHeroAgil & " | " & intHeroMaxHP & " | " & intHeroMP & " | " & intNumberOfHerbs & vbNewLine
             ElseIf intCurrentHP <= 48 AndAlso intCurrentMP >= 8 Then
                 'Do Healmore
                 intCurrentMP -= 8
                 intCurrentHP += GetRandomDecimal(85, 101)
                 If intCurrentHP > intHeroMaxHP Then intCurrentHP = intHeroMaxHP
+                strStats &= "Heal: " & vbTab & vbTab & intCurrentHP & " | " & intCurrentMP & " | " & DL2HP & " | " & intHeroAP & " | " & intHeroAgil & " | " & intHeroMaxHP & " | " & intHeroMP & " | " & intNumberOfHerbs & vbNewLine
+
             Else
                 'otherwise attack
                 DL2HP -= GetAttackDamage(DL2Agil, intHeroAP)
+                strStats &= "Attack: " & vbTab & vbTab & intCurrentHP & " | " & intCurrentMP & " | " & DL2HP & " | " & intHeroAP & " | " & intHeroAgil & " | " & intHeroMaxHP & " | " & intHeroMP & " | " & intNumberOfHerbs & vbNewLine
             End If
 
 
@@ -228,18 +263,17 @@ Public Module FightSimulator
 
             'DL1 attacks
             intCurrentHP -= DL2TurnDamage(intHeroDef, DL2AP)
+            strStats &= "Round End: " & vbTab & intCurrentHP & " | " & intCurrentMP & " | " & DL2HP & " | " & intHeroAP & " | " & intHeroAgil & " | " & intHeroMaxHP & " | " & intHeroMP & " | " & intNumberOfHerbs & vbNewLine
 
             If IsDead(intCurrentHP) Then
+                strStats &= "239"
+                'MessageBox.Show(strStats)
                 Return False
             End If
 
         End While
 
-
         Return True
-
-
-
     End Function
     Public Function CalculateAveragedNumberOfAttacksLeft(intAttackerAP As Integer, intDefenderDefense As Integer, intDefenderCurrentHP As Integer) As Integer
         Dim intMinAttack As Integer = Math.Floor((intAttackerAP / 4) - (intDefenderDefense / 8))

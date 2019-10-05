@@ -106,16 +106,25 @@ Partial Class Settings
         Me.chkEnableStats = New System.Windows.Forms.CheckBox()
         Me.btnOpenMapForm = New System.Windows.Forms.Button()
         Me.tpAdmin = New System.Windows.Forms.TabPage()
+        Me.grpDLSimulationSettings = New System.Windows.Forms.GroupBox()
+        Me.nudDLSimStartingHerbs = New System.Windows.Forms.NumericUpDown()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.nudDLSimMinHealth = New System.Windows.Forms.NumericUpDown()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.nudNumberOfSimulations = New System.Windows.Forms.NumericUpDown()
+        Me.lblSimulations = New System.Windows.Forms.Label()
         Me.chkEnableFactoryReset = New System.Windows.Forms.CheckBox()
         Me.btnResetToFactory = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.lblSimulations = New System.Windows.Forms.Label()
-        Me.nudNumberOfSimulations = New System.Windows.Forms.NumericUpDown()
-        Me.grpDLSimulationSettings = New System.Windows.Forms.GroupBox()
-        Me.nudDLSimMinHealth = New System.Windows.Forms.NumericUpDown()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.nudDLSimStartingHerbs = New System.Windows.Forms.NumericUpDown()
-        Me.Label25 = New System.Windows.Forms.Label()
+        Me.tbDifficultyEstimate = New System.Windows.Forms.TrackBar()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         CType(Me.nudTimerFontSize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetHours, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTimerSetMinutes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,10 +147,12 @@ Partial Class Settings
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.tpAdmin.SuspendLayout()
-        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpDLSimulationSettings.SuspendLayout()
-        CType(Me.nudDLSimMinHealth, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudDLSimStartingHerbs, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudDLSimMinHealth, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tbDifficultyEstimate, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmbTimerFont
@@ -516,6 +527,7 @@ Partial Class Settings
         '
         'tpControls
         '
+        Me.tpControls.Controls.Add(Me.GroupBox5)
         Me.tpControls.Controls.Add(Me.btnSimulateDLFights)
         Me.tpControls.Controls.Add(Me.btnStartPauseTimer)
         Me.tpControls.Controls.Add(Me.btnResetStats)
@@ -541,6 +553,7 @@ Partial Class Settings
         '
         'btnSimulateDLFights
         '
+        Me.btnSimulateDLFights.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.btnSimulateDLFights.Location = New System.Drawing.Point(254, 176)
         Me.btnSimulateDLFights.Name = "btnSimulateDLFights"
         Me.btnSimulateDLFights.Size = New System.Drawing.Size(49, 30)
@@ -1109,6 +1122,77 @@ Partial Class Settings
         Me.tpAdmin.Text = "Admin"
         Me.tpAdmin.UseVisualStyleBackColor = True
         '
+        'grpDLSimulationSettings
+        '
+        Me.grpDLSimulationSettings.Controls.Add(Me.nudDLSimStartingHerbs)
+        Me.grpDLSimulationSettings.Controls.Add(Me.Label25)
+        Me.grpDLSimulationSettings.Controls.Add(Me.nudDLSimMinHealth)
+        Me.grpDLSimulationSettings.Controls.Add(Me.Label24)
+        Me.grpDLSimulationSettings.Controls.Add(Me.nudNumberOfSimulations)
+        Me.grpDLSimulationSettings.Controls.Add(Me.lblSimulations)
+        Me.grpDLSimulationSettings.Location = New System.Drawing.Point(8, 60)
+        Me.grpDLSimulationSettings.Name = "grpDLSimulationSettings"
+        Me.grpDLSimulationSettings.Size = New System.Drawing.Size(314, 98)
+        Me.grpDLSimulationSettings.TabIndex = 50
+        Me.grpDLSimulationSettings.TabStop = False
+        Me.grpDLSimulationSettings.Text = "DL Fight Simulation"
+        '
+        'nudDLSimStartingHerbs
+        '
+        Me.nudDLSimStartingHerbs.Location = New System.Drawing.Point(142, 71)
+        Me.nudDLSimStartingHerbs.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
+        Me.nudDLSimStartingHerbs.Name = "nudDLSimStartingHerbs"
+        Me.nudDLSimStartingHerbs.Size = New System.Drawing.Size(146, 20)
+        Me.nudDLSimStartingHerbs.TabIndex = 52
+        Me.nudDLSimStartingHerbs.Value = New Decimal(New Integer() {6, 0, 0, 0})
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(14, 73)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(77, 13)
+        Me.Label25.TabIndex = 53
+        Me.Label25.Text = "Starting Herbs:"
+        '
+        'nudDLSimMinHealth
+        '
+        Me.nudDLSimMinHealth.Location = New System.Drawing.Point(142, 45)
+        Me.nudDLSimMinHealth.Maximum = New Decimal(New Integer() {150, 0, 0, 0})
+        Me.nudDLSimMinHealth.Name = "nudDLSimMinHealth"
+        Me.nudDLSimMinHealth.Size = New System.Drawing.Size(146, 20)
+        Me.nudDLSimMinHealth.TabIndex = 50
+        Me.nudDLSimMinHealth.Value = New Decimal(New Integer() {48, 0, 0, 0})
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(14, 47)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(122, 13)
+        Me.Label24.TabIndex = 51
+        Me.Label24.Text = "Maximum Attack Health:"
+        '
+        'nudNumberOfSimulations
+        '
+        Me.nudNumberOfSimulations.Increment = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudNumberOfSimulations.Location = New System.Drawing.Point(105, 19)
+        Me.nudNumberOfSimulations.Maximum = New Decimal(New Integer() {-1530494976, 232830, 0, 0})
+        Me.nudNumberOfSimulations.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.nudNumberOfSimulations.Name = "nudNumberOfSimulations"
+        Me.nudNumberOfSimulations.Size = New System.Drawing.Size(183, 20)
+        Me.nudNumberOfSimulations.TabIndex = 48
+        Me.nudNumberOfSimulations.Value = New Decimal(New Integer() {10000, 0, 0, 0})
+        '
+        'lblSimulations
+        '
+        Me.lblSimulations.AutoSize = True
+        Me.lblSimulations.Location = New System.Drawing.Point(14, 21)
+        Me.lblSimulations.Name = "lblSimulations"
+        Me.lblSimulations.Size = New System.Drawing.Size(85, 13)
+        Me.lblSimulations.TabIndex = 49
+        Me.lblSimulations.Text = "# of Simulations:"
+        '
         'chkEnableFactoryReset
         '
         Me.chkEnableFactoryReset.AutoSize = True
@@ -1133,76 +1217,98 @@ Partial Class Settings
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'lblSimulations
+        'tbDifficultyEstimate
         '
-        Me.lblSimulations.AutoSize = True
-        Me.lblSimulations.Location = New System.Drawing.Point(14, 21)
-        Me.lblSimulations.Name = "lblSimulations"
-        Me.lblSimulations.Size = New System.Drawing.Size(85, 13)
-        Me.lblSimulations.TabIndex = 49
-        Me.lblSimulations.Text = "# of Simulations:"
+        Me.tbDifficultyEstimate.Location = New System.Drawing.Point(3, 29)
+        Me.tbDifficultyEstimate.Maximum = 7
+        Me.tbDifficultyEstimate.Minimum = 1
+        Me.tbDifficultyEstimate.Name = "tbDifficultyEstimate"
+        Me.tbDifficultyEstimate.Orientation = System.Windows.Forms.Orientation.Vertical
+        Me.tbDifficultyEstimate.Size = New System.Drawing.Size(45, 184)
+        Me.tbDifficultyEstimate.TabIndex = 41
+        Me.tbDifficultyEstimate.Value = 1
         '
-        'nudNumberOfSimulations
+        'Label26
         '
-        Me.nudNumberOfSimulations.Increment = New Decimal(New Integer() {100, 0, 0, 0})
-        Me.nudNumberOfSimulations.Location = New System.Drawing.Point(105, 19)
-        Me.nudNumberOfSimulations.Maximum = New Decimal(New Integer() {-1530494976, 232830, 0, 0})
-        Me.nudNumberOfSimulations.Minimum = New Decimal(New Integer() {100, 0, 0, 0})
-        Me.nudNumberOfSimulations.Name = "nudNumberOfSimulations"
-        Me.nudNumberOfSimulations.Size = New System.Drawing.Size(183, 20)
-        Me.nudNumberOfSimulations.TabIndex = 48
-        Me.nudNumberOfSimulations.Value = New Decimal(New Integer() {10000, 0, 0, 0})
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(33, 192)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(28, 13)
+        Me.Label26.TabIndex = 42
+        Me.Label26.Text = "Free"
         '
-        'grpDLSimulationSettings
+        'Label27
         '
-        Me.grpDLSimulationSettings.Controls.Add(Me.nudDLSimStartingHerbs)
-        Me.grpDLSimulationSettings.Controls.Add(Me.Label25)
-        Me.grpDLSimulationSettings.Controls.Add(Me.nudDLSimMinHealth)
-        Me.grpDLSimulationSettings.Controls.Add(Me.Label24)
-        Me.grpDLSimulationSettings.Controls.Add(Me.nudNumberOfSimulations)
-        Me.grpDLSimulationSettings.Controls.Add(Me.lblSimulations)
-        Me.grpDLSimulationSettings.Location = New System.Drawing.Point(8, 60)
-        Me.grpDLSimulationSettings.Name = "grpDLSimulationSettings"
-        Me.grpDLSimulationSettings.Size = New System.Drawing.Size(314, 98)
-        Me.grpDLSimulationSettings.TabIndex = 50
-        Me.grpDLSimulationSettings.TabStop = False
-        Me.grpDLSimulationSettings.Text = "DL Fight Simulation"
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(33, 166)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(30, 13)
+        Me.Label27.TabIndex = 43
+        Me.Label27.Text = "Easy"
         '
-        'nudDLSimMinHealth
+        'Label28
         '
-        Me.nudDLSimMinHealth.Location = New System.Drawing.Point(142, 45)
-        Me.nudDLSimMinHealth.Maximum = New Decimal(New Integer() {150, 0, 0, 0})
-        Me.nudDLSimMinHealth.Name = "nudDLSimMinHealth"
-        Me.nudDLSimMinHealth.Size = New System.Drawing.Size(146, 20)
-        Me.nudDLSimMinHealth.TabIndex = 50
-        Me.nudDLSimMinHealth.Value = New Decimal(New Integer() {48, 0, 0, 0})
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(33, 140)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(22, 13)
+        Me.Label28.TabIndex = 44
+        Me.Label28.Text = "OK"
         '
-        'Label24
+        'Label29
         '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(14, 47)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(122, 13)
-        Me.Label24.TabIndex = 51
-        Me.Label24.Text = "Maximum Attack Health:"
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(33, 114)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(44, 13)
+        Me.Label29.TabIndex = 45
+        Me.Label29.Text = "Medium"
         '
-        'nudDLSimStartingHerbs
+        'Label30
         '
-        Me.nudDLSimStartingHerbs.Location = New System.Drawing.Point(142, 71)
-        Me.nudDLSimStartingHerbs.Maximum = New Decimal(New Integer() {6, 0, 0, 0})
-        Me.nudDLSimStartingHerbs.Name = "nudDLSimStartingHerbs"
-        Me.nudDLSimStartingHerbs.Size = New System.Drawing.Size(146, 20)
-        Me.nudDLSimStartingHerbs.TabIndex = 52
-        Me.nudDLSimStartingHerbs.Value = New Decimal(New Integer() {6, 0, 0, 0})
+        Me.Label30.AutoSize = True
+        Me.Label30.Location = New System.Drawing.Point(33, 88)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(30, 13)
+        Me.Label30.TabIndex = 46
+        Me.Label30.Text = "Hard"
         '
-        'Label25
+        'Label31
         '
-        Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(14, 73)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(77, 13)
-        Me.Label25.TabIndex = 53
-        Me.Label25.Text = "Starting Herbs:"
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(33, 62)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(62, 13)
+        Me.Label31.TabIndex = 47
+        Me.Label31.Text = "Really Hard"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(33, 36)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(24, 13)
+        Me.Label32.TabIndex = 48
+        Me.Label32.Text = "Evil"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.GroupBox5.BackColor = System.Drawing.Color.Gainsboro
+        Me.GroupBox5.Controls.Add(Me.Label32)
+        Me.GroupBox5.Controls.Add(Me.Label31)
+        Me.GroupBox5.Controls.Add(Me.Label30)
+        Me.GroupBox5.Controls.Add(Me.Label29)
+        Me.GroupBox5.Controls.Add(Me.Label28)
+        Me.GroupBox5.Controls.Add(Me.Label27)
+        Me.GroupBox5.Controls.Add(Me.Label26)
+        Me.GroupBox5.Controls.Add(Me.tbDifficultyEstimate)
+        Me.GroupBox5.Location = New System.Drawing.Point(5, 3)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(93, 214)
+        Me.GroupBox5.TabIndex = 49
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Dive Difficulty Estimator"
         '
         'Settings
         '
@@ -1242,11 +1348,14 @@ Partial Class Settings
         Me.GroupBox3.PerformLayout()
         Me.tpAdmin.ResumeLayout(False)
         Me.tpAdmin.PerformLayout()
-        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpDLSimulationSettings.ResumeLayout(False)
         Me.grpDLSimulationSettings.PerformLayout()
-        CType(Me.nudDLSimMinHealth, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudDLSimStartingHerbs, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudDLSimMinHealth, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudNumberOfSimulations, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tbDifficultyEstimate, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1345,4 +1454,13 @@ Partial Class Settings
     Friend WithEvents Label24 As Label
     Friend WithEvents nudDLSimStartingHerbs As NumericUpDown
     Friend WithEvents Label25 As Label
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Label32 As Label
+    Friend WithEvents Label31 As Label
+    Friend WithEvents Label30 As Label
+    Friend WithEvents Label29 As Label
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents tbDifficultyEstimate As TrackBar
 End Class
