@@ -138,7 +138,6 @@
         End If
         My.Settings.objShieldTag = pbShields.Tag.ToString
         My.Settings.Save()
-        'Testing the github save
     End Sub
 
     Private Sub UpdateRotating(sender As PictureBox, strBasePath As String, lstItems As List(Of StatItem), Optional blnReverse As Boolean = False)
